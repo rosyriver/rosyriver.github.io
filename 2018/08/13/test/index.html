@@ -164,14 +164,14 @@
 
 
   <meta name="description" content="testtest testtesttesttesttesttesttesttesttesttest">
-<meta name="keywords" content="python">
+<meta name="keywords" content="python,�ڿ�,��ȫ,���˵�,MSF,��͸">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2018/08/13/test/index.html">
+<meta property="og:url" content="https://rosyriver.me/2018/08/13/test/index.html">
 <meta property="og:site_name" content="☪  愿世界和平 ☭">
 <meta property="og:description" content="testtest testtesttesttesttesttesttesttesttesttest">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-08-14T16:24:32.085Z">
+<meta property="og:updated_time" content="2018-08-15T02:03:42.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
 <meta name="twitter:description" content="testtest testtesttesttesttesttesttesttesttesttest">
@@ -181,7 +181,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/13/test/"/>
+  <link rel="canonical" href="https://rosyriver.me/2018/08/13/test/"/>
 
 
 
@@ -388,7 +388,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/test/">
+    <link itemprop="mainEntityOfPage" href="https://rosyriver.me/2018/08/13/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="r1ver">
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-08-15 00:24:32" itemprop="dateModified" datetime="2018-08-15T00:24:32+08:00">2018-08-15</time>
+                <time title="修改時間：2018-08-15 10:03:42" itemprop="dateModified" datetime="2018-08-15T10:03:42+08:00">2018-08-15</time>
               
             
           </span>
@@ -549,6 +549,16 @@
           
             <a href="/tags/python/" <i class="fa fa-tag"></i> python</a>
           
+            <a href="/tags/�ڿ�/" <i class="fa fa-tag"></i> �ڿ�</a>
+          
+            <a href="/tags/��o/" <i class="fa fa-tag"></i> ��ȫ</a>
+          
+            <a href="/tags/���˵�/" <i class="fa fa-tag"></i> ���˵�</a>
+          
+            <a href="/tags/MSF/" <i class="fa fa-tag"></i> MSF</a>
+          
+            <a href="/tags/��͸/" <i class="fa fa-tag"></i> ��͸</a>
+          
         </div>
       
 
@@ -619,6 +629,17 @@
 
       
       
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div id="myCanvasContainer" class="widget tagcloud">
+        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MSF/">MSF</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/�ڿ�/">�ڿ�</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/��o/">��ȫ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/��͸/">��͸</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/���˵�/">���˵�</a><span class="tag-list-count">1</span></li></ul>
+        </canvas>
+    </div>
+</div>
+
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
@@ -651,14 +672,24 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">標籤</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -905,7 +936,7 @@
         avatar:'wavatar',
         meta:guest,
         pageSize:'10' || 10,
-        visitor: false
+        visitor: true
     });
   </script>
 
@@ -1238,67 +1269,6 @@
 
 
   
-
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function ({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
-            
-            .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            })
-            
-            .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-            })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
-            
-          }
-        })
-      .fail(function ({ responseJSON }) {
-        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
-      });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "iFVpuQjtFSbw7jcQtVuaBq6d-gzGzoHsz")
-        .done(function ({ api_server }) {
-          var Counter = function (method, url, data) {
-            return $.ajax({
-              method: method,
-              url: `https://${api_server}/1.1${url}`,
-              headers: {
-                'X-LC-Id': "iFVpuQjtFSbw7jcQtVuaBq6d-gzGzoHsz",
-                'X-LC-Key': "pcBtugB3qqc8FCj8AzMPTPh6",
-                'Content-Type': 'application/json',
-              },
-              data: data,
-            });
-          };
-          
-          addCount(Counter);
-          
-        })
-    });
-  </script>
-
-
 
   
 
