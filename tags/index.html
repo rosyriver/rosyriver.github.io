@@ -170,7 +170,7 @@
 <meta property="og:site_name" content="☪  愿世界和平 ☭">
 <meta property="og:description" content="唯有热爱,享受过程">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-08-15T02:01:08.572Z">
+<meta property="og:updated_time" content="2018-08-15T12:03:21.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="☪  愿世界和平 ☭">
 <meta name="twitter:description" content="唯有热爱,享受过程">
@@ -442,10 +442,30 @@
                     
                   
                 
-                目前共有 6 個標籤
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                
+                  
+                    
+                  
+                
+                目前共有 11 個標籤
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/MSF/" style="font-size: 12px; color: #ccc">MSF</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a> <a href="/tags/�ڿ�/" style="font-size: 12px; color: #ccc">�ڿ�</a> <a href="/tags/��o/" style="font-size: 12px; color: #ccc">��ȫ</a> <a href="/tags/��͸/" style="font-size: 12px; color: #ccc">��͸</a> <a href="/tags/���˵�/" style="font-size: 12px; color: #ccc">���˵�</a>
+              <a href="/tags/Dream/" style="font-size: 14px; color: #6c6">Dream</a> <a href="/tags/Tools/" style="font-size: 14px; color: #6c6">Tools</a> <a href="/tags/note/" style="font-size: 14px; color: #6c6">note</a> <a href="/tags/python/" style="font-size: 14px; color: #6c6">python</a> <a href="/tags/宇西/" style="font-size: 14px; color: #6c6">宇西</a> <a href="/tags/日记/" style="font-size: 14px; color: #6c6">日记</a> <a href="/tags/柯南/" style="font-size: 14px; color: #6c6">柯南</a> <a href="/tags/海贼王/" style="font-size: 14px; color: #6c6">海贼王</a> <a href="/tags/爬虫/" style="font-size: 14px; color: #6c6">爬虫</a> <a href="/tags/莫文蔚/" style="font-size: 14px; color: #6c6">莫文蔚</a> <a href="/tags/进击的巨人/" style="font-size: 14px; color: #6c6">进击的巨人</a>
             </div>
           </div>
         
@@ -536,7 +556,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">標籤</span>
                   </a>
                 </div>
@@ -579,6 +609,34 @@
                   </li>
                 
               </ul>
+              
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/15/2018 22:20:46");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
             </div>
           
 
@@ -586,7 +644,33 @@
             
           
           
-
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/15/2018 22:20:46");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
         </div>
       </section>
 

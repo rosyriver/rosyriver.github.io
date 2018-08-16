@@ -1063,7 +1063,7 @@ pre .javascript .function {
 }
 .tag-cloud a {
   display: inline-block;
-  margin: 10px;
+  margin: 15px;
 }
 .back-to-top {
   box-sizing: border-box;
@@ -1962,7 +1962,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa20e;
+  background: #4209d1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2726,6 +2726,21 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
+自定义背景图片,
+body {
+  background: #ffffe7;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+修改不透明度,
+.site-subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #ffdf58;
+  font-family: 'PingFang SC';
+/*   color: #ffdf58;*/
+}
 .post {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -2875,6 +2890,22 @@ p.description {
 code.description {
   padding: 1px 1px 1px 1px;
   margin: 0px 1px 0px 4px;
+}
+.tag-cloud {
+  margin: -80px 50px 40px 50px;
+  background-color: #fff;
+  padding: 86px 36px 36px 36px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+.tag-cloud-title {
+  margin-bottom: 40px;
+}
+#days {
+  display: block;
+  color: #07b39b;
+  font-size: 13px;
+  margin-top: 15px;
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
