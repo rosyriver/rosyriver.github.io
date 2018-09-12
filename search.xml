@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
+    <title><![CDATA[Andriod 9 Pie 之初体验及详解刷机过程]]></title>
+    <url>%2F2018%2F09%2F11%2FAndriod-P-9-0-%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[&nbsp; 「Android 9 harnesses the power of artificial intelligence to give you more from your phone. Now it’s smarter, faster and adapts as you use it.」 BeforePie界面非常的优雅美观(非常喜欢),功能上正如官网所说的更加人性化与智能化Digital Wellbeing, 即「数字化健康」. 这是最喜欢的一个新功能,通过该功能用户将能够清楚地看到自己在手机上花费多少时间做了些什么，包括可以看到最常用的应用程序，还会告诉用户已经解锁了手机多少次，以及收到了多少通知等等。 这只是其中之一,还有很多特色功能,快来一起刷Android Pie咯!接下来是我刷机的过程(我也是根据官网来的!)这是官方的步骤(Mi5,其他型号也是类似的步骤), TWRP for Mi 5 (gemini) for this Mi 5 LineageOS 16 ROM How to install TWRP recovery Mi 5 unlock bootloader guide – required to install TWRP recovery ROM download link for Mi 5 Lineage OS 16 MindTheGApps for LineageOS 16 / GApps for Lineage OS 16 LineageOS 16 Root DoingStep 1st:Twrp, 解锁 Bootloader. 官方教程 安装 ADB fastBoot 到你的电脑上. 下载地址 下载 Twrp image.(根据手机型号) 官方下载地址 连接数据线开启USB调试(需要打开开发者模式),在adb主目录里, 按住shift 右击命令窗口 开启bootloader模式 (手机出现如提示请选择Allow(允许)) 1adb reboot bootloader 刷入twrp 1fastboot flash recovery twrp-3.0.x.x-xxx.img 重启手机 1fastboot reboot 验证,开机同时按锁屏+音量上键进入TWRP. More info: How to install TWRP Step 2nd:Lineage OS 16 下载Rom(根据手机型号). 官方下载地址 把Rom拷贝进手机存储中. 开机进入TWRP,进行Wipe操作,这里选择四清(Dalvik Cathe , System , Data , Cathe)原因是 很纯净. 接着点击Install,找到拷贝的Rom,点击安装即可. 开机进行设定即可(首次开机会慢,并且需要进行初始化设定) 其实第二步安卓9 pie 已经成功装上了!接下来是操作可选择的 More info: How to install LineAge OS Step 3rd:GApps(谷歌全家桶) 下载Rom(根据手机系统). 官方下载地址官网分了很多种类的包,例如Aromar,super,stock..具体如果选择根据自己的需求相关链接 本人选择的是Nano(名字好听也是一个原因哈哈哈!) 后续步骤参考Step 2ndMore info:How to install GApps Step 4th:SuperSu(Root) 下载Supersu. 官方下载地址 参考Step 2nd刷入 开机,在开发者模式里找到Root Access, 将模式设置为 Apps and ADB or Apps only or ADB only, 根据自己需要.. More info: How to install SuperSu DoneOpen Questions 关于安卓9 Xposed问题,好像目前还不支持. (解决办法:可以选择暂时VitualXposed, 官网) 装完谷歌全家桶,开机设置完成后 一直显示 正在准备设置,您很快就能完成Pixel的设置 (解决办法:真的是节点问题..,换节点+耐心!) 刷机的时候遇到验证包错误.(解决办法:勾选掉验证选项) adb识别不到设备或者adb devices,提示unauthorized (解决办法:先看是否打开了USB调试在开发者模式里,我百度了各种方法..说VID, 后来一看开发者模式里的USB调试没打开..) 关于 Andriod 9 Pie&nbsp;&nbsp;&nbsp;&nbsp;手机越来越人性化,智能化,不仅仅是手机,其他方方面面都在拥抱第四时代–人工智能时代!但是人类只会更加依赖智能设备!而谷歌这次的主题很棒!严肃地表示大家都花了太多时间在手机上，因此需要通过一些简单的方法，例如这三大功能，让 Android 系统帮助用户掌控自己的“数字生活”，而不是过渡使用手机，摆脱对手机的依赖，「最终目的是享受最真实生活，促进生活更加美满和幸福。」&nbsp;&nbsp;&nbsp;&nbsp;很憧憬未来万物互联的样子..也希望我们人类与新物种可以好好相处!]]></content>
+      <tags>
+        <tag>Andriod 9 Pie</tag>
+        <tag>Andriod</tag>
+        <tag>刷机</tag>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello world]]></title>
     <url>%2F2018%2F08%2F09%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
