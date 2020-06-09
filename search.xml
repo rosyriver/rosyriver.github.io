@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Andriod 9 Pie 之初体验及详解刷机过程</title>
+    <url>/2018/09/11/Andriod-P-9-0-%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<p>   &nbsp;</p>
+<a id="more"></a>
+
+
+<blockquote class="blockquote-center"><br>
+**「Android 9 harnesses the power of artificial intelligence to give you more from your phone. Now it's smarter, faster and adapts as you use it.」**  
+<br></blockquote>
+
+<h1 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h1><p><strong>Pie</strong>界面非常的<strong>优雅美观</strong><u>(非常喜欢)</u>,功能上正如官网所说的更加<strong>人性化与智能化</strong><br><u><strong>Digital Wellbeing</strong></u>, 即「数字化健康」. 这是最喜欢的一个新功能,通过该功能用户将能够<u>清楚地看到自己在手机上花费多少时间做了些什么</u>，包括可以看到<u>最常用的应用程序</u>，还会告诉用户已经<u>解锁了手机多少次</u>，以及<u>收到了多少通</u>知等等。</p>
+<div style="width: 220px; margin: left">![Digital Wellbeing](/images/09122.png)</div>
+
+<p>这只是其中之一,还有很多特色功能,快来一起刷Android Pie咯!<br>接下来是<del>我刷机的过程</del>(我也是根据官网来的!)<br>这是官方的步骤(Mi5,其他型号也是类似的步骤),</p>
+<ul>
+<li>TWRP for Mi 5 (gemini) for this Mi 5 LineageOS 16 ROM</li>
+<li>How to install TWRP recovery</li>
+<li>Mi 5 unlock bootloader guide – required to install TWRP recovery</li>
+<li>ROM download link for Mi 5 Lineage OS 16</li>
+<li>MindTheGApps for LineageOS 16 / GApps for Lineage OS 16</li>
+<li>LineageOS 16 Root</li>
+</ul>
+<h1 id="Doing"><a href="#Doing" class="headerlink" title="Doing"></a>Doing</h1><h2 id="Step-1st"><a href="#Step-1st" class="headerlink" title="Step 1st:"></a>Step 1st:</h2><h3 id="Twrp"><a href="#Twrp" class="headerlink" title="Twrp,"></a>Twrp,</h3><ol>
+<li><p>解锁 <strong>Bootloader</strong>.  <i class="fa fa-pencil"></i><a href="https://www.miui.com/unlock/index.html" target="_blank" rel="noopener">官方教程</a></p>
+</li>
+<li><p>安装 <strong>ADB fastBoot</strong> 到你的电脑上.             <i class="fa fa-download"></i> <a href="/share/platform-tools_r28.0.1-windows.zip">下载地址</a></p>
+</li>
+<li><p>下载 <strong>Twrp image</strong>.(根据手机型号)     <i class="fa fa-download"></i> <a href="https://twrp.me/Devices/" target="_blank" rel="noopener">官方下载地址</a></p>
+</li>
+<li><p>连接数据线开启USB调试(需要打开<strong>开发者模式</strong>),在adb主目录里, 按住shift 右击命令窗口</p>
+</li>
+<li><p>开启bootloader模式 (手机出现提示点击Allow(允许))</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷入twrp</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery twrp-3.0.x.x-xxx.img</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启手机</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证,开机同时按锁屏+音量上键进入TWRP.</p>
+</li>
+</ol>
+<p>More info:<a href="https://www.cyanogenmods.org/forums/topic/install-twrp-recovery-android-using-fastboot/" target="_blank" rel="noopener"> How to install TWRP</a></p>
+<h2 id="Step-2nd"><a href="#Step-2nd" class="headerlink" title="Step 2nd:"></a>Step 2nd:</h2><h3 id="Lineage-OS-16"><a href="#Lineage-OS-16" class="headerlink" title="Lineage OS 16"></a>Lineage OS 16</h3><ol>
+<li>下载Rom(根据手机型号).  <i class="fa fa-download"></i> <a href="https://www.cyanogenmods.org/lineageos-16-supported-devices-list-and-downloads-android-pie-9-0/" target="_blank" rel="noopener">官方下载地址</a></li>
+<li>把Rom拷贝进手机存储中.</li>
+<li>开机进入TWRP,进行<strong>Wipe</strong>操作,这里选择<strong>四清</strong>(<strong><u>Dalvik Cathe</u></strong> , <strong><u>System</u></strong> , <strong><u>Data</u></strong> , <strong><u>Cathe</u></strong>)原因是 很纯净.</li>
+<li>接着点击<strong>Install</strong>,找到拷贝的Rom,点击<strong>安装</strong>即可.</li>
+<li>开机进行设定即可(首次开机会慢,并且需要进行初始化设定)</li>
+</ol>
+<p>其实第二步<strong>安卓9 pie 已经成功装上了</strong>!接下来是操作可选择的</p>
+<p>More info:<a href="https://www.cyanogenmods.org/forums/topic/download-lineage-os-16-for-xiaomi-mi-5/" target="_blank" rel="noopener"> How to install LineAge OS</a></p>
+<h2 id="Step-3rd"><a href="#Step-3rd" class="headerlink" title="Step 3rd:"></a>Step 3rd:</h2><h3 id="GApps-谷歌全家桶"><a href="#GApps-谷歌全家桶" class="headerlink" title="GApps(谷歌全家桶)"></a>GApps(谷歌全家桶)</h3><ol>
+<li>下载Rom(根据手机系统). <i class="fa fa-download"></i> <a href="https://opengapps.org" target="_blank" rel="noopener">官方下载地址</a><div class="note class_name danger"><p>官网分了很多种类的包,例如Aromar,super,stock..具体如果选择根据自己的需求<a href="https://jakting.com/archives/gapps-links-what.html" target="_blank" rel="noopener">相关链接</a> 本人选择的是Nano(<del>名字好听也是一个原因哈哈哈!</del>)  </p></div></li>
+<li>后续步骤参考<strong><u>Step 2nd</u></strong><br>More info:<a href="https://www.cyanogenmods.org/forums/topic/google-apps-download-lineage-os-16-gapps-zip-file/" target="_blank" rel="noopener">How to install GApps</a></li>
+</ol>
+<h2 id="Step-4th"><a href="#Step-4th" class="headerlink" title="Step 4th:"></a>Step 4th:</h2><h3 id="SuperSu-Root"><a href="#SuperSu-Root" class="headerlink" title="SuperSu(Root)"></a>SuperSu(Root)</h3><ol>
+<li>下载<strong>Supersu</strong>.  <i class="fa fa-download"></i> <a href="https://mirrorbits.lineageos.org/su/addonsu-15.1-arm64-signed.zip" target="_blank" rel="noopener">官方下载地址</a></li>
+<li>参考<strong><u>Step 2nd</u></strong>刷入</li>
+<li>开机,在<strong>开发者模式</strong>里找到<strong>Root Access</strong>, 将模式设置为 <strong><u>Apps and ADB</u></strong> or <strong><u>Apps only</u></strong> or <strong><u>ADB only</u></strong>, 根据自己需要..</li>
+</ol>
+<p>More info:<a href="https://www.cyanogenmods.org/root-lineageos-15-1-android-oreo-rom/" target="_blank" rel="noopener"> How to install SuperSu</a></p>
+<h1 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><h2 id="Open-Questions"><a href="#Open-Questions" class="headerlink" title="Open Questions"></a>Open Questions</h2><hr>
+<ul>
+<li><del>关于<strong>安卓9 Xposed</strong>问题</del>,好像目前还不支持. (<strong>解决办法</strong>:可以选择暂时<strong>VitualXposed</strong>, <a href="https://github.com/android-hacker/VirtualXposed" target="_blank" rel="noopener">官网</a>)</li>
+<li><del>装完谷歌全家桶,开机设置完成后 一直显示  <code>正在准备设置,您很快就能完成Pixel的设置</code></del> (<strong>解决办法</strong>:真的是节点问题..,换节点+耐心!)</li>
+<li><del>刷机的时候遇到<strong>验证包错误</strong>.</del>(<strong>解决办法</strong>:勾选掉验证选项)</li>
+<li><del>adb识别不到设备或者adb devices,提示unauthorized</del> (<strong>解决办法</strong>:先看是否打开了<strong>USB调试</strong>在开发者模式里,我百度了各种方法..说VID, 后来一看开发者模式里的USB调试没打开..)</li>
+</ul>
+<h2 id="关于-Andriod-9-Pie"><a href="#关于-Andriod-9-Pie" class="headerlink" title="关于 Andriod 9 Pie"></a>关于 Andriod 9 Pie</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;手机越来越人性化,智能化,不仅仅是手机,其他方方面面都在拥抱<strong>第四时代</strong>–<strong>人工智能时代</strong>!但是人类只会<strong>更加依赖</strong>智能设备!而谷歌这次的<strong>主题</strong>很棒!严肃地表示大家都花了<strong>太多时间</strong>在手机上，因此需要通过一些简单的方法，例如这三大功能，让 Android 系统帮助用户掌控自己的“数字生活”，而不是过渡使用手机，摆脱对手机的依赖，「<strong>最终目的是享受最真实生活，促进生活更加美满和幸福。</strong>」<br>&nbsp;&nbsp;&nbsp;&nbsp;很憧憬未来万物互联的样子..也希望我们人类与<strong><u>新物种</u></strong>可以<strong>好好相处</strong>!</p>
+]]></content>
+      <tags>
+        <tag>Andriod 9 Pie</tag>
+        <tag>Andriod</tag>
+        <tag>刷机</tag>
+        <tag>Xposed</tag>
+      </tags>
+  </entry>
+</search>
