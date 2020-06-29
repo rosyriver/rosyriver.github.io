@@ -1963,7 +1963,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #069fff;
+  background: #149812;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2729,7 +2729,7 @@ embed {
 }
 自定义背景图片,
 body {
-  background: #f5f8f5;
+  background: #e4f6ed;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -2746,7 +2746,7 @@ blockquote.question {
 .site-subtitle {
   margin-top: 10px;
   font-size: 15px;
-  color: #a537fd;
+  color: #be90d4;
   font-family: 'PingFang SC';
 /*   color: #ffdf58;*/
 }
