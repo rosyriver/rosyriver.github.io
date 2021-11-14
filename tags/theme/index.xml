@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme on 敬      ㅤㅤ 浪漫宇宙</title>
+    <link>/tags/theme/</link>
+    <description>Recent content in Theme on 敬      ㅤㅤ 浪漫宇宙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 01 Apr 2019 14:26:00 +0800</lastBuildDate><atom:link href="/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/posts/english-preview/</link>
+      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
+      
+      <guid>/posts/english-preview/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Theme Preview</title>
+      <link>/posts/theme-preview/</link>
+      <pubDate>Sun, 31 Mar 2019 17:49:40 +0800</pubDate>
+      
+      <guid>/posts/theme-preview/</guid>
+      <description>&lt;h1 id=&#34;headings&#34;&gt;Headings&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# H1
+&lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;## H2
+&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;### H3
+&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;#### H4
+&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;##### H5
+&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;###### H6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
