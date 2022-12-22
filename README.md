@@ -1,2 +1,2 @@
-# rosyriver.github.io
+# 独立博客
 探索自我/宇宙
