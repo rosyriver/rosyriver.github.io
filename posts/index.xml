@@ -18,21 +18,5 @@
 &lt;/blockquote&gt;</description>
     </item>
     
-    <item>
-      <title>Theme Preview</title>
-      <link>https://rosyriver.me/posts/theme-preview/</link>
-      <pubDate>Sun, 31 Mar 2019 17:49:40 +0800</pubDate>
-      
-      <guid>https://rosyriver.me/posts/theme-preview/</guid>
-      <description>&lt;h1 id=&#34;headings&#34;&gt;Headings&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# H1
-&lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;## H2
-&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;### H3
-&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;#### H4
-&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;##### H5
-&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;###### H6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    
   </channel>
 </rss>
