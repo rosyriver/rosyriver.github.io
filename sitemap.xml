@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rosyriver.me/tags/ai/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/posts/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/tags/prompt/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/tags/stable-diffusion/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/tags/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/posts/20230826/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
+    <loc>https://rosyriver.me/</loc>
+    <lastmod>2023-08-26T19:46:25+08:00</lastmod>
+  </url><url>
     <loc>https://rosyriver.me/tags/onedrive/</loc>
     <lastmod>2023-08-25T13:13:13-13:13</lastmod>
   </url><url>
     <loc>https://rosyriver.me/posts/onedrive-vercel-index/</loc>
     <lastmod>2023-08-25T13:13:13-13:13</lastmod>
   </url><url>
-    <loc>https://rosyriver.me/posts/</loc>
-    <lastmod>2023-08-25T13:13:13-13:13</lastmod>
-  </url><url>
-    <loc>https://rosyriver.me/tags/</loc>
-    <lastmod>2023-08-25T13:13:13-13:13</lastmod>
-  </url><url>
     <loc>https://rosyriver.me/tags/typescript/</loc>
-    <lastmod>2023-08-25T13:13:13-13:13</lastmod>
-  </url><url>
-    <loc>https://rosyriver.me/</loc>
     <lastmod>2023-08-25T13:13:13-13:13</lastmod>
   </url><url>
     <loc>https://rosyriver.me/about/</loc>
