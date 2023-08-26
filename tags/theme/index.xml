@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Theme on 敬      ㅤㅤ 浪漫宇宙</title>
+    <title>theme on 敬宇宙🥂 </title>
     <link>https://rosyriver.me/tags/theme/</link>
-    <description>Recent content in Theme on 敬      ㅤㅤ 浪漫宇宙</description>
+    <description>Recent content in theme on 敬宇宙🥂 </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 01 Apr 2019 14:26:00 +0800</lastBuildDate><atom:link href="https://rosyriver.me/tags/theme/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Creating a New Theme</title>
-      <link>https://rosyriver.me/posts/english-preview/</link>
-      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://rosyriver.me/posts/english-preview/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Sun, 31 Mar 2019 17:49:40 +0800</lastBuildDate><atom:link href="https://rosyriver.me/tags/theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Theme Preview</title>
       <link>https://rosyriver.me/posts/theme-preview/</link>

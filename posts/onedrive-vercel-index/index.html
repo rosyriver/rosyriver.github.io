@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>onedrive-vercel-index在vercel中自定义环境变量报错 ｜ 敬宇宙🥂 </title>
+	
+    
+    
+    <meta name="description" content=" 类型断言不是类型转换，更像是类型的选择
+" />
+    
+
+    
+    
+    <meta name="keywords" content="宇宙, 自我, 探索, Crypto" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://rosyriver.me/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="../../about/">關於我</a>
+            </li>
+            
+            <li>
+                <a href="../../">寫字</a>
+            </li>
+            
+            <li>
+                <a href="../../posts/">跳舞</a>
+            </li>
+            
+            <li>
+                <a href="../../tags/">喝酒</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h2>
+                <a href="https://rosyriver.me">
+                    <span>敬宇宙🥂 </span>
+                </a>
+            </h2>
+        </div>
+        <div class="description">
+            <p class="sub_title">是 否 有 玫 瑰 悄 然 绽 放</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://www.instagram.com/rosyr1ver/" title="instagram" target="_blank"><i class="ri-instagram-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/rosyr1ver" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/rosyriver/" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                 
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='../../posts/onedrive-vercel-index/'>onedrive-vercel-index在vercel中自定义环境变量报错</a></h2>
+                        <span class="date">2023.08.25</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>类型断言不是类型转换，更像是类型的选择</p>
+</blockquote>
+<h1 id="0x00-先上结论">0x00 先上结论</h1>
+<p>直接修改配置文件<code>config/api.config.js</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
+</span><span class="s">    
+</span><span class="s">  clientId: process.env.CLIENT_ID  || &#39;&#39;,
+</span><span class="s">  obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,
+</span><span class="s">    </span>
+<span class="na">}</span>
+</code></pre></div><p><strong>之所以报错<code>Type ‘string | string[]‘ is not assignable to type ‘string | undefined‘</code></strong></p>
+<p><strong>是因为typescript开启了空值检查 并且这里不能类比python直接使用类型转换  而是使用断言 告诉编译器 我将类型选择成什么&hellip;.</strong></p>
+<h1 id="0x01-事情起因">0x01 事情起因</h1>
+<p>偶然发现一个onedrive-index的项目ui很好看支持在线预览视频、音频、图片, 而且使用vercel部署，<strong>但是</strong>做到最后一步 发现竟然把azure的应用的id和key硬编码在github里&hellip;.这让我很难受&hellip;</p>
+<p>查了下<a href="https://github.com/spencerwooo/onedrive-vercel-index/discussions/229">讨论区</a>  可以自定义环境变量  但是一直报错</p>
+<p><img src="https://raw.githubusercontent.com/rosyriver/rosyriver.github.io/master/images/0826.png" alt="image-20230826174538950"></p>
+<p>评论区下面有人说加了<code>!</code> 可以</p>
+<h1 id="0x02-过程">0x02 过程</h1>
+<p>于是顺着线索 <code>!</code> 查是感叹号是 typescript中的非空断言符</p>
+<p>我尝试下面这样的操作发现js不支持 <code>!</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
+</span><span class="s">  clientId: process.env.client_Id !,
+</span><span class="s">  obfuscatedClientSecret: process.env.Secret_Key !,</span>
+<span class="na">}</span>
+</code></pre></div><p>走读代码后 在<code>src/pages/api/index.ts</code></p>
+<p><code>const clientSecret = revealObfuscatedToken(apiConfig.obfuscatedClientSecret!)</code></p>
+<p>依旧报上面的错误</p>
+<p>又尝试干脆直接在这里取值 不走js配置文件</p>
+<p><code>const clientSecret = revealObfuscatedToken(process.env.Secret_Key!)</code></p>
+<p><strong>编译通过</strong>了，但是这种方法需要改动的位置有<em>四处</em>   本着求知的欲望 有了下面的探索</p>
+<h1 id="0x03-原理">0x03 原理</h1>
+<p>TypeScript 2.0 增加了对<strong>不可为空类型</strong>的支持。有一种新的<strong>严格空值检查</strong>模式，他提供了 <strong>strictNullChecks</strong></p>
+<p>非空断言操作符(!)仅在启用&rsquo;strictNullchecks&rsquo;标志的时候才生效。当关闭该标志时，编译器不会检查undefined类型 null类型的赋值</p>
+<h3 id="注意点-1">注意点 1</h3>
+<p><strong>在严格空值检查模式下，null 和 undefined 无法赋值给其他类型的变量</strong>。</p>
+<p>例如下面的代码在 *<strong>strictNullChecks=true</strong> 下，是无法编译通过的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">let userName: string;</span>
+<span class="na">userName</span> <span class="o">=</span> <span class="s">&#34;搞前端的半夏&#34;;  // OK</span>
+<span class="na">userName</span> <span class="o">=</span> <span class="s">null;      // OK</span>
+<span class="na">userName</span> <span class="o">=</span> <span class="s">undefined; // OK</span>
+</code></pre></div><h3 id="注意点-2">注意点 2</h3>
+<p><strong>严格空值检查并不意味着变量的类型无法设置为 null 和 undefined</strong></p>
+<p>例如下面的代码在 *<strong>strictNullChecks=true</strong> 下，正常编译通过的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">let userName: null;</span>
+<span class="na">userName</span> <span class="o">=</span> <span class="s">null;  </span>
+
+<span class="na">let age: undefined;</span>
+<span class="na">age</span> <span class="o">=</span> <span class="s">undefined;  </span>
+</code></pre></div><p>Typescript 2.3 引入了一个新的 <code>--strict</code> 编译选项，它会开启一些相关的其他编译选项来使用更严格的类型检查。</p>
+<p>到 2021 年 8 月 Typescript 4.3 为止，<code>--strict</code> 选项会启用下面的八个编译选项：</p>
+<ul>
+<li>&ndash;alwaysStrict</li>
+<li>&ndash;strictBindCallApply</li>
+<li>&ndash;strictFunctionTypes</li>
+<li><strong>&ndash;strictNullChecks</strong></li>
+<li>&ndash;strictPropertyInitialization</li>
+<li>&ndash;noImplicitAny</li>
+<li>&ndash;noImplicitThis</li>
+<li>&ndash;useUnknownInCatchVariables</li>
+</ul>
+<p>通过查看配置文件 tsconfig.json 发现     <code>&quot;strict&quot;: true</code></p>
+<h1 id="0x04-解决方法">0x04 解决方法</h1>
+<ul>
+<li>
+<p>在tsconfig.json中添加 <code>strictNullChecks=false</code>   关闭检查</p>
+</li>
+<li>
+<p>在四个位置添加!  (上文提到)</p>
+</li>
+<li>
+<p>联合类型</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"> <span class="na">clientId: process.env.CLIENT_ID  || &#39;&#39;,     //这里必须传入一个字符串可以为空</span>
+ <span class="na">obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,</span>
+</code></pre></div></li>
+<li>
+<p>类型保护(未探索)</p>
+</li>
+</ul>
+<p><strong>这里当然推荐方法3 相对于1 改动地方少 ， 相对于2 不必为了这一个地方而关闭对整个代码的检查</strong></p>
+<h1 id="参考链接">参考链接：</h1>
+<p><a href="https://ovi.swo.moe/zh/docs/getting-started">onedrive-vercel-index 官方文档</a></p>
+<p><a href="https://www.cnblogs.com/wjaaron/p/11697275.html">typescript 中类型断言理解</a></p>
+<p><a href="https://juejin.cn/post/7026524971304222728%22yyds%22">Typescript 中的 &ndash;strict 编译选项 ——TypeScript Evolution 系列第二十二篇</a></p>
+<p><a href="https://juejin.cn/post/7081624988423290888">TypeScript 配置严格 null 类型检查 strictNullChecks</a></p>
+<p><a href="https://juejin.cn/post/7035986397810917389">【稳妥的TypeScript】联合类型、交叉类型和类型保护</a></p></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://rosyriver.me/tags/typescript/">typescript</a>
+                                    
+                                    <a href="https://rosyriver.me/tags/onedrive/">onedrive</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://rosyriver.me/css/comments.css" />
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'dX98xUiMrgPkFDRneWlbVOw6-gzGzoHsz',
+        appKey: 'YVqhhRJRpM3A90uJptl51zLN',
+        placeholder: 'say some shit. ',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="footer_slogan">
+        <span>Born to roam ./</span>
+    </div>
+</footer>
+    <script src="https://rosyriver.me/js/jquery-3.5.1.min.js"></script>
+<link href="https://rosyriver.me/css/fancybox.min.css" rel="stylesheet">
+<script src="https://rosyriver.me/js/fancybox.min.js"></script>
+<script src="https://rosyriver.me/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', '0irY3ZV8SneLMRhGd-QGcg', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

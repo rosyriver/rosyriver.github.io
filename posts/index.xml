@@ -1,49 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 敬      ㅤㅤ 浪漫宇宙</title>
+    <title>Posts on 敬宇宙🥂 </title>
     <link>https://rosyriver.me/posts/</link>
-    <description>Recent content in Posts on 敬      ㅤㅤ 浪漫宇宙</description>
+    <description>Recent content in Posts on 敬宇宙🥂 </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 11 Apr 2019 14:26:00 +0800</lastBuildDate><atom:link href="https://rosyriver.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Aug 2023 13:13:13 -1313</lastBuildDate><atom:link href="https://rosyriver.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>药师灌顶真言</title>
-      <link>https://rosyriver.me/posts/chinese-preview/</link>
-      <pubDate>Thu, 11 Apr 2019 14:26:00 +0800</pubDate>
+      <title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
+      <link>https://rosyriver.me/posts/onedrive-vercel-index/</link>
+      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
       
-      <guid>https://rosyriver.me/posts/chinese-preview/</guid>
+      <guid>https://rosyriver.me/posts/onedrive-vercel-index/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;修学药师灌顶真言是药师法门的一部分，读诵修持有着极大的功德利益&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;内容&#34;&gt;内容&lt;/h1&gt;
-&lt;p&gt;南无薄伽伐帝鞞杀社&lt;/p&gt;
-&lt;p&gt;窭噜薜琉璃&lt;/p&gt;
-&lt;p&gt;跋喇婆&lt;/p&gt;
-&lt;p&gt;喝啰阇也&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>日本語敬語体系</title>
-      <link>https://rosyriver.me/posts/japanese-preview/</link>
-      <pubDate>Wed, 10 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://rosyriver.me/posts/japanese-preview/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;日本語の敬語体系は、一般に、大きく尊敬語・謙譲語・丁寧語に分類される。文化審議会国語分科会は、2007年2月に「敬語の指針」を答申し、これに丁重語および美化語を含めた5分類を示している。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;尊敬語&#34;&gt;尊敬語&lt;/h1&gt;
-&lt;p&gt;尊敬語は、動作の主体を高めることで、主体への敬意を表す言い方である。動詞に「お（ご）～になる」を付けた形、また、助動詞「（ら）れる」を付けた形などが用いられる。たとえば、動詞「取る」の尊敬形として、「（先生が）お取りになる」「（先生が）取られる」などが用いられる。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Creating a New Theme</title>
-      <link>https://rosyriver.me/posts/english-preview/</link>
-      <pubDate>Mon, 01 Apr 2019 14:26:00 +0800</pubDate>
-      
-      <guid>https://rosyriver.me/posts/english-preview/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p&gt;</description>
+&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
