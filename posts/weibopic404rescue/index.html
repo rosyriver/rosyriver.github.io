@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-tw" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="VarKai" />
+	
+	
+	
+	<title>微博图片404  chatgpt教你Rescue ｜ 敬宇宙🥂 </title>
+	
+    
+    
+    <meta name="description" content="" />
+    
+
+    
+    
+    <meta name="keywords" content="宇宙, 自我, 探索, Crypto" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://rosyriver.me/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://rosyriver.me/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="../../about/">關於我</a>
+            </li>
+            
+            <li>
+                <a href="../../">寫字</a>
+            </li>
+            
+            <li>
+                <a href="../../posts/">跳舞</a>
+            </li>
+            
+            <li>
+                <a href="../../tags/">喝酒</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h2>
+                <a href="https://rosyriver.me">
+                    <span>敬宇宙🥂 </span>
+                </a>
+            </h2>
+        </div>
+        <div class="description">
+            <p class="sub_title">是 否 有 玫 瑰 悄 然 绽 放</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://www.instagram.com/rosyr1ver/" title="instagram" target="_blank"><i class="ri-instagram-fill"></i></a>
+                
+                
+                
+                <a href="https://twitter.com/rosyr1ver" title="twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/rosyriver/" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                 
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="content">
+            <div class="post_page">
+                <div class="post animate__animated animate__fadeInDown">
+                    <div class="post_title post_detail_title">
+                        <h2><a href='../../posts/weibopic404rescue/'>微博图片404  chatgpt教你Rescue</a></h2>
+                        <span class="date">2024.07.14</span>
+                    </div>
+                    <div class="post_content markdown"><blockquote>
+<p>来源</p>
+<p>Tk教主 <a href="https://weibo.com/6827625527/Ong3JyBf4?">https://weibo.com/6827625527/Ong3JyBf4?</a></p>
+<p><a href="https://weibo.com/1401527553/HDChc2ekA">https://weibo.com/1401527553/HDChc2ekA</a></p>
+<p><a href="https://www.helious.xyz/2023/11/27/the-trick-about-access-deleted-photos-of-weibo/">微博如何访问被夹的图片 – Helious.wu&rsquo;s Blog</a></p>
+</blockquote>
+<h3 id="具体实现">具体实现</h3>
+<p>原理在上面这位大佬的博客其实已经说的很清楚了</p>
+<p>我们来看看具体如何使用python实现的</p>
+<p>原文是使用curl实现的  其中一个关键的步骤是 指定&ndash;relsove将请求固定到 IP 地址</p>
+<hr>
+<p>我们来问下<strong>chatgpt</strong>:  <strong>curl中&ndash;resolve的参数  python中有实现吗</strong></p>
+<p>以下是她的回答:</p>
+<p><code>curl</code>中的 <code>--resolve</code> 选项允许你将域名解析到特定的IP地址。这个功能在调试和测试环境中非常有用，因为你可以指定域名解析而不必修改系统的DNS设置。</p>
+<p>在Python中，可以使用<code>http.client</code>库来实现类似的功能。这需要手动创建一个自定义的HTTP连接对象，并且在连接时指定自定义的主机和端口。</p>
+<h3 id="示例使用httpclient实现--resolve">示例：使用<code>http.client</code>实现<code>--resolve</code></h3>
+<p>假设你有以下<code>curl</code>命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl --resolve example.com:443:1.2.3.4 https://example.com
+</code></pre></div><p>这意味着你希望将 <code>example.com</code> 解析为 <code>1.2.3.4</code>，并通过 HTTPS 访问它。下面是如何在Python中实现这一点：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">ssl</span>
+
+<span class="c1"># 定义目标域名和IP地址</span>
+<span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span>
+<span class="n">resolved_ip</span> <span class="o">=</span> <span class="s1">&#39;1.2.3.4&#39;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">443</span>
+
+<span class="c1"># 创建SSL上下文</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">()</span>
+
+<span class="c1"># 创建HTTPS连接</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="n">resolved_ip</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+
+<span class="c1"># 设置自定义的主机头</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Host&#39;</span><span class="p">:</span> <span class="n">hostname</span>
+<span class="p">}</span>
+
+<span class="c1"># 发送GET请求</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="c1"># 获取响应</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+<span class="c1"># 关闭连接</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div><h3 id="解释">解释</h3>
+<ol>
+<li><strong>创建SSL上下文</strong>： 使用 <code>ssl.create_default_context()</code> 来创建一个默认的SSL上下文。这个上下文将用于HTTPS连接。</li>
+<li><strong>创建HTTPS连接</strong>： 使用 <code>http.client.HTTPSConnection</code> 来创建一个HTTPS连接对象，并指定解析后的IP地址和端口。</li>
+<li><strong>设置自定义的主机头</strong>： 为了让服务器识别请求的域名，需要在请求头中设置 <code>Host</code> 字段为原始域名。</li>
+<li><strong>发送请求并获取响应</strong>： 使用 <code>conn.request</code> 发送GET请求，并使用 <code>conn.getresponse</code> 获取服务器响应。</li>
+</ol>
+<h3 id="其他注意事项">其他注意事项</h3>
+<ul>
+<li>
+<p><strong>SSL证书验证</strong>： 上述代码创建的SSL上下文默认会验证服务器的SSL证书。如果你在测试环境中使用自签名证书，可能需要禁用SSL验证。这可以通过 <code>ssl._create_unverified_context()</code> 来实现，但不建议在生产环境中使用这种方法。</p>
+</li>
+<li>
+<p><strong>错误处理</strong>： 实际应用中应该添加错误处理逻辑，以应对可能的网络异常和HTTP错误。</p>
+</li>
+</ul>
+<p>这种方法可以实现类似<code>curl --resolve</code>的功能，允许你在Python中指定域名解析到特定的IP地址，并发送HTTP/HTTPS请求。</p>
+<hr>
+<p>我们随机找到一个404的微博图片：</p>
+<p>查看对应的请求并将其复制到postman, 生成对应的http.client代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s2">&#34;wx3.sinaimg.cn&#34;</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;accept-language&#39;</span><span class="p">:</span> <span class="s1">&#39;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="s1">&#39;u=1, i&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;referer&#39;</span><span class="p">:</span> <span class="s1">&#39;https://s.weibo.com/&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-ch-ua&#39;</span><span class="p">:</span> <span class="s1">&#39;&#34;Not/A)Brand&#34;;v=&#34;8&#34;, &#34;Chromium&#34;;v=&#34;126&#34;, &#34;Microsoft Edge&#34;;v=&#34;126&#34;&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-ch-ua-mobile&#39;</span><span class="p">:</span> <span class="s1">&#39;?0&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-ch-ua-platform&#39;</span><span class="p">:</span> <span class="s1">&#39;&#34;Windows&#34;&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-fetch-dest&#39;</span><span class="p">:</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-fetch-mode&#39;</span><span class="p">:</span> <span class="s1">&#39;no-cors&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sec-fetch-site&#39;</span><span class="p">:</span> <span class="s1">&#39;cross-site&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0&#39;</span>
+<span class="p">}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;/mw690/81d97f6dgy1hrg7uvj4b6j20u03w6tsr.jpg&#34;</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">))</span>
+</code></pre></div><hr>
+<p>如何你不会将结果保存为图片继续问她：</p>
+<p>我请求的是个图片如何将返回的结果保存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 检查请求是否成功</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># 打开文件以写入二进制数据</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">1024</span><span class="p">):</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;图片保存成功&#34;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;请求失败，状态码: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><hr>
+<p>获取CDN的resolve_ip</p>
+<p>登录阿里云的拨测挂掉的图片链接   等待10s  导出结果为xlsx</p>
+<p><a href="https://cloudmonitornext.console.aliyun.com/disposableTest">云监控 CloudMonitor (aliyun.com)</a></p>
+<p>我们这里要遍历表格里的所有ip,  接着问：如何使用python遍历excel中的某列</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">在Python中，遍历Excel文件中的某一列可以使用<span class="sb">`</span>pandas<span class="sb">`</span>库。以下是一个示例代码，展示如何读取Excel文件并遍历其中的一列。
+
+首先，确保你已经安装了<span class="sb">`</span>pandas<span class="sb">`</span>库和<span class="sb">`</span>openpyxl<span class="sb">`</span>库：
+
+<span class="sb">```</span>bash
+pip install pandas openpyxl
+<span class="sb">```</span>
+
+然后，你可以使用以下代码来遍历Excel文件中的某一列：
+
+<span class="sb">```</span>python
+import pandas as pd
+
+<span class="c1"># 读取Excel文件</span>
+<span class="nv">file_path</span> <span class="o">=</span> <span class="s1">&#39;your_excel_file.xlsx&#39;</span>
+<span class="nv">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Sheet1&#39;</span>  <span class="c1"># 替换为你的工作表名称</span>
+<span class="nv">column_name</span> <span class="o">=</span> <span class="s1">&#39;Column1&#39;</span>  <span class="c1"># 替换为你要遍历的列名</span>
+
+<span class="c1"># 使用pandas读取Excel文件</span>
+<span class="nv">df</span> <span class="o">=</span> pd.read_excel<span class="o">(</span>file_path, <span class="nv">sheet_name</span><span class="o">=</span>sheet_name<span class="o">)</span>
+
+<span class="c1"># 遍历指定列</span>
+<span class="k">for</span> value in df<span class="o">[</span>column_name<span class="o">]</span>:
+    print<span class="o">(</span>value<span class="o">)</span>
+<span class="sb">```</span>
+
+<span class="c1">### 解释</span>
+
+1. **导入<span class="sb">`</span>pandas<span class="sb">`</span>库**：<span class="sb">`</span>pandas<span class="sb">`</span>是一个强大的数据处理库，<span class="sb">`</span>openpyxl<span class="sb">`</span>是一个用于读取Excel文件的引擎。
+2. **读取Excel文件**：使用<span class="sb">`</span>pd.read_excel<span class="sb">`</span>函数读取Excel文件。你需要提供文件路径和工作表名称。
+3. **遍历列**：通过<span class="sb">`</span>df<span class="o">[</span>column_name<span class="o">]</span><span class="sb">`</span>可以获取指定列的数据，然后使用<span class="sb">`</span><span class="k">for</span><span class="sb">`</span>循环遍历该列。
+
+<span class="c1">### 示例Excel文件</span>
+
+假设你的Excel文件<span class="sb">`</span>your_excel_file.xlsx<span class="sb">`</span>有一个工作表<span class="sb">`</span>Sheet1<span class="sb">`</span>，其中包含以下数据：
+
+<span class="p">|</span> Column1 <span class="p">|</span> Column2 <span class="p">|</span>
+<span class="p">|</span>---------<span class="p">|</span>---------<span class="p">|</span>
+<span class="p">|</span> A       <span class="p">|</span> <span class="m">1</span>       <span class="p">|</span>
+<span class="p">|</span> B       <span class="p">|</span> <span class="m">2</span>       <span class="p">|</span>
+<span class="p">|</span> C       <span class="p">|</span> <span class="m">3</span>       <span class="p">|</span>
+
+运行上述代码后，输出将是：
+
+<span class="sb">```</span>
+A
+B
+C
+<span class="sb">```</span>
+
+这样你就可以遍历Excel文件中的指定列了。如果你有任何其他问题或需要进一步的帮助，请告诉我！
+</code></pre></div><hr>
+<p>最终将chatgpt和postman生成的代码结合如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">ssl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 读取Excel文件</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;111.xlsx&#39;</span>
+<span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;page1&#39;</span>  <span class="c1"># 替换为你的工作表名称</span>
+<span class="n">column_name</span> <span class="o">=</span> <span class="s1">&#39;解析结果IP&#39;</span>  <span class="c1"># 替换为你要遍历的列名</span>
+
+<span class="c1"># 使用pandas读取Excel文件</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="n">sheet_name</span><span class="p">)</span>
+
+<span class="c1"># 遍历指定列</span>
+<span class="k">for</span> <span class="n">resolved_ip</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">column_name</span><span class="p">]:</span>
+
+    <span class="c1"># 定义目标域名和IP地址</span>
+    <span class="n">hostname</span> <span class="o">=</span> <span class="s1">&#39;wx3.sinaimg.cn&#39;</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span>
+
+
+<span class="c1"># &#34;orj360&#34;,</span>
+    
+    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/mw690/81d97f6dgy1hrg7uvj4b6j20u03w6tsr.jpg&#39;</span>
+
+    <span class="c1"># 创建SSL上下文</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">_create_unverified_context</span><span class="p">()</span>
+
+    <span class="c1"># 创建HTTPS连接</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="n">resolved_ip</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># 设置自定义的主机头</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Host&#39;</span><span class="p">:</span> <span class="n">hostname</span><span class="p">,</span>
+        <span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;accept-language&#39;</span><span class="p">:</span> <span class="s1">&#39;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="s1">&#39;u=1, i&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;referer&#39;</span><span class="p">:</span> <span class="s1">&#39;https://s.weibo.com/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-ch-ua&#39;</span><span class="p">:</span> <span class="s1">&#39;&#34;ndNot/A)Bra&#34;;v=&#34;8&#34;, &#34;Chromium&#34;;v=&#34;126&#34;, &#34;Microsoft Edge&#34;;v=&#34;126&#34;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-ch-ua-mobile&#39;</span><span class="p">:</span> <span class="s1">&#39;?0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-ch-ua-platform&#39;</span><span class="p">:</span> <span class="s1">&#39;&#34;Windows&#34;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-fetch-dest&#39;</span><span class="p">:</span> <span class="s1">&#39;image&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-fetch-mode&#39;</span><span class="p">:</span> <span class="s1">&#39;no-cors&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sec-fetch-site&#39;</span><span class="p">:</span> <span class="s1">&#39;cross-site&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0&#39;</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 发送GET请求</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="c1"># 获取响应</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+
+    <span class="c1"># 检查请求是否成功</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="c1"># 打开文件以写入二进制数据</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">resolved_ip</span><span class="si">}</span><span class="s1">404.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;图片保存成功&#34;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;请求失败，状态码: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+
+
+    <span class="c1"># 关闭连接</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+</code></pre></div></div>
+                    <div class="post_footer">
+                        
+                        <div class="meta">
+                            <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="https://rosyriver.me/tags/weibo/">Weibo</a>
+                                    
+                                    <a href="https://rosyriver.me/tags/python/">Python</a>
+                                    
+                                    <a href="https://rosyriver.me/tags/chatgpt/">Chatgpt</a>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://rosyriver.me/css/comments.css" />
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'dX98xUiMrgPkFDRneWlbVOw6-gzGzoHsz',
+        appKey: 'YVqhhRJRpM3A90uJptl51zLN',
+        placeholder: 'say some shit. ',
+        visitor: 'true',
+    })
+</script>
+                
+            </div>
+        </div>
+    </div>
+    <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    <footer class="footer">
+    <div class="footer_slogan">
+        <span>Born to roam ./</span>
+    </div>
+</footer>
+    <script src="https://rosyriver.me/js/jquery-3.5.1.min.js"></script>
+<link href="https://rosyriver.me/css/fancybox.min.css" rel="stylesheet">
+<script src="https://rosyriver.me/js/fancybox.min.js"></script>
+<script src="https://rosyriver.me/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', '0irY3ZV8SneLMRhGd-QGcg', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

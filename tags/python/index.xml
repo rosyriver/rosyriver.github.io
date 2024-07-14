@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 敬宇宙🥂 </title>
+    <link>https://rosyriver.me/tags/python/</link>
+    <description>Recent content in Python on 敬宇宙🥂 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 14 Jul 2024 20:09:47 +0800</lastBuildDate><atom:link href="https://rosyriver.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微博图片404  chatgpt教你Rescue</title>
+      <link>https://rosyriver.me/posts/weibopic404rescue/</link>
+      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+      
+      <guid>https://rosyriver.me/posts/weibopic404rescue/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
