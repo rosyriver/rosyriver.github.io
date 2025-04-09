@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 敬宇宙🥂 </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 14 Jul 2024 20:09:47 +0800</lastBuildDate><atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate><atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>当Clash遇见WeChat：论代理工具对本地回环流量的误伤与防御</title>
+      <link>https://joyseen.us/posts/clashmeetwechat/</link>
+      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+      
+      <guid>https://joyseen.us/posts/clashmeetwechat/</guid>
+      <description>0x00：被代理「误伤」的本地服务 作为一款热门的FPS游戏，无畏契约的快捷登录功能本应让玩家体验丝滑的社交连接。然而，当我在开启Clash系统代理的环境下启动游戏时，微信自动登录窗</description>
+    </item>
+    
     <item>
       <title>微博图片404  chatgpt教你Rescue</title>
       <link>https://joyseen.us/posts/weibopic404rescue/</link>
