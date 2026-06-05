@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>敬宇宙🥂 </title>
-    <link>https://joyseen.us/</link>
-    <description>Recent content on 敬宇宙🥂 </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate><atom:link href="https://joyseen.us/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
-      <link>https://joyseen.us/posts/clashmeetwechat/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/clashmeetwechat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>微博图片404  chatgpt教你Rescue</title>
-      <link>https://joyseen.us/posts/weibopic404rescue/</link>
-      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/weibopic404rescue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>操 我要跟Ai美女谈恋爱！</title>
-      <link>https://joyseen.us/posts/20230826/</link>
-      <pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/20230826/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
-      <link>https://joyseen.us/posts/onedrive-vercel-index/</link>
-      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
-      
-      <guid>https://joyseen.us/posts/onedrive-vercel-index/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>@我</title>
-      <link>https://joyseen.us/about/</link>
-      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://joyseen.us/about/</guid>
-      <description>「 一个人只有远离人群，才能真正和他们在一起.」这是卡尔维诺在《树上的男爵》一书中出的最大谜题。 Haro infj, 私の Telegram: @rosyr1ver 海贼迷，最佩服尾田老师的伏笔！最爱香克斯 , 进击的巨人是唯一可以跟海贼匹敌的</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>敬宇宙🥂 </title>
+		<link>https://joyseen.us/</link>
+		<description>Recent content on 敬宇宙🥂 </description>
+		<generator>Hugo</generator>
+		<language>zh-tw</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 05 Jun 2026 23:58:14 +0800</lastBuildDate>
+		
+			<atom:link href="https://joyseen.us/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>&#34;No mistake in a tango, Donna, not l...</title>
+				<link>https://joyseen.us/stream/20260605-235814-9gjc536h8lemzi5/</link>
+				<pubDate>Fri, 05 Jun 2026 23:58:14 +0800</pubDate>
+				<guid>https://joyseen.us/stream/20260605-235814-9gjc536h8lemzi5/</guid>
+				<description>&lt;p&gt;&amp;ldquo;No mistake in a tango, Donna, not like life. Simple, that makes tango so great.&amp;rdquo;  (探戈无所谓错步的, 不像人生&lt;/p&gt;&#xA;&lt;p&gt;重温这段  想学探戈了&#xA;探戈里没有错步，唐娜，不像人生。简单，这就是探戈如此伟大的原因。(探戈无所谓错步的，不像人生&lt;/p&gt;&#xA;&lt;p&gt;重温这段  想学探戈了&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
+				<link>https://joyseen.us/posts/clashmeetwechat/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/posts/clashmeetwechat/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>微博图片404  chatgpt教你Rescue</title>
+				<link>https://joyseen.us/posts/weibopic404rescue/</link>
+				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+				<guid>https://joyseen.us/posts/weibopic404rescue/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>操 我要跟Ai美女谈恋爱！</title>
+				<link>https://joyseen.us/posts/20230826/</link>
+				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
+				<guid>https://joyseen.us/posts/20230826/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
+				<link>https://joyseen.us/posts/onedrive-vercel-index/</link>
+				<pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
+				<guid>https://joyseen.us/posts/onedrive-vercel-index/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+			<item>
+				<title>@我</title>
+				<link>https://joyseen.us/about/</link>
+				<pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+				<guid>https://joyseen.us/about/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;「 &lt;strong&gt;一个人只有远离人群，才能真正和他们在一起.&lt;/strong&gt;」这是卡尔维诺在《树上的男爵》一书中出的最大谜题。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;haro&#34;&gt;Haro&lt;/h1&gt;&#xA;&lt;p&gt;infj,&lt;/p&gt;&#xA;&lt;p&gt;私の Telegram: &lt;strong&gt;@rosyr1ver&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;海贼迷，最佩服尾田老师的伏笔！最爱&lt;strong&gt;香克斯&lt;/strong&gt; , 进击的巨人是唯一可以跟海贼匹敌的 (不接受任何反驳…)&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>愿世界和平🙂</title>
+				<link>https://joyseen.us/stream/20170815-233904-oe0ephotjijj0vd/</link>
+				<pubDate>Tue, 15 Aug 2017 23:39:04 +0800</pubDate>
+				<guid>https://joyseen.us/stream/20170815-233904-oe0ephotjijj0vd/</guid>
+				<description>&lt;p&gt;愿世界和平🙂&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

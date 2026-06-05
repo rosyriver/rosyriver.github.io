@@ -1,119 +1,101 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on 敬宇宙🥂 </title>
-    <link>https://joyseen.us/tags/</link>
-    <description>Recent content in Tags on 敬宇宙🥂 </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate><atom:link href="https://joyseen.us/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>clash</title>
-      <link>https://joyseen.us/tags/clash/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/clash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deepseek</title>
-      <link>https://joyseen.us/tags/deepseek/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/deepseek/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>微信快捷登录</title>
-      <link>https://joyseen.us/tags/%E5%BE%AE%E4%BF%A1%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/%E5%BE%AE%E4%BF%A1%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>瓦</title>
-      <link>https://joyseen.us/tags/%E7%93%A6/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/%E7%93%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chatgpt</title>
-      <link>https://joyseen.us/tags/chatgpt/</link>
-      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/chatgpt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://joyseen.us/tags/python/</link>
-      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Weibo</title>
-      <link>https://joyseen.us/tags/weibo/</link>
-      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/weibo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ai</title>
-      <link>https://joyseen.us/tags/ai/</link>
-      <pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Prompt</title>
-      <link>https://joyseen.us/tags/prompt/</link>
-      <pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/prompt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stable diffusion</title>
-      <link>https://joyseen.us/tags/stable-diffusion/</link>
-      <pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-      
-      <guid>https://joyseen.us/tags/stable-diffusion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Onedrive</title>
-      <link>https://joyseen.us/tags/onedrive/</link>
-      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
-      
-      <guid>https://joyseen.us/tags/onedrive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typescript</title>
-      <link>https://joyseen.us/tags/typescript/</link>
-      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
-      
-      <guid>https://joyseen.us/tags/typescript/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Tags on 敬宇宙🥂 </title>
+		<link>https://joyseen.us/tags/</link>
+		<description>Recent content in Tags on 敬宇宙🥂 </description>
+		<generator>Hugo</generator>
+		<language>zh-tw</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate>
+		
+			<atom:link href="https://joyseen.us/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Clash</title>
+				<link>https://joyseen.us/tags/clash/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/tags/clash/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Deepseek</title>
+				<link>https://joyseen.us/tags/deepseek/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/tags/deepseek/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>微信快捷登录</title>
+				<link>https://joyseen.us/tags/%E5%BE%AE%E4%BF%A1%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/tags/%E5%BE%AE%E4%BF%A1%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>瓦</title>
+				<link>https://joyseen.us/tags/%E7%93%A6/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/tags/%E7%93%A6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Chatgpt</title>
+				<link>https://joyseen.us/tags/chatgpt/</link>
+				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+				<guid>https://joyseen.us/tags/chatgpt/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>https://joyseen.us/tags/python/</link>
+				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+				<guid>https://joyseen.us/tags/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Weibo</title>
+				<link>https://joyseen.us/tags/weibo/</link>
+				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+				<guid>https://joyseen.us/tags/weibo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ai</title>
+				<link>https://joyseen.us/tags/ai/</link>
+				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
+				<guid>https://joyseen.us/tags/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Prompt</title>
+				<link>https://joyseen.us/tags/prompt/</link>
+				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
+				<guid>https://joyseen.us/tags/prompt/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Stable Diffusion</title>
+				<link>https://joyseen.us/tags/stable-diffusion/</link>
+				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
+				<guid>https://joyseen.us/tags/stable-diffusion/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Onedrive</title>
+				<link>https://joyseen.us/tags/onedrive/</link>
+				<pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
+				<guid>https://joyseen.us/tags/onedrive/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Typescript</title>
+				<link>https://joyseen.us/tags/typescript/</link>
+				<pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
+				<guid>https://joyseen.us/tags/typescript/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

@@ -1,0 +1,144 @@
+.stream_page {
+  margin-top: 30px;
+}
+
+.stream_head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 18px;
+}
+
+.stream_head h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.stream_rss {
+  color: #999999;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.stream_timeline {
+  position: relative;
+  padding-left: 22px;
+}
+
+.stream_timeline:before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  bottom: 0;
+  width: 1px;
+  background: #eeeeee;
+}
+
+.stream_item {
+  position: relative;
+  padding: 0 0 34px 0;
+}
+
+.stream_item:before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e42b2b;
+  box-shadow: 0 0 0 5px #ffffff;
+}
+
+.stream_meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #999999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.stream_link {
+  color: #c7c7c7;
+  font-size: 13px;
+}
+
+.stream_pin {
+  color: #e42b2b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.stream_body {
+  color: #333333;
+}
+
+.stream_body p {
+  margin-bottom: 14px;
+}
+
+.stream_body img {
+  display: block;
+  max-width: 100%;
+  margin: 14px 0 0;
+  border-radius: 6px;
+}
+
+.stream_empty {
+  color: #999999;
+  font-size: 14px;
+  padding: 20px 0 60px;
+}
+
+.stream_single {
+  margin-top: 30px;
+}
+
+.stream_single_title h2 a {
+  font-size: 1.35rem;
+}
+
+.stream_single_nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 22px;
+  margin-top: 28px;
+  font-size: 13px;
+}
+
+.stream_single_nav a {
+  color: #777777;
+}
+
+@media screen and (max-width: 680px) {
+  .stream_head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stream_timeline {
+    padding-left: 17px;
+  }
+
+  .stream_item:before {
+    left: -19px;
+  }
+
+  .stream_meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

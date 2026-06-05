@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on 敬宇宙🥂 </title>
-    <link>https://joyseen.us/posts/</link>
-    <description>Recent content in Posts on 敬宇宙🥂 </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate><atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
-      <link>https://joyseen.us/posts/clashmeetwechat/</link>
-      <pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/clashmeetwechat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>微博图片404  chatgpt教你Rescue</title>
-      <link>https://joyseen.us/posts/weibopic404rescue/</link>
-      <pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/weibopic404rescue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>操 我要跟Ai美女谈恋爱！</title>
-      <link>https://joyseen.us/posts/20230826/</link>
-      <pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-      
-      <guid>https://joyseen.us/posts/20230826/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
-      <link>https://joyseen.us/posts/onedrive-vercel-index/</link>
-      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
-      
-      <guid>https://joyseen.us/posts/onedrive-vercel-index/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Posts on 敬宇宙🥂 </title>
+		<link>https://joyseen.us/posts/</link>
+		<description>Recent content in Posts on 敬宇宙🥂 </description>
+		<generator>Hugo</generator>
+		<language>zh-tw</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 09 Apr 2025 20:36:30 +0800</lastBuildDate>
+		
+			<atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
+				<link>https://joyseen.us/posts/clashmeetwechat/</link>
+				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
+				<guid>https://joyseen.us/posts/clashmeetwechat/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>微博图片404  chatgpt教你Rescue</title>
+				<link>https://joyseen.us/posts/weibopic404rescue/</link>
+				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
+				<guid>https://joyseen.us/posts/weibopic404rescue/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>操 我要跟Ai美女谈恋爱！</title>
+				<link>https://joyseen.us/posts/20230826/</link>
+				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
+				<guid>https://joyseen.us/posts/20230826/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
+				<link>https://joyseen.us/posts/onedrive-vercel-index/</link>
+				<pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
+				<guid>https://joyseen.us/posts/onedrive-vercel-index/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
+	</channel>
 </rss>

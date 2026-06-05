@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
     <meta name="author" content="VarKai" />
 	
 	
@@ -25,7 +26,7 @@
     
     <link rel="shortcut icon" href="https://joyseen.us/images/favicon.ico" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="https://joyseen.us/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://joyseen.us//css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="https://joyseen.us/css/zozo.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
@@ -33,7 +34,10 @@
 
     
     
+    <link rel="stylesheet" href="https://joyseen.us/css/stream.css" />
+    
 </head>
+
 
 <body>
     <div class="main animate__animated animate__fadeInDown">
@@ -47,6 +51,10 @@
             
             <li>
                 <a href="../../">寫字</a>
+            </li>
+            
+            <li>
+                <a href="../../stream/">瞬间</a>
             </li>
             
             <li>
@@ -67,7 +75,7 @@
     <div class="site_title_container">
         <div class="site_title">
             <h2>
-                <a href="https://joyseen.us">
+                <a href="https://joyseen.us/">
                     <span>敬宇宙🥂 </span>
                 </a>
             </h2>
@@ -88,11 +96,11 @@
                 <a href="https://weibo.com/rosyriver/" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
                 
                 
-                 
             </div>
         </div>
     </div>
 </div>
+
         <div class="content">
             <div class="post_page">
                 <div class="post animate__animated animate__fadeInDown">
@@ -105,13 +113,13 @@
 </blockquote>
 <h1 id="0x00-先上结论">0x00 先上结论</h1>
 <p>直接修改配置文件<code>config/api.config.js</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
-</span><span class="s">    
-</span><span class="s">  clientId: process.env.CLIENT_ID  || &#39;&#39;,
-</span><span class="s">  obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,
-</span><span class="s">    </span>
-<span class="na">}</span>
-</code></pre></div><p><strong>之所以报错<code>Type ‘string | string[]‘ is not assignable to type ‘string | undefined‘</code></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">    
+</span></span></span><span class="line"><span class="cl"><span class="s">  clientId: process.env.CLIENT_ID  || &#39;&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="s">  obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="s">    </span>
+</span></span><span class="line"><span class="cl"><span class="na">}</span>
+</span></span></code></pre></div><p><strong>之所以报错<code>Type ‘string | string[]‘ is not assignable to type ‘string | undefined‘</code></strong></p>
 <p><strong>是因为typescript开启了空值检查 并且这里不能类比python直接使用类型转换  而是使用断言 告诉编译器 我将类型选择成什么&hellip;.</strong></p>
 <h1 id="0x01-事情起因">0x01 事情起因</h1>
 <p>偶然发现一个onedrive-index的项目ui很好看支持在线预览视频、音频、图片, 而且使用vercel部署，<strong>但是</strong>做到最后一步 发现竟然把azure的应用的id和key硬编码在github里&hellip;.这让我很难受&hellip;</p>
@@ -121,11 +129,11 @@
 <h1 id="0x02-过程">0x02 过程</h1>
 <p>于是顺着线索 <code>!</code> 查是感叹号是 typescript中的非空断言符</p>
 <p>我尝试下面这样的操作发现js不支持 <code>!</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
-</span><span class="s">  clientId: process.env.client_Id !,
-</span><span class="s">  obfuscatedClientSecret: process.env.Secret_Key !,</span>
-<span class="na">}</span>
-</code></pre></div><p>走读代码后 在<code>src/pages/api/index.ts</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">module.exports</span> <span class="o">=</span> <span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">  clientId: process.env.client_Id !,
+</span></span></span><span class="line"><span class="cl"><span class="s">  obfuscatedClientSecret: process.env.Secret_Key !,</span>
+</span></span><span class="line"><span class="cl"><span class="na">}</span>
+</span></span></code></pre></div><p>走读代码后 在<code>src/pages/api/index.ts</code></p>
 <p><code>const clientSecret = revealObfuscatedToken(apiConfig.obfuscatedClientSecret!)</code></p>
 <p>依旧报上面的错误</p>
 <p>又尝试干脆直接在这里取值 不走js配置文件</p>
@@ -137,19 +145,19 @@
 <h3 id="注意点-1">注意点 1</h3>
 <p><strong>在严格空值检查模式下，null 和 undefined 无法赋值给其他类型的变量</strong>。</p>
 <p>例如下面的代码在 *<strong>strictNullChecks=true</strong> 下，是无法编译通过的。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">let userName: string;</span>
-<span class="na">userName</span> <span class="o">=</span> <span class="s">&#34;搞前端的半夏&#34;;  // OK</span>
-<span class="na">userName</span> <span class="o">=</span> <span class="s">null;      // OK</span>
-<span class="na">userName</span> <span class="o">=</span> <span class="s">undefined; // OK</span>
-</code></pre></div><h3 id="注意点-2">注意点 2</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">let userName: string;</span>
+</span></span><span class="line"><span class="cl"><span class="na">userName</span> <span class="o">=</span> <span class="s">&#34;搞前端的半夏&#34;;  // OK</span>
+</span></span><span class="line"><span class="cl"><span class="na">userName</span> <span class="o">=</span> <span class="s">null;      // OK</span>
+</span></span><span class="line"><span class="cl"><span class="na">userName</span> <span class="o">=</span> <span class="s">undefined; // OK</span>
+</span></span></code></pre></div><h3 id="注意点-2">注意点 2</h3>
 <p><strong>严格空值检查并不意味着变量的类型无法设置为 null 和 undefined</strong></p>
 <p>例如下面的代码在 *<strong>strictNullChecks=true</strong> 下，正常编译通过的。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="na">let userName: null;</span>
-<span class="na">userName</span> <span class="o">=</span> <span class="s">null;  </span>
-
-<span class="na">let age: undefined;</span>
-<span class="na">age</span> <span class="o">=</span> <span class="s">undefined;  </span>
-</code></pre></div><p>Typescript 2.3 引入了一个新的 <code>--strict</code> 编译选项，它会开启一些相关的其他编译选项来使用更严格的类型检查。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">let userName: null;</span>
+</span></span><span class="line"><span class="cl"><span class="na">userName</span> <span class="o">=</span> <span class="s">null;  </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">let age: undefined;</span>
+</span></span><span class="line"><span class="cl"><span class="na">age</span> <span class="o">=</span> <span class="s">undefined;  </span>
+</span></span></code></pre></div><p>Typescript 2.3 引入了一个新的 <code>--strict</code> 编译选项，它会开启一些相关的其他编译选项来使用更严格的类型检查。</p>
 <p>到 2021 年 8 月 Typescript 4.3 为止，<code>--strict</code> 选项会启用下面的八个编译选项：</p>
 <ul>
 <li>&ndash;alwaysStrict</li>
@@ -172,9 +180,9 @@
 </li>
 <li>
 <p>联合类型</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"> <span class="na">clientId: process.env.CLIENT_ID  || &#39;&#39;,     //这里必须传入一个字符串可以为空</span>
- <span class="na">obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"> <span class="na">clientId: process.env.CLIENT_ID  || &#39;&#39;,     //这里必须传入一个字符串可以为空</span>
+</span></span><span class="line"><span class="cl"> <span class="na">obfuscatedClientSecret: process.env.SECRET_KEY  || &#39;&#39;,</span>
+</span></span></code></pre></div></li>
 <li>
 <p>类型保护(未探索)</p>
 </li>
@@ -281,13 +289,13 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', '0irY3ZV8SneLMRhGd-QGcg', 'auto');
-	
-	ga('send', 'pageview');
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', '0irY3ZV8SneLMRhGd-QGcg', 'auto');
+    ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
 
 </body>
 
