@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sat, 26 Aug 2023 19:46:25 +0800</lastBuildDate>
+			<lastBuildDate>Thu, 02 Jul 2026 19:21:00 +0800</lastBuildDate>
 		
 			<atom:link href="https://joyseen.us/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://joyseen.us/stream/20260702-192100-p6ygc0qaxnvb3mx/</link>
+				<pubDate>Thu, 02 Jul 2026 19:21:00 +0800</pubDate>
+				<guid>https://joyseen.us/stream/20260702-192100-p6ygc0qaxnvb3mx/</guid>
+				<description>&lt;p&gt;请使用本机 Codex 凭证查一下 rate-limit reset credits：&lt;/p&gt;&#xA;&lt;p&gt;读取 ~/.codex/auth.json 里的 tokens.access_token，请求接口：&#xA;&lt;a href=&#34;https://chatgpt.com/backend-api/wham/rate-limit-reset-credits&#34;&gt;https://chatgpt.com/backend-api/wham/rate-limit-reset-credits&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;要求：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;不要打印 access_token、refresh_token、cookie 或完整唯一 ID&lt;/li&gt;&#xA;&lt;li&gt;只汇总 available_count、每个 credit 的 status/title/granted_at/expires_at&lt;/li&gt;&#xA;&lt;li&gt;把 granted_at/expires_at 从 UTC 转成本地时间&lt;/li&gt;&#xA;&lt;li&gt;如果状态码返回 401，说明是凭证失效或没带对 Authorization header&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
 			<item>
 				<title>操 我要跟Ai美女谈恋爱！</title>
 				<link>https://joyseen.us/posts/20230826/</link>
