@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PocketMoment · 个人动态</title>
-<link rel="stylesheet" href="../stream/common.css">
-<link rel="stylesheet" href="../stream/theme.css">
+<link rel="icon" href="data:,">
+<title>Stream · PocketMoment</title>
+<link rel="stylesheet" href="../stream/common.css?v=20260716-logo">
+<link rel="stylesheet" id="streamThemeStylesheet" href="../stream/theme.css">
 <style>
   .shell { width: min(1120px, 100%); margin: 0 auto; padding: 28px; display: block !important; }
   .stream_content { max-width: 600px; margin: 0 auto; }
@@ -45,7 +46,48 @@
   .stream_share_tags span { padding: 4px 9px; border-radius: 999px; background: rgba(255,255,255,0.76); color: #737b84; font-size: 12px; font-weight: 850; }
   .stream_share_foot { position: absolute; left: 30px; right: 30px; bottom: 28px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; color: #737b84; font-size: 12px; font-weight: 850; }
   .stream_share_mark { color: #27303b; font-size: 14px; font-weight: 950; }
+  html.moment_focus_active { overflow-anchor: none; }
   .auto_load_sentinel { display: none; height: 1px; margin: 22px 0 2px; pointer-events: none; }
+  .auto_load_sentinel_top { margin: 0 0 22px; }
+  .stream_search_meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 7px; }
+  .stream_search_meta .search_count { margin-top: 0; }
+  .stream_discovery_actions { display: flex; align-items: center; gap: 8px; }
+  .stream_discovery_action { font-size: 12px; }
+  .stream_time_rail { position: fixed; z-index: 30; top: 92px; left: calc(50% + 356px); width: 108px; max-height: calc(100vh - 118px); overflow: auto; padding: 2px 0 4px 15px; border-left: 1px solid var(--line, rgba(39,48,59,0.18)); color: var(--text, #27303b); scrollbar-width: none; }
+  .stream_time_rail::-webkit-scrollbar { display: none; }
+  .stream_time_title { margin-bottom: 9px; color: var(--muted, #737b84); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; }
+  .stream_time_returns, .stream_years { display: flex; flex-direction: column; align-items: stretch; }
+  .stream_time_action, .stream_year_button { appearance: none; width: 100%; border: 0; background: transparent; color: inherit; cursor: pointer; font-family: inherit; text-align: left; }
+  .stream_time_action { display: flex; align-items: center; gap: 7px; padding: 5px 0; font-size: 11px; font-weight: 700; }
+  .stream_time_action[hidden] { display: none; }
+  .stream_time_action:hover, .stream_time_action:focus-visible, .stream_year_button:hover, .stream_year_button:focus-visible { color: var(--text, #27303b); outline: none; }
+  .stream_today_count { min-width: 15px; font-size: 9px; line-height: 1; text-align: center; }
+  .stream_today_count:empty { display: none; }
+  .stream_time_rule { height: 1px; margin: 8px 0; background: var(--line, rgba(39,48,59,0.14)); }
+  .stream_time_rule[hidden] { display: none; }
+  .stream_year_button { position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 4px 0; color: var(--muted, #737b84); font-size: 11px; line-height: 1.4; }
+  .stream_year_button::before { content: ""; position: absolute; left: -19px; top: 50%; width: 7px; height: 1px; background: var(--line, rgba(39,48,59,0.28)); transition: width .15s, background .15s; }
+  .stream_year_button small { color: var(--faint, #9a9a9a); font-size: 9px; font-weight: 650; }
+  .stream_year_button.is_active { color: var(--text, #27303b); font-weight: 850; }
+  .stream_year_button.is_active::before { width: 12px; background: currentColor; }
+  .stream_time_returns { margin-top: 2px; }
+  .stream_time_returns .stream_time_action { color: var(--muted, #737b84); font-size: 11px; }
+  .list_item.moment_target { outline: 3px solid rgba(79,126,108,.48); outline-offset: 3px; }
+  @media (max-width: 960px) {
+    .stream_time_rail { position: static; width: 100%; max-height: none; margin: -7px 0 16px; padding: 0 0 10px; border-left: 0; border-bottom: 1px solid var(--line, rgba(39,48,59,0.18)); }
+    .stream_time_title, .stream_time_rule { display: none; }
+    .stream_time_returns { position: fixed; z-index: 120; right: 16px; bottom: 16px; margin: 0; }
+    .stream_time_returns .stream_time_action { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; overflow: hidden; border: 1px solid var(--line, rgba(39,48,59,.18)); border-radius: 50%; background: rgba(255,255,255,.9); box-shadow: 0 5px 18px rgba(39,48,59,.1); color: transparent; font-size: 0; backdrop-filter: blur(10px); }
+    .stream_time_returns .stream_time_action[hidden] { display: none; }
+    .stream_time_returns .stream_time_action::before { content: "↑"; color: var(--text, #27303b); font-size: 16px; }
+    .stream_time_returns .stream_time_action.is_return_latest { width: 52px; border-radius: 999px; color: var(--text, #27303b); font-size: 11px; font-weight: 800; }
+    .stream_time_returns .stream_time_action.is_return_latest::before { display: none; }
+    .stream_years { flex-direction: row; gap: 16px; margin-top: 7px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
+    .stream_years::-webkit-scrollbar { display: none; }
+    .stream_year_button { width: auto; flex: 0 0 auto; padding: 2px 0; scroll-snap-align: start; }
+    .stream_year_button::before { display: none; }
+    .stream_year_button small { display: none; }
+  }
   @media (max-width: 560px) {
     .stream_share_dialog { padding: 14px; border-radius: 18px; }
     .stream_share_card { min-height: 480px; padding: 24px; border-radius: 20px; }
@@ -55,14 +97,84 @@
 </style>
 </head>
 <body>
-<div class="header"><span class="header_title">PocketMoment <small>个人动态</small></span></div>
-<div class="shell"><div class="stream_content">
+<script>
+(function () {
+  var themeLink = document.getElementById('streamThemeStylesheet');
+  var themeStateUrl = "/stream/theme.json";
+  var themeCssUrl = "/stream/theme.css";
+  var logoStateUrl = "/stream/logo.json";
+  var themeClasses = ['theme-light-terminal', 'theme-light-terminal-moss', 'theme-light-terminal-graphite', 'theme-light-terminal-slate'];
+  var classMap = {
+    'light-terminal-moss': ['theme-light-terminal', 'theme-light-terminal-moss'],
+    'light-terminal-graphite': ['theme-light-terminal', 'theme-light-terminal-graphite'],
+    'light-terminal-slate': ['theme-light-terminal', 'theme-light-terminal-slate']
+  };
+  var currentVersion = '';
+  function applyThemeState(state) {
+    if (!state || !state.theme) return;
+    document.body.classList.remove.apply(document.body.classList, themeClasses);
+    var classes = classMap[state.theme];
+    if (classes) document.body.classList.add.apply(document.body.classList, classes);
+    var version = String(state.version || state.theme);
+    if (themeLink && version !== currentVersion) {
+      currentVersion = version;
+      themeLink.href = themeCssUrl + '?v=' + encodeURIComponent(version);
+    }
+  }
+  function syncTheme() {
+    fetch(themeStateUrl + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+      .then(applyThemeState)
+      .catch(function() {});
+  }
+  function applyLogoState(state) {
+    if (!state || (state.logo !== 'signature' && state.logo !== 'pencil')) return;
+    document.querySelectorAll('[data-logo-style]').forEach(function(logo) {
+      logo.classList.remove('logo_signature', 'logo_pencil');
+      logo.classList.add('logo_' + state.logo);
+      logo.setAttribute('data-logo-style', state.logo);
+    });
+  }
+  function syncLogo() {
+    fetch(logoStateUrl + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+      .then(applyLogoState)
+      .catch(function() {});
+  }
+  syncTheme();
+  syncLogo();
+  if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
+    setInterval(syncTheme, 1500);
+    setInterval(syncLogo, 1500);
+  }
+})();
+</script>
+<div class="header"><a class="header_title logo_signature" data-logo-style="signature" href="../stream/" aria-label="返回最新动态"><span class="logo_name">PocketMoment</span><span class="logo_dot" aria-hidden="true"></span></a></div>
+<div class="shell">
+<div class="stream_content">
   <div class="search_wrap">
     <span class="search_icon">&#128269;</span>
     <input class="search_input" data-stream-search-input type="search" placeholder="搜正文、标题、标签..." autocomplete="off">
-    <div class="search_count"><span data-stream-search-count>0 条</span></div>
+    <div class="stream_search_meta">
+      <div class="search_count"><span data-stream-search-count>0 条</span></div>
+      <div class="stream_discovery_actions">
+        <button class="btn btn_small stream_discovery_action" type="button" id="streamRandomButton">随机一条</button>
+        <button class="btn btn_small stream_discovery_action" type="button" id="streamTodayButton">那年今日 <span class="stream_today_count" id="streamTodayCount"></span></button>
+      </div>
+    </div>
   </div>
+  <aside class="stream_time_rail" id="streamTimeRail" aria-label="年份导航" hidden>
+    <div class="stream_time_title">ARCHIVE</div>
+    <div class="stream_years" id="streamYearList" aria-label="按年份浏览"></div>
+    <div class="stream_time_rule" id="streamTopRule" hidden></div>
+    <div class="stream_time_returns">
+      <button class="stream_time_action" type="button" id="streamTopButton" aria-label="回到顶部" hidden>回到顶部</button>
+    </div>
+  </aside>
+  <div class="auto_load_sentinel auto_load_sentinel_top" id="autoLoadTopSentinel" aria-hidden="true"></div>
+  <div id="momentFocusTopSpacer" aria-hidden="true" style="height:0"></div>
   <div id="listContainer"></div>
+  <div id="momentFocusSpacer" aria-hidden="true" style="height:0"></div>
   <div class="auto_load_sentinel" id="autoLoadSentinel" aria-hidden="true"></div>
 </div></div>
 <div class="notification" id="streamNotification"></div>
@@ -80,7 +192,7 @@
   </div>
 </div>
 
-<script>var MOMENTS = [{"audios":[],"author":"","content":"请使用本机 Codex 凭证查一下 rate-limit reset credits：\r\n\r\n读取 ~/.codex/auth.json 里的 tokens.access_token，请求接口：\r\nhttps://chatgpt.com/backend-api/wham/rate-limit-reset-credits\r\n\r\n要求：\r\n\r\n1. 不要打印 access_token、refresh_token、cookie 或完整唯一 ID\r\n2. 只汇总 available_count、每个 credit 的 status/title/granted_at/expires_at\r\n3. 把 granted_at/expires_at 从 UTC 转成本地时间\r\n4. 如果状态码返回 401，说明是凭证失效或没带对 Authorization header","date":"2026.07.02 19:21","id":"p6ygc0qaxnvb3mx","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["ai"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"当爱的力量战胜对权力的热爱时，世界将迎来和平","date":"2026.07.01 19:17","id":"2a0stj5iorh3t4c","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"燕云换了个人妻脸","date":"2026.06.29 09:16","id":"qjcjdxpb5pr3mr0","images":["https://img.joyseen.us/photos/2026/07/02-74360da1cdfe.png"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","燕云十六声","游戏"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"\"轻微欠曝通常比严重过曝更好救。\n因为白炸的地方本质上已经没有信息了\"","date":"2026.06.07 21:33","id":"ssv2vuklcpgpt7o","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["摄影"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"罗马人和波斯人打的火热 阻碍了南边阿拉伯人的商道  于是在麦加有个古来氏部落里叫穆罕默德的阿拉伯商人 开始利用两大国纷争导致的经济水平大倒退提供的肥沃土壤  宣传自己是真主的使者 伊斯兰崛起 ​​​","date":"2025.06.27 22:25","id":"6yhszm121bs6e11","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"世界就是不断的在左与右之间摇摆  风水轮流转 罗诉韦德案时隔50多年又被推翻   贫富差距取代进步主义上升为世界的主要矛盾  \r\n\r\n我觉得叫四十年未有之大变局更贴切 上一轮结束的标志是苏联解体 柏林墙倒塌 这一轮又要献祭谁呢？","date":"2024.12.04 21:48","id":"h5ew3ypdfqikx1t","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"进步主义  lgbtq🏳️‍🌈  女权 多元化  该歇歇了\r\n\r\n新的政治周期 这边考公也要到顶了吧","date":"2024.11.23 21:47","id":"2bx18kq35hq7ked","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"调休多放两天算什么  打工人们  期待一下未来15年  一个调休一个调休的取消    还有每周四个工作日","date":"2024.11.13 21:47","id":"axxo8rzupglv3mh","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"今年的奥斯卡都挺能打  比如为艺术献身的艾玛 超现实科幻的可怜的东西也值得最佳影片  不过没办法奥本海默太炸了","date":"2024.03.11 21:46","id":"dt1vhlefoxb164r","images":["https://img.joyseen.us/photos/2026/06/23-5bf448947479.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","奥斯卡"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"\"孙宇晨前女友回忆，一群人吃椰子鸡，孙宇晨会在熟的第一秒，把大半只鸡一次性捞到自己碗里，不给自己吃不着的机会。“后来和他一起吃饭的人，发现他做生意也是这样”。\"","date":"2023.12.22 21:46","id":"f1n9x4ks224kl1l","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"“Just close the fucking door” - Powell, 2023 ​​​","date":"2023.11.10 21:43","id":"m6rgdfduhxk8xkn","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"@荐叔\r\n#上海万圣节# 可发","date":"2023.11.01 21:57","id":"uhc8my2j67c9ln3","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062305%23%E4%B8%8A%E6%B5%B7%E4%B8%87%E5%9C%A3%E8%8A%82%23%20%E5%8F%AF%E5%8F%91%E7%9A%84%E4%B8%80%E7%BB%84%EF%BC%8C%E5%A4%AA%E6%AC%A2%E4%B9%90%E4%BA%86%E3%80%82%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9C%9F%E6%A3%92%5B%E5%85%81%E6%82%B2%5D%5B%E5%85%81%E6%82%B2%5D%20%5B4963202700673358%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062305%23%E4%B8%8A%E6%B5%B7%E4%B8%87%E5%9C%A3%E8%8A%82%23%20%E5%8F%AF%E5%8F%91%E7%9A%84%E4%B8%80%E7%BB%84%EF%BC%8C%E5%A4%AA%E6%AC%A2%E4%B9%90%E4%BA%86%E3%80%82%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9C%9F%E6%A3%92%5B%E5%85%81%E6%82%B2%5D%5B%E5%85%81%E6%82%B2%5D%20%5B4963202700673358%5D.mp4"]},{"audios":[],"author":"","content":"我还记得上大学的时候去小饭馆吃饭。一桌八九个人，上一个菜，二十秒就没了。再上一个菜，还是二十秒就没了。老板端一个盘子上来就顺便把前一个盘子撤下去。\r\n\r\n当然，大家有哄着玩的成分，不过主要也是二十岁的小伙子确实能吃。五六个菜之后，有人就说不能这样了，让老板起码炒三个菜再一起上。要不然这么来一盘空一盘，跟喂狗一样。果然，这样菜就能存住了，大家也能一边吃一边聊。\r\n\r\n所以说啊，你“工具箱”里可能有不少东西，但现在这情况一样一样往外拿可能意义不大。拿一个产生的效果很快就会被消解。然后再拿第二个的时候和前一个也基本不产生叠加效应。重病得用狠药，有多少菜一起端上来，可能还有点用。","date":"2023.09.22 20:15","id":"8g2k9ap15mdvfgu","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["经济学"],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"巴基还是cool的","date":"2023.08.31 21:42","id":"4961gffxesal4oz","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频","海贼王"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062304Neflix%20%20%E7%9C%9F%E4%BA%BA%E7%89%88%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940941828821110%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062304Neflix%20%20%E7%9C%9F%E4%BA%BA%E7%89%88%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940941828821110%5D.mp4"]},{"audios":[],"author":"","content":"燃起来啦! 大海贼时代","date":"2023.08.31 20:11","id":"cpoi8ptmvc7lk4c","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["海贼王","视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062303Netflix%20%E7%9C%9F%E4%BA%BA%E7%89%88%20%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940921495618253%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062303Netflix%20%E7%9C%9F%E4%BA%BA%E7%89%88%20%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940921495618253%5D.mp4"]},{"audios":[],"author":"","content":"👍","date":"2023.08.15 21:40","id":"6fm86m0gkwosw8s","images":["https://img.joyseen.us/photos/2026/06/23-9911ede1a735.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"一个金融片拍这么艺术...","date":"2023.06.27 20:09","id":"ld3r3sz40bu7qgc","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["交易","视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062302%20%5B4917393480222627%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062302%20%5B4917393480222627%5D.mp4"]},{"audios":[],"author":"","content":"经济下行的时代  通过使用适当的保守化意识形态会抑制人们的负能量 戾气 一定程度上保证社会的稳定","date":"2023.05.18 20:08","id":"j30stt2knajtubd","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"祖师爷关键的两点: 1.用小量空头头寸测试几个月的市场趋势   像打德扑时 用小量资金bluff  得知其他玩家的可能手牌    2.虽然自己是大空头  但看到趋势不对 反复多空横跳","date":"2023.04.19 09:55","id":"w3ksdemmat6irs8","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["交易"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"想起有位大佬说这句话   \"真正的比特币信仰者的心理防线上没有比特币价格，只有比特币数量，只要比特币数量不超过 2100 万，他们就没有心理防线可以击溃。\"","date":"2023.04.15 03:03","id":"fxuizks6xmw9w5w","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["crypto"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"6","date":"2023.03.19 20:06","id":"v4tjtica3md975v","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频","经济学"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":["https://img.joyseen.us/videos/2026/06/23-fda9769a4967.mp4"]},{"audios":[],"author":"","content":"🔳▫️\n@Gunlt_","date":"2023.03.11 11:25","id":"bnbk5nty665tm30","images":["https://img.joyseen.us/photos/2026/06/21-0e4cadf6ee4d.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"很早以前就有一种理论，认为硅基是生命更先进的阶段。但宇宙无法直接产生硅基生命。所以，需要先自然演化出碳基，然后由碳基创造硅基。简而言之：碳基是硅基的生殖器。","date":"2023.03.03 19:51","id":"7u5nxkgtlxp483u","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"重温下","date":"2023.02.28 19:49","id":"2lvr5y96m1bcyt9","images":["https://img.joyseen.us/photos/2026/06/23-51febc96eaaf.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","政治"],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"真正的高手不是太极打的多漂亮（当然不是说不重要）  是指能立马精准分辨出你所踩到的坑  并提供至少1个思路\r\n\r\n当走过大多数人走过的坑   那么你成为高手的赔率也会变的更高\r\n\r\n朋友是一例 ​​​  每次对我提问的解答 都是一个ahamoment ​​​","date":"2023.01.30 19:49","id":"2ya3cqlen3h3je5","images":["https://img.joyseen.us/photos/2026/06/23-a401cf2f40f0.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"tony妥妥的觉醒infp  另外这段哈哈\"我还记得在阿根廷，第一天就拍床戏，我豁出去跳上床就跟Leslie（张国荣）狂吻。他当下的反应是：你是不是真的要玩得这么尽啊？接下来的日子，每次开拍前他都带着点一副准备格剑的样子。我只是想将事情做好，不是要跟他格剑。\"","date":"2023.01.28 19:48","id":"fkdaqpz3ii6akoy","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"老龄化会使得社会文化/策略更趋向于保守派\r\n\r\n而新生代也会更加叛逆\r\n\r\n社会会变得更加撕裂 ​​​","date":"2023.01.19 19:48","id":"jd994qh755rel3f","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["政治","经济学"],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"付鹏老师说过 \"居民负债的终极追求是人口\" ​​​","date":"2023.01.17 07:47","id":"vrs27m97fjfrc15","images":["https://img.joyseen.us/photos/2026/06/23-1dadb3761292.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["经济学","图片"],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"上岸是一种想象中的岸   你只是从一片海洋漂流到了下一片海洋","date":"2022.12.27 19:42","id":"jlqy1fkd0152ivi","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"R.I.P.   \r\n\r\n自由派的时代落下帷幕 ​​​","date":"2022.11.30 19:41","id":"62cqrwdeaapp9es","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["政治"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]}];</script>
+<script>var MOMENTS = [{"audios":[],"author":"","content":"当不了一点资本家 在有小想法的时候  第一时间竟然是 这个东西能不能创造就业？","date":"2026.08.03 22:50","id":"tjctpczciaxarwp","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"每天一万个小想法 但只能自娱自乐","date":"2026.08.02 22:22","id":"g9qsp80gpk0fr1y","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["vibe"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"我去 刚知道 赵大哥是赵匡胤  晋中原是赵光义","date":"2026.07.18 17:13","id":"av9cldxcv8cf4fn","images":["/moments/20260718-171300-av9cldxcv8cf4fn/df4ce507718d780d6f6674444fc9ed17_fz3xprian2.png"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","游戏","燕云十六声"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"冷暴力这件事  可能是从小每次在生气之后   沉默的生气 都会获得别人的服软 形成了正反馈 所以习惯性遇到生气的事情选择沉默","date":"2026.07.12 13:48","id":"vyz2j8djq4yph9z","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"#608.3Blue1Brown创始人：AI攻克数学前沿，人类创造力与科学发现将何去何从","date":"2026.07.05 15:20","id":"4oile4pvtqazcxn","images":[],"link_description":"听《跨国串门儿计划》上小宇宙。 这是一档使用 AI 技术来将英文播客翻译为中文播客的节目～ 在翻译的同时，也能保留原有声线，用中文听懂外语播客！","link_image":"https://image.xyzcdn.net/FgPi3C76e0yvQlUYo8TDbk1GTgp8.png","link_title":"#608.3Blue1Brown创始人：AI攻克数学前沿，人类创造力与科学发现将何去何从","pinned":false,"tags":["小宇宙"],"title":"","type":"link","typeLabel":"链接","url":"https://www.xiaoyuzhoufm.com/episode/6a44b3d22e335a35a80c491b","videos":[]},{"audios":[],"author":"","content":"请使用本机 Codex 凭证查一下 rate-limit reset credits：\r\n\r\n读取 ~/.codex/auth.json 里的 tokens.access_token，请求接口：\r\nhttps://chatgpt.com/backend-api/wham/rate-limit-reset-credits\r\n\r\n要求：\r\n\r\n1. 不要打印 access_token、refresh_token、cookie 或完整唯一 ID\r\n2. 只汇总 available_count、每个 credit 的 status/title/granted_at/expires_at\r\n3. 把 granted_at/expires_at 从 UTC 转成本地时间\r\n4. 如果状态码返回 401，说明是凭证失效或没带对 Authorization header","date":"2026.07.02 19:21","id":"p6ygc0qaxnvb3mx","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["ai"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"当爱的力量战胜对权力的热爱时，世界将迎来和平","date":"2026.07.01 19:17","id":"2a0stj5iorh3t4c","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"燕云换了个人妻脸","date":"2026.06.29 09:16","id":"qjcjdxpb5pr3mr0","images":["https://img.joyseen.us/photos/2026/07/02-74360da1cdfe.png"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","燕云十六声","游戏"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"\"轻微欠曝通常比严重过曝更好救。\n因为白炸的地方本质上已经没有信息了\"","date":"2026.06.07 21:33","id":"ssv2vuklcpgpt7o","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["摄影"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"罗马人和波斯人打的火热 阻碍了南边阿拉伯人的商道  于是在麦加有个古来氏部落里叫穆罕默德的阿拉伯商人 开始利用两大国纷争导致的经济水平大倒退提供的肥沃土壤  宣传自己是真主的使者 伊斯兰崛起 ​​​","date":"2025.06.27 22:25","id":"6yhszm121bs6e11","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"世界就是不断的在左与右之间摇摆  风水轮流转 罗诉韦德案时隔50多年又被推翻   贫富差距取代进步主义上升为世界的主要矛盾  \r\n\r\n我觉得叫四十年未有之大变局更贴切 上一轮结束的标志是苏联解体 柏林墙倒塌 这一轮又要献祭谁呢？","date":"2024.12.04 21:48","id":"h5ew3ypdfqikx1t","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"进步主义  lgbtq🏳️‍🌈  女权 多元化  该歇歇了\r\n\r\n新的政治周期 这边考公也要到顶了吧","date":"2024.11.23 21:47","id":"2bx18kq35hq7ked","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"调休多放两天算什么  打工人们  期待一下未来15年  一个调休一个调休的取消    还有每周四个工作日","date":"2024.11.13 21:47","id":"axxo8rzupglv3mh","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"今年的奥斯卡都挺能打  比如为艺术献身的艾玛 超现实科幻的可怜的东西也值得最佳影片  不过没办法奥本海默太炸了","date":"2024.03.11 21:46","id":"dt1vhlefoxb164r","images":["https://img.joyseen.us/photos/2026/06/23-5bf448947479.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","奥斯卡"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"\"孙宇晨前女友回忆，一群人吃椰子鸡，孙宇晨会在熟的第一秒，把大半只鸡一次性捞到自己碗里，不给自己吃不着的机会。“后来和他一起吃饭的人，发现他做生意也是这样”。\"","date":"2023.12.22 21:46","id":"f1n9x4ks224kl1l","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"“Just close the fucking door” - Powell, 2023 ​​​","date":"2023.11.10 21:43","id":"m6rgdfduhxk8xkn","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"@荐叔\r\n#上海万圣节# 可发","date":"2023.11.01 21:57","id":"uhc8my2j67c9ln3","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062305%23%E4%B8%8A%E6%B5%B7%E4%B8%87%E5%9C%A3%E8%8A%82%23%20%E5%8F%AF%E5%8F%91%E7%9A%84%E4%B8%80%E7%BB%84%EF%BC%8C%E5%A4%AA%E6%AC%A2%E4%B9%90%E4%BA%86%E3%80%82%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9C%9F%E6%A3%92%5B%E5%85%81%E6%82%B2%5D%5B%E5%85%81%E6%82%B2%5D%20%5B4963202700673358%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062305%23%E4%B8%8A%E6%B5%B7%E4%B8%87%E5%9C%A3%E8%8A%82%23%20%E5%8F%AF%E5%8F%91%E7%9A%84%E4%B8%80%E7%BB%84%EF%BC%8C%E5%A4%AA%E6%AC%A2%E4%B9%90%E4%BA%86%E3%80%82%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9C%9F%E6%A3%92%5B%E5%85%81%E6%82%B2%5D%5B%E5%85%81%E6%82%B2%5D%20%5B4963202700673358%5D.mp4"]},{"audios":[],"author":"","content":"我还记得上大学的时候去小饭馆吃饭。一桌八九个人，上一个菜，二十秒就没了。再上一个菜，还是二十秒就没了。老板端一个盘子上来就顺便把前一个盘子撤下去。\r\n\r\n当然，大家有哄着玩的成分，不过主要也是二十岁的小伙子确实能吃。五六个菜之后，有人就说不能这样了，让老板起码炒三个菜再一起上。要不然这么来一盘空一盘，跟喂狗一样。果然，这样菜就能存住了，大家也能一边吃一边聊。\r\n\r\n所以说啊，你“工具箱”里可能有不少东西，但现在这情况一样一样往外拿可能意义不大。拿一个产生的效果很快就会被消解。然后再拿第二个的时候和前一个也基本不产生叠加效应。重病得用狠药，有多少菜一起端上来，可能还有点用。","date":"2023.09.22 20:15","id":"8g2k9ap15mdvfgu","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["经济学"],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"巴基还是cool的","date":"2023.08.31 21:42","id":"4961gffxesal4oz","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频","海贼王"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062304Neflix%20%20%E7%9C%9F%E4%BA%BA%E7%89%88%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940941828821110%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062304Neflix%20%20%E7%9C%9F%E4%BA%BA%E7%89%88%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940941828821110%5D.mp4"]},{"audios":[],"author":"","content":"燃起来啦! 大海贼时代","date":"2023.08.31 20:11","id":"cpoi8ptmvc7lk4c","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["海贼王","视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062303Netflix%20%E7%9C%9F%E4%BA%BA%E7%89%88%20%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940921495618253%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062303Netflix%20%E7%9C%9F%E4%BA%BA%E7%89%88%20%E6%B5%B7%E8%B4%BC%E7%8E%8B%20%5B4940921495618253%5D.mp4"]},{"audios":[],"author":"","content":"👍","date":"2023.08.15 21:40","id":"6fm86m0gkwosw8s","images":["https://img.joyseen.us/photos/2026/06/23-9911ede1a735.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"一个金融片拍这么艺术...","date":"2023.06.27 20:09","id":"ld3r3sz40bu7qgc","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["交易","视频"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"https://pan.joyseen.us/api/raw/?path=/blog/2026/062302%20%5B4917393480222627%5D.mp4","videos":["https://pan.joyseen.us/api/raw/?path=/blog/2026/062302%20%5B4917393480222627%5D.mp4"]},{"audios":[],"author":"","content":"经济下行的时代  通过使用适当的保守化意识形态会抑制人们的负能量 戾气 一定程度上保证社会的稳定","date":"2023.05.18 20:08","id":"j30stt2knajtubd","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"祖师爷关键的两点: 1.用小量空头头寸测试几个月的市场趋势   像打德扑时 用小量资金bluff  得知其他玩家的可能手牌    2.虽然自己是大空头  但看到趋势不对 反复多空横跳","date":"2023.04.19 09:55","id":"w3ksdemmat6irs8","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["交易"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"想起有位大佬说这句话   \"真正的比特币信仰者的心理防线上没有比特币价格，只有比特币数量，只要比特币数量不超过 2100 万，他们就没有心理防线可以击溃。\"","date":"2023.04.15 03:03","id":"fxuizks6xmw9w5w","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["crypto"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"6","date":"2023.03.19 20:06","id":"v4tjtica3md975v","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["视频","经济学"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":["https://img.joyseen.us/videos/2026/06/23-fda9769a4967.mp4"]},{"audios":[],"author":"","content":"🔳▫️\n@Gunlt_","date":"2023.03.11 11:25","id":"bnbk5nty665tm30","images":["https://img.joyseen.us/photos/2026/06/21-0e4cadf6ee4d.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]},{"audios":[],"author":"","content":"很早以前就有一种理论，认为硅基是生命更先进的阶段。但宇宙无法直接产生硅基生命。所以，需要先自然演化出碳基，然后由碳基创造硅基。简而言之：碳基是硅基的生殖器。","date":"2023.03.03 19:51","id":"7u5nxkgtlxp483u","images":[],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":[],"title":"","type":"quote","typeLabel":"摘录","url":"","videos":[]},{"audios":[],"author":"","content":"重温下","date":"2023.02.28 19:49","id":"2lvr5y96m1bcyt9","images":["https://img.joyseen.us/photos/2026/06/23-51febc96eaaf.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片","政治"],"title":"","type":"thought","typeLabel":"思考","url":"","videos":[]},{"audios":[],"author":"","content":"真正的高手不是太极打的多漂亮（当然不是说不重要）  是指能立马精准分辨出你所踩到的坑  并提供至少1个思路\r\n\r\n当走过大多数人走过的坑   那么你成为高手的赔率也会变的更高\r\n\r\n朋友是一例 ​​​  每次对我提问的解答 都是一个ahamoment ​​​","date":"2023.01.30 19:49","id":"2ya3cqlen3h3je5","images":["https://img.joyseen.us/photos/2026/06/23-a401cf2f40f0.jpg"],"link_description":"","link_image":"","link_title":"","pinned":false,"tags":["图片"],"title":"","type":"murmur","typeLabel":"碎碎念","url":"","videos":[]}];</script>
 <script>
 (function () {
   var container = document.getElementById('listContainer');
@@ -92,13 +204,39 @@
   var shareUrlButton = document.getElementById('streamShareUrlButton');
   var shareUrlText = document.getElementById('streamShareUrlText');
   var autoLoadSentinel = document.getElementById('autoLoadSentinel');
+  var autoLoadTopSentinel = document.getElementById('autoLoadTopSentinel');
+  var momentFocusTopSpacer = document.getElementById('momentFocusTopSpacer');
+  var momentFocusSpacer = document.getElementById('momentFocusSpacer');
+  var timeRail = document.getElementById('streamTimeRail');
+  var randomButton = document.getElementById('streamRandomButton');
+  var todayButton = document.getElementById('streamTodayButton');
+  var todayCount = document.getElementById('streamTodayCount');
+  var yearList = document.getElementById('streamYearList');
+  var topButton = document.getElementById('streamTopButton');
+  var topRule = document.getElementById('streamTopRule');
   var activeShareUrl = '';
   var shareItems = {};
+  var archiveYears = [];
+  var archiveTodayDays = [];
+  var archivePromise = null;
+  var archiveLookupPromises = {};
+  var suppressAutoLoad = false;
+  var todayItems = [];
+  var viewMode = 'latest';
+  var activeYear = '';
   var manifestUrl = "\/stream\/search\/manifest.json";
   var streamBaseUrl = "\/stream\/";
   var dataPageUrlPrefix = "\/stream\/data\/page-";
+  var activeDataPageUrlPrefix = dataPageUrlPrefix;
+  var archiveYearUrlPrefix = "\/stream\/data\/year\/";
+  var archiveManifestUrl = "\/stream\/data\/archive-manifest.json";
+  var archiveLookupUrlPrefix = "\/stream\/data\/lookup\/";
+  var archiveTodayUrlPrefix = "\/stream\/data\/today\/";
+  var archiveLookupPrefixLength = 1;
   var pageSize = 30;
-  var totalItemCount =  105 ;
+  var totalItemCount =  110 ;
+  var archiveTotalItemCount = totalItemCount;
+  var archiveTotalPages = Math.max(1, Math.ceil(totalItemCount / pageSize));
   var typeLabels = { thought: '思考', murmur: '碎碎念', photo: '照片', quote: '摘录', link: '链接', status: '状态', video: '视频' };
   function escHtml(s) { var e = document.createElement('span'); e.textContent = s||''; return e.innerHTML; }
   function escAttr(s) { return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -239,6 +377,9 @@
     var id = momentId(item);
     if (id) shareItems[id] = item;
     var attrs = id ? ' id="'+escAttr(momentElementId(id))+'" data-moment-id="'+escAttr(id)+'"' : '';
+    var itemYear = String(item.date || '').slice(0, 4);
+    if (itemYear) attrs += ' data-moment-year="'+escAttr(itemYear)+'"';
+    if (item._page) attrs += ' data-stream-page="'+escAttr(String(item._page))+'"';
     var h = '<div class="list_item"'+attrs+'><div class="list_meta"><span class="list_type '+cls+'">'+escHtml(label)+'</span>';
     if (item.title) h += '<strong>'+escHtml(item.title)+'</strong>';
     if (t === 'quote' && item.author) h += '<span class="list_author">— '+escHtml(item.author)+'</span>';
@@ -258,52 +399,217 @@
   function toggleExpand(btn) { var c=btn.previousElementSibling; if(!c)return; c.classList.toggle('expanded'); btn.textContent=c.classList.contains('expanded')?'收起':'展开'; }
   window.toggleExpand = toggleExpand;
   function checkExpandButtons() { document.querySelectorAll('.list_content').forEach(function(el){var b=el.nextElementSibling;if(!b||!b.classList.contains('list_expand_btn'))return;if(el.scrollHeight>el.clientHeight+2){b.classList.add('show')}else{b.classList.remove('show');el.classList.remove('expanded');b.textContent='展开'}}) }
-  var currentPage = 1;
   var totalPages = Math.max(1, Math.ceil(totalItemCount / pageSize));
   var loadedPages = { 1: true };
   var loadingPages = {};
-  var allItems = MOMENTS || [];
+  var initialItems = (MOMENTS || []).map(function(item, index) {
+    item._page = 1;
+    item._pageIndex = index;
+    return item;
+  });
+  var allItems = initialItems.slice();
+  var activeMinPage = 1;
+  var activeMaxPage = 1;
+  var pageWindowLimit = 3;
+  var scrollDirection = '';
+  var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+  var userScrollUntil = 0;
+  var dataGeneration = 0;
   MOMENTS = null; 
 
   function updateCountText(value) { if(count) count.textContent = value; }
+  function updateTotalCountText() { updateCountText(totalItemCount + ' 条'); }
   function isSearchActive() { return !!(input && normalize(input.value)); }
-  function renderList(items) { items = items || []; container.innerHTML = items.length ? items.map(buildItemHtml).join('') : '<div class="empty_state">还没有动态。</div>'; checkExpandButtons(); updateCountText(allItems.length + ' 条'); }
-  function appendItems(items) {
+  function renderList(items) { items = items || []; container.innerHTML = items.length ? items.map(buildItemHtml).join('') : '<div class="empty_state">还没有动态。</div>'; checkExpandButtons(); updateTotalCountText(); }
+  function appendItems(items, page, shouldRender) {
     items = items || [];
+    items.forEach(function(item, index) {
+      item._page = page;
+      item._pageIndex = index;
+    });
     var seen = {};
     allItems.forEach(function(item){ var id = momentId(item); if(id) seen[id] = true; });
     var fresh = items.filter(function(item){ var id = momentId(item); if(!id || seen[id]) return false; seen[id] = true; return true; });
     if (!fresh.length) return;
-    allItems = allItems.concat(fresh);
-    if (!isSearchActive()) {
-      container.insertAdjacentHTML('beforeend', fresh.map(buildItemHtml).join(''));
+    allItems = allItems.concat(fresh).sort(function(a, b) {
+      return (a._page || 1) - (b._page || 1) || (a._pageIndex || 0) - (b._pageIndex || 0);
+    });
+    if (shouldRender && !isSearchActive()) {
+      var before = Array.prototype.slice.call(container.querySelectorAll('.list_item[data-stream-page]')).find(function(el) {
+        return Number(el.getAttribute('data-stream-page')) > page;
+      });
+      if (before) before.insertAdjacentHTML('beforebegin', fresh.map(buildItemHtml).join(''));
+      else container.insertAdjacentHTML('beforeend', fresh.map(buildItemHtml).join(''));
       checkExpandButtons();
-      updateCountText(allItems.length + ' 条');
+      updateTotalCountText();
+      scheduleActiveYearUpdate();
     }
   }
   function itemIsMoment(item, id) { return momentId(item) === id; }
   function hasLoadedMoment(id) { return allItems.some(function(item){ return itemIsMoment(item, id); }); }
   function clearSearchForMoment() {
-    if (!input || !input.value) return;
+    if (!input || !input.value) return false;
     input.value = '';
     syncUrl('');
-    renderList(allItems);
+    return true;
+  }
+  function goToArchiveMoment(entry) {
+    if (!entry || !entry.id) return;
+    clearSearchForMoment();
+    var nextHash = momentHash(String(entry.id));
+    if (location.hash === nextHash) focusMomentFromUrl();
+    else location.hash = nextHash;
+  }
+  function updateReturnControls() {
+    var top = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var showTop = top > (window.innerHeight || document.documentElement.clientHeight || 0) * 0.8;
+    if (topButton) {
+      topButton.textContent = '回到顶部';
+      topButton.setAttribute('aria-label', '回到顶部');
+      topButton.classList.remove('is_return_latest');
+    }
+    if (topButton) topButton.hidden = !showTop;
+    if (topRule) topRule.hidden = !showTop;
+  }
+  function scrollStreamToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function updateActiveYear() {
+    if (!yearList) return;
+    if (viewMode === 'latest' || viewMode === 'focus') {
+      yearList.querySelectorAll('.stream_year_button').forEach(function(button) {
+        button.classList.toggle('is_active', button.getAttribute('data-view') === 'all');
+      });
+      return;
+    }
+    if (viewMode === 'year') {
+      yearList.querySelectorAll('.stream_year_button').forEach(function(button) {
+        button.classList.toggle('is_active', button.getAttribute('data-year') === activeYear);
+      });
+      return;
+    }
+    yearList.querySelectorAll('.stream_year_button').forEach(function(button) {
+      button.classList.remove('is_active');
+    });
+  }
+  var activeYearFrame = 0;
+  function scheduleActiveYearUpdate() {
+    if (activeYearFrame) return;
+    activeYearFrame = requestAnimationFrame(function() {
+      activeYearFrame = 0;
+      updateActiveYear();
+    });
+  }
+  function renderTimeRail() {
+    if (!timeRail || !yearList || !archiveYears.length) return;
+    yearList.innerHTML = '<button class="stream_year_button" type="button" data-view="all"><span>全部</span><small>'+archiveTotalItemCount+'</small></button>' + archiveYears.map(function(entry) {
+      return '<button class="stream_year_button" type="button" data-year="'+escAttr(entry.year)+'"><span>'+escHtml(entry.year)+'</span><small>'+entry.count+'</small></button>';
+    }).join('');
+    timeRail.hidden = false;
+    updateActiveYear();
+  }
+  function loadTodayItems() {
+    var now = new Date();
+    var monthDay = String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    var currentYear = String(now.getFullYear());
+    if (archiveTodayDays.indexOf(monthDay) < 0) {
+      todayItems = [];
+      if (todayCount) todayCount.textContent = '';
+      return Promise.resolve([]);
+    }
+    return fetch(new URL(archiveTodayUrlPrefix + monthDay + '.json', location.href).toString(), { credentials: 'same-origin' })
+      .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+      .then(function(data) {
+        todayItems = (Array.isArray(data.items) ? data.items : []).filter(function(item) { return String(item.date || '').slice(0, 4) !== currentYear; });
+        if (todayCount) todayCount.textContent = todayItems.length ? String(todayItems.length) : '';
+        return todayItems;
+      }).catch(function() {
+        todayItems = [];
+        if (todayCount) todayCount.textContent = '';
+        return [];
+      });
+  }
+  function loadArchiveIndex() {
+    if (archivePromise) return archivePromise;
+    archivePromise = fetch(new URL(archiveManifestUrl, location.href).toString(), { credentials: 'same-origin' })
+      .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+      .then(function(data) {
+        archiveYears = Array.isArray(data.years) ? data.years : [];
+        archiveTodayDays = Array.isArray(data.todayDays) ? data.todayDays : [];
+        archiveTotalItemCount = Number(data.totalItems) || archiveTotalItemCount;
+        archiveTotalPages = Number(data.totalPages) || archiveTotalPages;
+        totalItemCount = archiveTotalItemCount;
+        totalPages = archiveTotalPages;
+        pageSize = Number(data.pageSize) || pageSize;
+        archiveLookupPrefixLength = Number(data.lookupPrefixLength) || 1;
+        renderTimeRail();
+        loadTodayItems();
+        return data;
+      }).catch(function() {
+        if (timeRail) timeRail.hidden = true;
+        return null;
+      });
+    return archivePromise;
+  }
+  function findArchiveEntry(id) {
+    id = String(id || '');
+    if (!id) return Promise.resolve(null);
+    return loadArchiveIndex().then(function() {
+      var key = id.slice(0, archiveLookupPrefixLength).toLowerCase() || '_';
+      if (!archiveLookupPromises[key]) {
+        archiveLookupPromises[key] = fetch(new URL(archiveLookupUrlPrefix + encodeURIComponent(key) + '.json', location.href).toString(), { credentials: 'same-origin' })
+          .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+          .then(function(data) { return Array.isArray(data.items) ? data.items : []; })
+          .catch(function() { return []; });
+      }
+      return archiveLookupPromises[key].then(function(items) {
+        return items.find(function(item) { return String(item.id) === id; }) || null;
+      });
+    });
   }
   function scrollToMoment(id) {
     var el = document.getElementById(momentElementId(id));
     if (!el) return false;
+    stopMomentLayoutWatch();
+    document.documentElement.classList.add('moment_focus_active');
+    if (momentFocusTopSpacer) momentFocusTopSpacer.style.height = '0px';
+    if (momentFocusSpacer) momentFocusSpacer.style.height = '0px';
     document.querySelectorAll('.list_item.moment_target').forEach(function(item){ item.classList.remove('moment_target'); });
     el.classList.add('moment_target');
-    centerMoment(el, 'smooth');
-    requestAnimationFrame(function(){ centerMoment(el, 'auto'); });
-    [180, 520, 1100].forEach(function(delay) {
-      setTimeout(function(){ centerMoment(el, 'auto'); }, delay);
-    });
+    centerMoment(el, 'auto');
+    watchMomentLayout(el);
+    scheduleActiveYearUpdate();
     el.querySelectorAll('img, video').forEach(function(media) {
       if (media.tagName === 'IMG' && media.complete) return;
       media.addEventListener(media.tagName === 'IMG' ? 'load' : 'loadedmetadata', function(){ centerMoment(el, 'auto'); }, { once: true });
     });
     return true;
+  }
+  var focusLayoutObserver = null;
+  var focusLayoutTimer = 0;
+  var focusLayoutStopTimer = 0;
+  function stopMomentLayoutWatch() {
+    clearTimeout(focusLayoutTimer);
+    clearTimeout(focusLayoutStopTimer);
+    if (focusLayoutObserver) focusLayoutObserver.disconnect();
+    focusLayoutObserver = null;
+  }
+  function watchMomentLayout(el) {
+    if (!('ResizeObserver' in window)) {
+      [800, 1800, 3600].forEach(function(delay) { setTimeout(function(){ centerMoment(el, 'auto'); }, delay); });
+      return;
+    }
+    focusLayoutObserver = new ResizeObserver(function() {
+      clearTimeout(focusLayoutTimer);
+      focusLayoutTimer = setTimeout(function() {
+        if (el.isConnected && el.classList.contains('moment_target')) centerMoment(el, 'auto');
+      }, 180);
+    });
+    focusLayoutObserver.observe(container);
+    focusLayoutStopTimer = setTimeout(function() {
+      if (el.isConnected && el.classList.contains('moment_target')) centerMoment(el, 'auto');
+      stopMomentLayoutWatch();
+    }, 9000);
   }
   function centerMoment(el, behavior) {
     var rect = el.getBoundingClientRect();
@@ -313,21 +619,33 @@
     var visibleCenter = headerHeight + Math.max(0, viewportHeight - headerHeight) / 2;
     var pageY = window.pageYOffset || document.documentElement.scrollTop || 0;
     var targetTop = pageY + rect.top + rect.height / 2 - visibleCenter;
+    if (momentFocusTopSpacer && targetTop < 0) {
+      var topSpacerHeight = parseFloat(momentFocusTopSpacer.style.height) || 0;
+      momentFocusTopSpacer.style.height = Math.ceil(topSpacerHeight - targetTop + 4) + 'px';
+      rect = el.getBoundingClientRect();
+      targetTop = pageY + rect.top + rect.height / 2 - visibleCenter;
+    }
     var maxTop = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+    if (momentFocusSpacer && targetTop > maxTop) {
+      var spacerHeight = parseFloat(momentFocusSpacer.style.height) || 0;
+      momentFocusSpacer.style.height = Math.ceil(spacerHeight + targetTop - maxTop + 12) + 'px';
+      maxTop = Math.max(0, document.documentElement.scrollHeight - viewportHeight);
+    }
     window.scrollTo({ top: Math.max(0, Math.min(targetTop, maxTop)), behavior: behavior || 'auto' });
   }
-  function loadDataPage(page) {
+  function loadDataPage(page, shouldRender) {
     if (loadedPages[page]) return Promise.resolve(true);
     if (loadingPages[page]) return loadingPages[page];
-    loadingPages[page] = fetch(new URL(dataPageUrlPrefix + page + '.json', location.href).toString(), { credentials: 'same-origin' })
+    var generation = dataGeneration;
+    loadingPages[page] = fetch(new URL(activeDataPageUrlPrefix + page + '.json', location.href).toString(), { credentials: 'same-origin' })
       .then(function(r) { if (!r.ok) throw Error(); return r.json(); })
       .then(function(data) {
+        if (generation !== dataGeneration) return false;
         loadedPages[page] = true;
-        currentPage = Math.max(currentPage, page);
         totalPages = data.totalPages || totalPages;
-        appendItems(data.items || []);
+        totalItemCount = data.totalItems || totalItemCount;
+        appendItems(data.items || [], page, shouldRender !== false);
         updateAutoLoader();
-        maybeLoadNextPage();
         return true;
       }).catch(function(err) {
         updateAutoLoader();
@@ -338,69 +656,317 @@
     return loadingPages[page];
   }
   function ensureMomentLoaded(id) {
-    if (hasLoadedMoment(id)) return Promise.resolve(true);
-    var page = 2;
-    function next() {
-      if (hasLoadedMoment(id)) return Promise.resolve(true);
-      if (page > totalPages) return Promise.resolve(false);
-      return loadDataPage(page++).then(next).catch(function(){ return false; });
-    }
-    return next();
+    var loaded = allItems.find(function(item) { return itemIsMoment(item, id); });
+    if (loaded) return Promise.resolve(Number(loaded._page) || 1);
+    return findArchiveEntry(id).then(function(entry) {
+      var page = entry ? Number(entry.page) : 0;
+      if (!page || page > totalPages) return 0;
+      return loadDataPage(page, false).then(function() { return hasLoadedMoment(id) ? page : 0; }).catch(function(){ return 0; });
+    });
+  }
+  function retainFocusedPage(page) {
+    Object.keys(loadedPages).forEach(function(value) {
+      var loadedPage = Number(value);
+      if (loadedPage !== page) delete loadedPages[loadedPage];
+    });
+    allItems = allItems.filter(function(item) {
+      var itemPage = Number(item._page) || 1;
+      return itemPage === page;
+    });
+    activeMinPage = page;
+    activeMaxPage = page;
+    scrollDirection = '';
   }
   function focusMomentFromUrl() {
     var id = getMomentIdFromUrl();
     if (!id) return Promise.resolve(false);
+    dataGeneration += 1;
+    viewMode = 'focus';
+    activeYear = '';
+    activeDataPageUrlPrefix = dataPageUrlPrefix;
+    loadingPages = {};
     clearSearchForMoment();
-    if (scrollToMoment(id)) return Promise.resolve(true);
-    return ensureMomentLoaded(id).then(function(found) {
-      if (!found) {
+    suppressAutoLoad = true;
+    return ensureMomentLoaded(id).then(function(page) {
+      if (!page) {
+        suppressAutoLoad = false;
         notify('没有找到这条瞬间', 'error');
         return false;
       }
-      renderList(allItems);
+      retainFocusedPage(page);
+      renderList(allItems.filter(function(item) { return (Number(item._page) || 1) === page; }));
+      updateAutoLoader();
+      updateReturnControls();
       setTimeout(function(){ scrollToMoment(id); }, 30);
+      setTimeout(function(){
+        suppressAutoLoad = false;
+        scrollDirection = '';
+        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        updateAutoLoader();
+      }, 500);
       return true;
     });
   }
 
-  function loadMore() {
-    loadDataPage(currentPage + 1).catch(function() {});
+  function removePageFromWindow(page, keepViewport) {
+    var anchor = keepViewport ? container.querySelector('.list_item[data-stream-page="'+(page + 1)+'"]') : null;
+    var before = anchor ? anchor.getBoundingClientRect().top : 0;
+    container.querySelectorAll('.list_item[data-stream-page="'+page+'"]').forEach(function(el) { el.remove(); });
+    allItems = allItems.filter(function(item) { return (Number(item._page) || 1) !== page; });
+    delete loadedPages[page];
+    if (anchor && anchor.isConnected) {
+      var after = anchor.getBoundingClientRect().top;
+      window.scrollBy(0, after - before);
+    }
   }
+  function trimPageWindow(direction) {
+    while (activeMaxPage - activeMinPage + 1 > pageWindowLimit) {
+      if (direction === 'newer') {
+        removePageFromWindow(activeMaxPage, false);
+        activeMaxPage -= 1;
+      } else {
+        removePageFromWindow(activeMinPage, true);
+        activeMinPage += 1;
+      }
+    }
+    scheduleActiveYearUpdate();
+  }
+  function resetToFirstPage() {
+    dataGeneration += 1;
+    loadedPages = { 1: true };
+    loadingPages = {};
+    allItems = initialItems.slice();
+    activeMinPage = 1;
+    activeMaxPage = 1;
+    scrollDirection = '';
+    if (momentFocusTopSpacer) momentFocusTopSpacer.style.height = '0px';
+    if (momentFocusSpacer) momentFocusSpacer.style.height = '0px';
+    renderList(allItems);
+    updateAutoLoader();
+  }
+  function openLatest() {
+    clearSearchForMoment();
+    clearMomentFocus();
+    viewMode = 'latest';
+    activeYear = '';
+    activeDataPageUrlPrefix = dataPageUrlPrefix;
+    totalItemCount = archiveTotalItemCount;
+    totalPages = archiveTotalPages;
+    suppressAutoLoad = false;
+    resetToFirstPage();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    updateReturnControls();
+    updateActiveYear();
+  }
+  function clearMomentFocus() {
+    var url = new URL(location.href);
+    url.hash = '';
+    history.replaceState(null, '', url.toString());
+    stopMomentLayoutWatch();
+    document.documentElement.classList.remove('moment_focus_active');
+    if (momentFocusTopSpacer) momentFocusTopSpacer.style.height = '0px';
+    if (momentFocusSpacer) momentFocusSpacer.style.height = '0px';
+    document.querySelectorAll('.list_item.moment_target').forEach(function(item) { item.classList.remove('moment_target'); });
+  }
+  function beginStandaloneView(mode, items, total) {
+    clearSearchForMoment();
+    clearMomentFocus();
+    dataGeneration += 1;
+    loadingPages = {};
+    loadedPages = { 1: true };
+    allItems = (items || []).map(function(item, index) {
+      item._page = 1;
+      item._pageIndex = index;
+      return item;
+    });
+    activeMinPage = 1;
+    activeMaxPage = 1;
+    viewMode = mode;
+    totalItemCount = Number(total) || allItems.length;
+    totalPages = 1;
+    scrollDirection = '';
+    suppressAutoLoad = false;
+    renderList(allItems);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    updateAutoLoader();
+    updateReturnControls();
+    scheduleActiveYearUpdate();
+  }
+  function openYear(year) {
+    var entry = archiveYears.filter(function(item) { return item.year === year; })[0];
+    if (!entry) return;
+    clearSearchForMoment();
+    clearMomentFocus();
+    dataGeneration += 1;
+    var generation = dataGeneration;
+    viewMode = 'year';
+    activeYear = year;
+    activeDataPageUrlPrefix = archiveYearUrlPrefix + encodeURIComponent(year) + '/page-';
+    totalItemCount = Number(entry.count) || 0;
+    totalPages = Number(entry.totalPages) || Math.max(1, Math.ceil(totalItemCount / pageSize));
+    loadedPages = {};
+    loadingPages = {};
+    allItems = [];
+    activeMinPage = 1;
+    activeMaxPage = 1;
+    suppressAutoLoad = true;
+    container.innerHTML = '<div class="empty_state">正在打开 '+escHtml(year)+' 年...</div>';
+    loadDataPage(1, false).then(function(loaded) {
+      if (!loaded || generation !== dataGeneration) return;
+      renderList(allItems);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      suppressAutoLoad = false;
+      updateAutoLoader();
+      updateReturnControls();
+      updateActiveYear();
+    }).catch(function() {
+      if (generation !== dataGeneration) return;
+      suppressAutoLoad = false;
+      container.innerHTML = '<div class="empty_state">这一年的内容暂时无法打开。</div>';
+    });
+  }
+  function loadOlder() {
+    var page = activeMaxPage + 1;
+    if (suppressAutoLoad || isSearchActive() || page > totalPages || loadingPages[page]) return;
+    if (momentFocusSpacer) momentFocusSpacer.style.height = '0px';
+    loadDataPage(page, true).then(function(loaded) {
+      if (!loaded) return;
+      activeMaxPage = page;
+      trimPageWindow('older');
+      updateAutoLoader();
+    }).catch(function() {});
+  }
+  function loadNewer() {
+    var page = activeMinPage - 1;
+    if (suppressAutoLoad || isSearchActive() || page < 1 || loadingPages[page]) return;
+    var anchor = container.querySelector('.list_item');
+    var before = anchor ? anchor.getBoundingClientRect().top : 0;
+    loadDataPage(page, true).then(function(loaded) {
+      if (!loaded) return;
+      if (momentFocusTopSpacer) momentFocusTopSpacer.style.height = '0px';
+      activeMinPage = page;
+      if (anchor && anchor.isConnected) window.scrollBy(0, anchor.getBoundingClientRect().top - before);
+      trimPageWindow('newer');
+      updateAutoLoader();
+    }).catch(function() {});
+  }
+  function loadMore() { loadOlder(); }
   window.loadMore = loadMore;
 
-  function hasMorePages() {
-    return !isSearchActive() && currentPage < totalPages;
-  }
+  function hasMorePages() { return !suppressAutoLoad && !isSearchActive() && (viewMode === 'latest' || viewMode === 'focus' || viewMode === 'year') && activeMaxPage < totalPages; }
+  function hasNewerPages() { return !suppressAutoLoad && !isSearchActive() && (viewMode === 'latest' || viewMode === 'focus' || viewMode === 'year') && activeMinPage > 1; }
   function updateAutoLoader() {
-    if (!autoLoadSentinel) return;
-    autoLoadSentinel.style.display = hasMorePages() ? 'block' : 'none';
+    if (autoLoadSentinel) autoLoadSentinel.style.display = hasMorePages() ? 'block' : 'none';
+    if (autoLoadTopSentinel) autoLoadTopSentinel.style.display = hasNewerPages() ? 'block' : 'none';
   }
   function maybeLoadNextPage() {
-    if (!hasMorePages() || loadingPages[currentPage + 1]) return;
+    if (Date.now() > userScrollUntil || scrollDirection !== 'down' || !hasMorePages()) return;
     var doc = document.documentElement;
     var scrollTop = window.pageYOffset || doc.scrollTop || 0;
     var viewport = window.innerHeight || doc.clientHeight || 0;
     var remain = doc.scrollHeight - (scrollTop + viewport);
-    if (remain < Math.max(480, viewport * 0.7)) loadMore();
+    if (remain < Math.max(420, viewport * 0.55)) loadOlder();
+  }
+  function maybeLoadPreviousPage() {
+    if (Date.now() > userScrollUntil || scrollDirection !== 'up' || !hasNewerPages() || !autoLoadTopSentinel) return;
+    if (autoLoadTopSentinel.getBoundingClientRect().bottom > -240) loadNewer();
   }
   if (autoLoadSentinel && 'IntersectionObserver' in window) {
     var autoLoadObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) loadMore();
+        if (entry.isIntersecting && Date.now() <= userScrollUntil && scrollDirection === 'down') loadOlder();
       });
-    }, { root: null, rootMargin: '700px 0px', threshold: 0 });
+    }, { root: null, rootMargin: '420px 0px', threshold: 0 });
     autoLoadObserver.observe(autoLoadSentinel);
   }
-  window.addEventListener('scroll', maybeLoadNextPage, { passive: true });
-  window.addEventListener('resize', maybeLoadNextPage);
+  if (autoLoadTopSentinel && 'IntersectionObserver' in window) {
+    var autoLoadTopObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && Date.now() <= userScrollUntil && scrollDirection === 'up') loadNewer();
+      });
+    }, { root: null, rootMargin: '240px 0px', threshold: 0 });
+    autoLoadTopObserver.observe(autoLoadTopSentinel);
+  }
+  window.addEventListener('scroll', function() {
+    var top = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (Math.abs(top - lastScrollTop) > 2) scrollDirection = top > lastScrollTop ? 'down' : 'up';
+    lastScrollTop = top;
+    maybeLoadNextPage();
+    maybeLoadPreviousPage();
+    scheduleActiveYearUpdate();
+    updateReturnControls();
+  }, { passive: true });
+  window.addEventListener('wheel', function(e) {
+    scrollDirection = e.deltaY >= 0 ? 'down' : 'up';
+    userScrollUntil = Date.now() + 1200;
+  }, { passive: true });
+  var lastTouchY = 0;
+  window.addEventListener('touchstart', function(e) {
+    if (e.touches && e.touches[0]) lastTouchY = e.touches[0].clientY;
+  }, { passive: true });
+  window.addEventListener('touchmove', function(e) {
+    if (!e.touches || !e.touches[0]) return;
+    var y = e.touches[0].clientY;
+    scrollDirection = y < lastTouchY ? 'down' : 'up';
+    lastTouchY = y;
+    userScrollUntil = Date.now() + 1200;
+  }, { passive: true });
+  window.addEventListener('keydown', function(e) {
+    if (['ArrowDown', 'PageDown', 'End', ' '].indexOf(e.key) >= 0) { scrollDirection = 'down'; userScrollUntil = Date.now() + 1200; }
+    if (['ArrowUp', 'PageUp', 'Home'].indexOf(e.key) >= 0) { scrollDirection = 'up'; userScrollUntil = Date.now() + 1200; }
+  });
+  window.addEventListener('resize', updateAutoLoader);
+  window.addEventListener('resize', scheduleActiveYearUpdate);
+  window.addEventListener('resize', updateReturnControls);
 
   function checkHasMore() {
     updateAutoLoader();
-    maybeLoadNextPage();
   }
 
   renderList(allItems);
   checkHasMore();
+  updateReturnControls();
+  loadArchiveIndex();
+  if (randomButton) {
+    randomButton.addEventListener('click', function() {
+      if (!totalItemCount) return;
+      var globalTotal = archiveYears.reduce(function(sum, entry) { return sum + (Number(entry.count) || 0); }, 0) || totalItemCount;
+      var ordinal = Math.floor(Math.random() * globalTotal);
+      var page = Math.floor(ordinal / pageSize) + 1;
+      var index = ordinal % pageSize;
+      fetch(new URL(dataPageUrlPrefix + page + '.json', location.href).toString(), { credentials: 'same-origin' })
+        .then(function(response) { if (!response.ok) throw Error(); return response.json(); })
+        .then(function(data) {
+        var choices = Array.isArray(data.items) ? data.items : [];
+        if (!choices.length) return;
+        var selected = choices[Math.min(index, choices.length - 1)];
+        beginStandaloneView('random', [selected], 1);
+      }).catch(function() {});
+    });
+  }
+  if (todayButton) {
+    todayButton.addEventListener('click', function() {
+      if (!todayItems.length) {
+        notify('今天还没有旧时光', 'success');
+        return;
+      }
+      beginStandaloneView('today', todayItems.slice(), todayItems.length);
+    });
+  }
+  if (yearList) {
+    yearList.addEventListener('click', function(e) {
+      var allButton = e.target.closest ? e.target.closest('[data-view="all"]') : null;
+      if (allButton) {
+        openLatest();
+        return;
+      }
+      var button = e.target.closest ? e.target.closest('[data-year]') : null;
+      if (!button) return;
+      var year = button.getAttribute('data-year');
+      openYear(year);
+    });
+  }
+  if (topButton) topButton.addEventListener('click', scrollStreamToTop);
   container.addEventListener('click', function(e) {
     var btn = e.target.closest ? e.target.closest('[data-share-moment-id]') : null;
     if (!btn) return;
@@ -424,14 +990,21 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeShareCard();
   });
-  window.addEventListener('hashchange', function(){ focusMomentFromUrl(); });
+  window.addEventListener('hashchange', function(){
+    if (getMomentIdFromUrl()) focusMomentFromUrl();
+    else {
+      resetToFirstPage();
+      checkHasMore();
+      updateReturnControls();
+    }
+  });
 
   var manifestPromise, shardsPromise, indexItems = [], resultLimit = 80;
   function syncUrl(q) { try { var u=new URL(location.href); q?u.searchParams.set('q',q):u.searchParams.delete('q'); history.replaceState(null,'',u.toString()) } catch(e){} }
   function loadManifest() { if(manifestPromise)return manifestPromise; manifestPromise=fetch(new URL(manifestUrl,location.href).toString(),{credentials:'same-origin'}).then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(m){resultLimit=m.result_limit||resultLimit;return m}); return manifestPromise }
   function loadIndex() { if(shardsPromise)return shardsPromise; shardsPromise=loadManifest().then(function(m){return Promise.all((m.shards||[]).map(function(s){return fetch(new URL(s.url,location.origin).toString(),{credentials:'same-origin'}).then(function(r){if(!r.ok)throw Error();return r.json()})}))}).then(function(shards){indexItems=[];shards.forEach(function(s){if(Array.isArray(s.items))indexItems=indexItems.concat(s.items)});return indexItems}); return shardsPromise }
-  function update() { var q=normalize(input.value); syncUrl(q); if(!q){renderList(allItems);checkHasMore();return} updateAutoLoader(); if(count)count.textContent='搜索中...'; loadIndex().then(function(all){var active=normalize(input.value),terms=active.split(/\s+/).filter(Boolean);if(!terms.length){update();return} var matches=all.filter(function(i){var h=normalize(i.search||i.text||i.title);return terms.every(function(t){return h.indexOf(t)!==-1})}); container.innerHTML=matches.slice(0,resultLimit).map(function(i){return buildItemHtml({id:i.id,type:(i.type||'').trim(),content:(i.text||i.title||''),date:i.date||'',tags:i.tags||[],pinned:i.pinned,link_image:i.link_image,link_title:i.link_title,link_description:i.link_description,url:i.external_url||i.url||''})}).join('')||'<div class="empty_state">没有找到匹配的瞬间。</div>'; checkExpandButtons(); if(count)count.textContent=matches.length+' / '+all.length }).catch(function(){if(count)count.textContent='搜索索引加载失败'}) }
-  var iq=''; try{if(!getMomentIdFromUrl())iq=new URLSearchParams(location.search).get('q')||''}catch(e){} if(iq)input.value=iq; input.addEventListener('input',update); if(iq)update(); else focusMomentFromUrl();
+  function update() { var q=normalize(input.value); syncUrl(q); if(!q){if(getMomentIdFromUrl())focusMomentFromUrl();else renderList(allItems);checkHasMore();return} updateAutoLoader(); if(count)count.textContent='搜索中...'; loadIndex().then(function(all){var active=normalize(input.value),terms=active.split(/\s+/).filter(Boolean);if(!terms.length){update();return} var matches=all.filter(function(i){var h=normalize(i.search||i.text||i.title);return terms.every(function(t){return h.indexOf(t)!==-1})}); container.innerHTML=matches.slice(0,resultLimit).map(function(i){return buildItemHtml({id:i.id,type:(i.type||'').trim(),content:(i.text||i.title||''),date:i.date||'',tags:i.tags||[],pinned:i.pinned,link_image:i.link_image,link_title:i.link_title,link_description:i.link_description,url:i.external_url||i.url||''})}).join('')||'<div class="empty_state">没有找到匹配的瞬间。</div>'; checkExpandButtons(); if(count)count.textContent=matches.length+' / '+all.length }).catch(function(){if(count)count.textContent='搜索索引加载失败'}) }
+  var iq=''; try{if(!getMomentIdFromUrl())iq=new URLSearchParams(location.search).get('q')||''}catch(e){} if(iq)input.value=iq; input.addEventListener('input',update); if(iq)update(); else loadArchiveIndex().then(focusMomentFromUrl);
 })();
 </script>
 </body>
