@@ -376,3 +376,31 @@
 .post .post_title span.date {
   font-size: 14px;
 }
+
+/* ===== 手机端菜单常显（覆盖 zozo 的弹窗式汉堡菜单）===== */
+/* zozo 在 ≤680px 时把 site_nav 隐藏、靠汉堡按钮以 position:fixed 全屏弹窗
+   展开；这里恢复成与桌面一致的并排横排，并隐藏汉堡按钮 */
+@media screen and (max-width: 680px) {
+  .nav_container .site_nav {
+    display: block;
+    position: static;
+    width: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .nav_container .site_nav ul {
+    float: right;
+    text-align: right;
+  }
+
+  .nav_container .site_nav li {
+    float: left;
+  }
+
+  .nav_container .menu_icon {
+    display: none;
+  }
+}
+
