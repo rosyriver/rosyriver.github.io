@@ -10,9 +10,23 @@
 		
 		
 		
-			<lastBuildDate>Sun, 06 Sep 2026 11:40:00 +0800</lastBuildDate>
+			<lastBuildDate>Sun, 06 Sep 2026 17:12:58 +0800</lastBuildDate>
 		
 			<atom:link href="https://joyseen.us/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Ai</title>
+				<link>https://joyseen.us/tags/ai/</link>
+				<pubDate>Sun, 06 Sep 2026 17:12:58 +0800</pubDate>
+				<guid>https://joyseen.us/tags/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Chatgpt</title>
+				<link>https://joyseen.us/tags/chatgpt/</link>
+				<pubDate>Sun, 06 Sep 2026 17:12:58 +0800</pubDate>
+				<guid>https://joyseen.us/tags/chatgpt/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>哲学</title>
 				<link>https://joyseen.us/tags/%E5%93%B2%E5%AD%A6/</link>
@@ -63,13 +77,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Ai</title>
-				<link>https://joyseen.us/tags/ai/</link>
-				<pubDate>Thu, 02 Jul 2026 19:21:00 +0800</pubDate>
-				<guid>https://joyseen.us/tags/ai/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>摄影</title>
 				<link>https://joyseen.us/tags/%E6%91%84%E5%BD%B1/</link>
 				<pubDate>Sun, 07 Jun 2026 21:33:00 +0800</pubDate>
@@ -102,13 +109,6 @@
 				<link>https://joyseen.us/tags/%E7%93%A6/</link>
 				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
 				<guid>https://joyseen.us/tags/%E7%93%A6/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Chatgpt</title>
-				<link>https://joyseen.us/tags/chatgpt/</link>
-				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-				<guid>https://joyseen.us/tags/chatgpt/</guid>
 				<description></description>
 			</item>
 			<item>

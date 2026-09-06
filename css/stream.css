@@ -365,3 +365,14 @@
     max-width: 100%;
   }
 }
+
+/* ===== 文章日期与标签字号调整（覆盖 zozo 主题默认值）===== */
+/* 首页列表每篇的日期 + 标签（原 11px） */
+.post .post_footer .meta .info {
+  font-size: 14px;
+}
+
+/* 文章页标题下的日期（原 12px） */
+.post .post_title span.date {
+  font-size: 14px;
+}
