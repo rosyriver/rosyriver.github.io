@@ -1,8 +1,35 @@
 ﻿{
     "page":  1,
     "totalPages":  4,
-    "totalItems":  110,
+    "totalItems":  111,
     "items":  [
+                  {
+                      "id":  "d6qovz00l362n0n",
+                      "content":  "当代社会制度中的每个公民的基本权力是建立在劳资关系上的，每个人的议价权来自劳动，ai agent将改变这个范式",
+                      "type":  "thought",
+                      "typeLabel":  "thought",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2026.09.06 11:40",
+                      "tags":  [
+                                   "政治",
+                                   "哲学"
+                               ],
+                      "pinned":  false,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
                   {
                       "id":  "tjctpczciaxarwp",
                       "content":  "当不了一点资本家 在有小想法的时候  第一时间竟然是 这个东西能不能创造就业？",
@@ -755,32 +782,6 @@
                       "pinned":  false,
                       "images":  [
                                      "https://img.joyseen.us/photos/2026/06/23-51febc96eaaf.jpg"
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "2ya3cqlen3h3je5",
-                      "content":  "真正的高手不是太极打的多漂亮（当然不是说不重要）  是指能立马精准分辨出你所踩到的坑  并提供至少1个思路\r\n\r\n当走过大多数人走过的坑   那么你成为高手的赔率也会变的更高\r\n\r\n朋友是一例 ​​​  每次对我提问的解答 都是一个ahamoment ​​​",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2023.01.30 19:49",
-                      "tags":  [
-                                   "图片"
-                               ],
-                      "pinned":  false,
-                      "images":  [
-                                     "https://img.joyseen.us/photos/2026/06/23-a401cf2f40f0.jpg"
                                  ],
                       "videos":  [
 
