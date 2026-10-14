@@ -1,0 +1,68 @@
+/* Quiet, single-column reading within the original Zozo theme. */
+.about-page .post_detail_title { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 19px; border-bottom: 1px solid #ededed; }
+.about-page .post_detail_title h2 { margin-bottom: 0; }
+.about-page .post_detail_title h2 a { font-size: 24px; line-height: 1.3; letter-spacing: 0; }
+.about-page .post_detail_title .date { font-size: 11px; letter-spacing: .5px; color: #888; }
+.about-page .about-content { display: flex; flex-direction: column; gap: 46px; padding-top: 17px; }
+.about-page .about-section { min-width: 0; margin: 0; scroll-margin-top: 28px; }
+.about-page .about-section > h2 { display: flex; align-items: baseline; gap: 13px; margin: 0 0 23px; font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -.2px; }
+.about-page .about-section > h2::after { content: ''; height: 1px; flex: 1; background: #ededed; align-self: center; margin-left: 5px; }
+.about-page .about-section h2 small { align-self: center; color: #888; font-size: 10px; font-weight: 400; letter-spacing: .4px; }
+.about-page #profile p { font-size: 14px; line-height: 2; margin-bottom: 16px; color: #444; }
+.about-page #profile p:last-child { margin-bottom: 0; color: #777; font-size: 13px; }
+.about-page #profile strong { color: #333; }
+.about-page #philosophy > h2 { margin-bottom: 14px; }
+.about-page .philosophy-note { margin: 0 0 12px; color: #999; font-size: 12px; line-height: 1.8; }
+.about-page .belief-scroll { max-width: 100%; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #c9c9c9 transparent; }
+.about-page .belief-list { list-style: none; width: max-content; min-width: 100%; margin: 0; padding: 0; }
+.about-page .belief-line { display: flex; align-items: baseline; gap: 18px; padding: 13px 8px 13px 0; line-height: 1.6; white-space: nowrap; border-bottom: 1px solid #f3f3f3; transition: background-color .2s; }
+.about-page .belief-line:last-child { border-bottom: 0; }
+.about-page .belief-line:hover { background: #fafafa; }
+.about-page .belief-number { flex: 0 0 20px; color: #999; font-size: 10px; font-variant-numeric: tabular-nums; letter-spacing: .5px; padding-left: 2px; }
+.about-page .belief-pair { display: grid; grid-template-columns: 198px 28px max-content; align-items: baseline; font-size: 14px; }
+.about-page .belief-english { color: #333; font-weight: 400; letter-spacing: 0; }
+.about-page .belief-dash { color: #aaa; font-size: 12px; text-align: center; }
+.about-page .belief-chinese { color: #444; font-size: 14px; letter-spacing: .1px; }
+.about-page .belief-line:hover .belief-number { color: #e42b2b; }
+.about-page .about-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 0; }
+.about-page .about-projects li { min-width: 0; padding: 0; margin: 0; }
+.about-page .about-projects .project-link { position: relative; display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 10px; height: 100%; min-height: 112px; padding: 14px 12px; box-sizing: border-box; border: 1px solid #e8e8e8; border-radius: 4px; color: #333; letter-spacing: 0; background: #fff; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.about-page .project-number { display: none; }
+.about-page .project-icon { display: grid; place-items: center; width: 28px; height: 34px; color: #666; background: #fafafa; border-radius: 7px; }
+.about-page .project-icon svg { width: 23px; height: 23px; stroke-width: 1.15; fill: none; transition: transform .25s; }
+.about-page .project-copy { display: block; min-width: 0; }
+.about-page .project-title { display: block; padding-right: 17px; color: #333; font-size: 13px; font-weight: 500; line-height: 1.7; }
+.about-page .project-domain { display: block; color: #888; font-size: 10px; letter-spacing: .2px; line-height: 1.7; margin-top: 5px; }
+.about-page .project-description { display: block; color: #777; font-size: 11px; line-height: 1.8; margin-top: 3px; }
+.about-page .project-arrow { position: absolute; top: 14px; right: 10px; display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid #eee; border-radius: 50%; color: #888; font-size: 11px; line-height: 1; transition: background-color .2s, color .2s, border-color .2s; }
+.about-page .project-link:hover { border-color: #aaa; box-shadow: 0 6px 16px #00000004; transform: translateY(-2px); }
+.about-page .project-link:hover .project-arrow { background: #e42b2b; border-color: #e42b2b; color: #fff; }
+.about-page .project-link:hover .project-icon svg { transform: translateY(-2px); }
+.about-page .post_footer { margin-top: 30px; }
+.about-page .comment-status { font-size: 13px; color: #777; }
+.about-page .comment-status button { border: 0; background: none; color: #e42b2b; cursor: pointer; }
+.about-page button:focus-visible, .about-page a:focus-visible, .about-page .belief-scroll:focus-visible { outline: 2px solid #e42b2b; outline-offset: 4px; }
+@media (max-width: 680px) {
+  .about-page .post_detail_title h2 a { font-size: 23px; }
+  .about-page .post_detail_title .date { font-size: 10px; }
+  .about-page .about-content { gap: 36px; padding-top: 12px; }
+  .about-page .about-section > h2 { font-size: 20px; gap: 11px; }
+  .about-page .belief-line { gap: 12px; padding-top: 13px; padding-bottom: 13px; }
+  .about-page .belief-number { flex-basis: 16px; padding-left: 1px; font-size: 9px; }
+  .about-page .belief-pair { grid-template-columns: 178px 24px max-content; font-size: 13px; }
+  .about-page .belief-chinese { font-size: 13px; }
+  .about-page .about-projects { gap: 10px; grid-template-columns: 1fr; }
+  .about-page .about-projects .project-link { grid-template-columns: 34px minmax(0, 1fr) 20px; gap: 13px; min-height: 104px; padding: 14px 16px; }
+  .about-page .project-title { padding-right: 0; }
+  .about-page .project-icon { width: 34px; height: 38px; }
+  .about-page .project-arrow { position: static; width: 20px; height: 20px; font-size: 12px; }
+}
+@media (min-width: 681px) and (max-width: 900px) {
+  .about-page .about-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-page .animate__animated { animation: none !important; }
+  .about-page .belief-line, .about-page .project-link, .about-page .project-icon svg, .about-page .project-arrow { transition: none; }
+  .about-page .project-link:hover, .about-page .project-link:hover .project-icon svg { transform: none; }
+}
+@media print { .about-page .belief-scroll { overflow: visible; } }
