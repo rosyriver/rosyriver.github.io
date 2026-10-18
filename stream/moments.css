@@ -24,7 +24,10 @@
 
 #listContainer .stream_share_btn:hover { color:#4e5d48; background:transparent; text-decoration:underline; text-underline-offset:4px; text-decoration-color:#bac2b4; }
 #listContainer .stream_share_btn:focus-visible,#listContainer .list_expand_btn:focus-visible { outline:2px solid #809374; outline-offset:3px; }
-#listContainer .list_expand_btn { margin:6px 0 0; padding:3px 0; border:0; background:none; color:#6e8065; font-size:11px; font-weight:400; }
+#listContainer .list_expand_btn { display:none; min-height:32px; margin:10px 0 2px; padding:5px 11px; border:1px solid color-mix(in srgb,var(--ink,#45523e) 20%,transparent); border-radius:5px; background:color-mix(in srgb,var(--ink,#45523e) 4%,transparent); color:var(--ink,#45523e); font-family:inherit; font-size:12px; font-weight:600; line-height:20px; cursor:pointer; }
+#listContainer .list_expand_btn.show { display:inline-flex; align-items:center; }
+#listContainer .list_expand_btn:hover { background:color-mix(in srgb,var(--ink,#45523e) 8%,transparent); }
+#listContainer .list_expand_btn::before,#listContainer .list_expand_btn::after { content:none; }
 #listContainer .list_media { gap:8px; margin:12px 0 0; }
 #listContainer .list_media_thumb { max-width:100%; max-height:280px; width:auto; height:auto; border:0; border-radius:5px; object-fit:contain; }
 #listContainer .list_media_thumb:hover { transform:none; }
@@ -59,16 +62,16 @@
 #listContainer .list_item[data-kind="quote"] .list_author { margin:9px 0 0 17px; font-size:11px; }
 #listContainer .list_footer { margin-top:7px; }
 #listContainer .list_media { display:block; margin:13px 0 0; }
-#listContainer .photo_gallery { display:grid; gap:6px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+#listContainer .photo_gallery { display:grid; width:min(100%,360px); gap:6px; grid-template-columns:repeat(2,minmax(0,1fr)); }
 #listContainer .photo_gallery.gallery_3,#listContainer .photo_gallery.gallery_5,#listContainer .photo_gallery.gallery_6 { grid-template-columns:repeat(3,minmax(0,1fr)); }
 #listContainer .photo_gallery.gallery_1 { display:block; }
 #listContainer .moment_photo { appearance:none; display:block; position:relative; width:100%; aspect-ratio:1; overflow:hidden; padding:0; border:0; border-radius:4px; background:#f2f3ed; cursor:zoom-in; font:inherit; color:#424e40; text-align:left; }
 #listContainer .moment_photo img { display:block; width:100%; height:100%; object-fit:cover; }
-#listContainer .gallery_1 .moment_photo { width:fit-content; max-width:100%; aspect-ratio:auto; }
-#listContainer .gallery_1 .moment_photo img { width:auto; max-width:100%; height:auto; max-height:360px; object-fit:contain; }
-#listContainer .gallery_1 .moment_photo.is_long { width:min(100%,320px); height:260px; }
+#listContainer .gallery_1 .moment_photo { width:fit-content; max-width:min(100%,280px); aspect-ratio:auto; }
+#listContainer .gallery_1 .moment_photo img { width:auto; max-width:100%; height:auto; max-height:240px; object-fit:contain; }
+#listContainer .gallery_1 .moment_photo.is_long { width:min(100%,200px); height:200px; }
 #listContainer .gallery_1 .moment_photo.is_long img { width:100%; height:100%; max-height:none; object-fit:cover; object-position:top; }
-#listContainer .moment_photo.is_long::after { content:'长图 · 点击查看'; position:absolute; right:9px; bottom:9px; padding:4px 7px; border:1px solid #ffffffb3; border-radius:3px; background:#fffffff0; color:#58644f; font-size:10px; letter-spacing:.03em; pointer-events:none; }
+#listContainer .moment_photo.is_long::after { content:'长图'; position:absolute; right:7px; bottom:7px; padding:2px 5px; border:1px solid #ffffffb3; border-radius:3px; background:#fffffff0; color:#58644f; font-size:10px; letter-spacing:.03em; pointer-events:none; }
 #listContainer .moment_photo.is_unavailable { min-width:110px; min-height:90px; }
 #listContainer .moment_photo.is_unavailable::after { content:'图片暂时无法加载'; position:absolute; inset:0; display:grid; place-items:center; background:#f3f4ee; color:#7b8276; font-size:11px; }
 #listContainer .photo_remaining { position:absolute; inset:0; display:grid; place-items:center; background:#fff9; color:#344333; font-size:24px; font-weight:500; pointer-events:none; }
@@ -95,7 +98,7 @@ html.photo_viewer_open { overflow:hidden; }
  #listContainer .moment_card_head { min-height:42px; padding:9px 17px 5px; }
  #listContainer .moment_card_body { padding:3px 17px 12px; }
  #listContainer .list_meta { padding:0 17px 13px; margin:0; }
- #listContainer .gallery_1 .moment_photo.is_long { height:230px; }
+ #listContainer .gallery_1 .moment_photo.is_long { height:200px; }
  #listContainer .photo_gallery { gap:4px; }
  .photo_viewer { width:calc(100vw - 16px); max-height:calc(100dvh - 16px); }
  .photo_viewer_head { padding:8px 10px; }
@@ -127,3 +130,7 @@ html.photo_viewer_open { overflow:hidden; }
 #listContainer .list_pinned_icon { margin:0; }
 #listContainer .list_item[data-kind="quote"] .list_content { color:var(--ink,#605569); }
 .photo_viewer { background:var(--card-clean,#fafbf7); color:var(--ink,#3b4538); }
+.moment_write .moment_load_sentinel { grid-column:2; height:1px; pointer-events:none; }
+.moment_write .moment_load_retry { grid-column:2; text-align:center; }
+.moment_write .moment_load_retry[hidden],.moment_write .moment_load_sentinel[hidden] { display:none; }
+@media(max-width:900px) { .moment_write .moment_load_sentinel,.moment_write .moment_load_retry { grid-column:auto; } }

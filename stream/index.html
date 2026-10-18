@@ -95,7 +95,7 @@
     .stream_share_foot { left: 24px; right: 24px; bottom: 24px; }
   }
 </style>
-<link rel="stylesheet" href="../stream/moments.css?v=20261018">
+<link rel="stylesheet" href="../stream/moments.css?v=20261018b">
 <link rel="stylesheet" href="../stream/profile.css?v=20261018">
 </head>
 <body>
@@ -419,7 +419,7 @@
       var text = String(item.content || '');
       var body = text.split(/\r?\n[\t ]*\r?\n/).map(function(p){return '<p>'+escHtml(p)+'</p>';}).join('');
       var element = t === 'quote' ? 'blockquote' : 'div';
-      h += '<'+element+' class="list_content">'+body+'</'+element+'><button class="list_expand_btn" type="button" aria-expanded="false" onclick="toggleExpand(this)">展开</button>';
+      h += '<'+element+' class="list_content">'+body+'</'+element+'><button class="list_expand_btn" type="button" aria-expanded="false" onclick="toggleExpand(this)">展开全文</button>';
     }
     if (t === 'quote' && item.author) h += '<div class="list_author">— '+escHtml(item.author)+'</div>';
     if (item.link_image) { h += '<a href="'+escAttr(item.url||'#')+'" target="_blank" rel="noopener" class="link_card"><img src="'+escAttr(item.link_image)+'" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'" alt=""><div><div class="link_card_title">'+escHtml(item.link_title||item.url||'')+'</div></div></a>'; }
@@ -444,9 +444,9 @@
     return h;
   }
 
-  function toggleExpand(btn) { var c=btn.previousElementSibling; if(!c)return; c.classList.toggle('expanded'); btn.textContent=c.classList.contains('expanded')?'收起':'展开'; btn.setAttribute('aria-expanded',c.classList.contains('expanded')?'true':'false'); }
+  function toggleExpand(btn) { var c=btn.previousElementSibling; if(!c)return; c.classList.toggle('expanded'); btn.textContent=c.classList.contains('expanded')?'收起全文':'展开全文'; btn.setAttribute('aria-expanded',c.classList.contains('expanded')?'true':'false'); }
   window.toggleExpand = toggleExpand;
-  function checkExpandButtons() { document.querySelectorAll('.list_content').forEach(function(el){var b=el.nextElementSibling;if(!b||!b.classList.contains('list_expand_btn'))return;if(el.classList.contains('expanded')||el.scrollHeight>el.clientHeight+2){b.classList.add('show')}else{b.classList.remove('show');if(b.textContent!=='展开')b.textContent='展开';b.setAttribute('aria-expanded','false')}}) }
+  function checkExpandButtons() { document.querySelectorAll('.list_content').forEach(function(el){var b=el.nextElementSibling;if(!b||!b.classList.contains('list_expand_btn'))return;if(el.classList.contains('expanded')||el.scrollHeight>el.clientHeight+2){b.classList.add('show')}else{b.classList.remove('show');if(b.textContent!=='展开全文')b.textContent='展开全文';b.setAttribute('aria-expanded','false')}}) }
   window.refreshStreamExpand = checkExpandButtons;
   var totalPages = Math.max(1, Math.ceil(totalItemCount / pageSize));
   var loadedPages = { 1: true };
