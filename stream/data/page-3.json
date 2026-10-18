@@ -1,8 +1,35 @@
 ﻿{
     "page":  3,
     "totalPages":  4,
-    "totalItems":  115,
+    "totalItems":  116,
     "items":  [
+                  {
+                      "id":  "optfvrfc1g8csqz",
+                      "content":  "投机市场有个词叫「Fud」（Fear, Uncertainty, and Doubt；恐懼、不確定性和懷疑） 因為虛假資訊流傳、散戶恐慌情緒而獲得優勢。\r\n\r\n比如 有庄家开了空  就利用社交媒体 让周边的人开始恐慌  轻易的交出你的筹码  收集足够多的筹码然后一顿暴拉  结局就是亏钱  \r\n\r\n现在这种 520 的气氛   是「少亏钱」的修炼[并不简单] [开学季] [苦涩]",
+                      "type":  "thought",
+                      "typeLabel":  "thought",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.05.21 19:17",
+                      "tags":  [
+                                   "爱情",
+                                   "交易"
+                               ],
+                      "pinned":  false,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
                   {
                       "id":  "05pw429oq62mpjk",
                       "content":  "现在的福利姬小姐姐也太上进了\r\n\r\n有整天10个小时在听web3的space的  也有疯狂开合约的赌怪hkd老师\r\n\r\n还有个昨天非要学撸大厂的cdn作视频床 ",
@@ -754,32 +781,6 @@
                                  ],
                       "videos":  [
                                      "https://img.joyseen.us/videos/2026/06/22-51313154319b.mp4"
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "772yxpidn4jhva1",
-                      "content":  "不同意推到高牆  但支持把墻建的足夠足夠低  \r\n\r\n當然 我也不知道這個 阈值 是多少   但是可以感受到的是 現在墻的高度一定是遠遠高於這個  阈值的 \r\n\r\n就連著名的左派 胡錫進 都是堅定的 推牆派 /  右派更不用說  \r\n所以可以說  墻的問題  是實實在在存在的  \r\n\r\n另一方面 牆有好的意義嗎  /  當然是有的\r\n\r\n前幾天純銀說  美國从硬件和軟件兩方面全面封殺華為 / 到現在的 又試圖封殺 tiktok   「信仰了幾十年的\"世界經濟共同體\"  從此不再有安全感」  \r\n\r\n是的 可以説現在是冷戰了  那誰也說不準 會不會有不懷好意  帶著立場的國外科技公司  控制輿論走向  來向國民灌輸不好的東西\r\n\r\n這也正是 墻存在的意義了 \r\n\r\n正如信息茧房 肯定是要建的  但肯定不是根據  與自己不同的第二第三種聲音    應該阻擋的是 不懷好意的作惡者 /  墻也應如此",
-                      "type":  "thought",
-                      "typeLabel":  "thought",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2020.07.31 20:14",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
                                  ],
                       "audios":  [
 
