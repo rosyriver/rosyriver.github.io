@@ -1,0 +1,170 @@
+/* A personal profile: identity, outlook, creations, and everyday tools. */
+:root { color-scheme:light; --paper:#f7f6f2; --ink:#303530; --muted:#72786b; --line:#e2e2d9; --accent:#a55943; --serif:Georgia,'Times New Roman',serif; }
+* { box-sizing:border-box; }
+html { background:var(--paper); scroll-behavior:smooth; scrollbar-color:#c1c2b8 var(--paper); }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; font-size:14px; -webkit-font-smoothing:antialiased; }
+a { color:inherit; text-decoration:none; }
+
+a { -webkit-tap-highlight-color:transparent; }
+a { touch-action:manipulation; }
+a:focus-visible,.belief-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; border-radius:2px; }
+::selection { color:#262e25; background:#e0e5d6; }
+p,h1,h2,ol,ul,blockquote { margin:0; }
+.skip-link { position:fixed; left:16px; top:-60px; z-index:10; background:var(--ink); color:white; padding:10px 16px; }
+.skip-link:focus { top:12px; }
+.about-layout { display:grid; grid-template-columns:180px minmax(0,640px); column-gap:76px; width:min(100% - 96px,896px); margin:0 auto; padding:66px 0 22px; align-items:start; }
+.site-rail { position:sticky; top:46px; padding-top:5px; }
+.site-brand { display:inline-block; font-size:20px; font-weight:600; letter-spacing:1px; line-height:1.6; }
+.site-caption { color:var(--muted); font-size:10px; line-height:2; margin-top:8px; white-space:nowrap; letter-spacing:.1px; }
+.site-navigation { display:flex; flex-direction:column; gap:3px; margin:39px 0 30px; }
+.site-navigation a { display:flex; justify-content:space-between; align-items:center; max-width:137px; padding:8px 0; color:var(--muted); font-size:12px; line-height:1.5; }
+.site-navigation a span { font-size:12px; color:#b8b9b0; }
+.site-navigation a[aria-current] { color:var(--ink); font-weight:600; }
+.site-navigation a[aria-current] span { color:var(--accent); font-size:7px; }
+.site-navigation a:hover { color:var(--accent); }
+.site-navigation a:hover span { color:var(--accent); }
+#about-main { min-width:0; outline:none; }
+.rail-note { padding-top:17px; max-width:150px; border-top:1px solid var(--line); color:#8b9081; font-family:var(--serif); font-size:12px; font-style:italic; line-height:1.8; }
+.rail-note span { display:block; margin-top:3px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif; font-size:9px; font-style:normal; letter-spacing:.5px; }
+.profile-heading { margin-bottom:24px; }
+.profile-topline { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:15px; }
+.profile-kicker { color:#7a806f; font-size:9px; letter-spacing:1.7px; text-transform:uppercase; }
+.profile-topline time { color:#929786; font-size:9px; font-variant-numeric:tabular-nums; letter-spacing:.6px; }
+.profile-name { display:flex; align-items:center; gap:17px; }
+.profile-name h1 { font-family:var(--serif); font-size:43px; line-height:1.15; font-weight:400; letter-spacing:-1.6px; }
+.profile-mark { color:var(--accent); font-size:25px; font-family:var(--serif); font-weight:400; }
+.profile-description { margin-top:9px; color:#747b6c; font-size:12px; line-height:1.8; letter-spacing:.5px; }
+.about-section { padding-bottom:28px; scroll-margin-top:25px; }
+.about-section h2 { font-family:var(--serif); font-size:23px; font-weight:400; font-style:italic; letter-spacing:-.5px; line-height:1.4; margin-bottom:11px; }
+.about-section h2 small { display:inline-block; vertical-align:middle; margin-left:8px; color:var(--accent); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:10px; font-weight:400; font-style:normal; letter-spacing:0; }
+#introduction { position:relative; padding:0 0 23px 19px; margin-bottom:25px; border-bottom:1px solid var(--line); }
+#introduction::before { position:absolute; content:'“'; left:-1px; top:-5px; color:#a7ac99; font-family:var(--serif); font-size:30px; line-height:1; }
+#introduction blockquote { border:0; padding:0; margin-bottom:8px; }
+#introduction blockquote p { color:#4e5649; font-size:15px; line-height:1.9; letter-spacing:.25px; }
+#introduction strong { font-weight:400; }
+#introduction .section-prose > p { color:var(--muted); font-size:10px; line-height:1.8; }
+.profile-record { display:grid; grid-template-columns:45px minmax(0,1fr); column-gap:15px; padding:8px 0; }
+.profile-record + .profile-record { border-top:1px solid #eaeae2; }
+.record-label { color:#8b9081; font-size:10px; line-height:2.4; }
+.record-value { min-width:0; color:#4a5145; font-size:13px; line-height:1.9; }
+.profile-record:last-child .record-value { color:#737a6c; font-size:12px; }
+#profile strong { color:var(--ink); font-weight:600; text-decoration:underline; text-decoration-color:#cbd1bc; text-decoration-thickness:3px; text-underline-offset:4px; }
+#profile del { color:#919489; text-decoration-color:#b9bcb0; }
+.section-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:6px 18px; margin-bottom:10px; }
+.section-heading h2 { margin:0; }
+.philosophy-note { color:#73796c; font-size:10px; line-height:1.8; }
+.belief-scroll { max-width:100%; overflow-x:auto; scrollbar-width:thin; scrollbar-color:#c7c9be transparent; }
+.belief-list { padding:0; list-style:none; width:max-content; min-width:100%; }
+.belief-line { display:flex; align-items:baseline; gap:15px; padding:7px 0; line-height:1.7; white-space:nowrap; border-bottom:1px solid #e9e9e1; }
+.belief-line:last-child { border-bottom-color:transparent; }
+.belief-number { flex:0 0 18px; color:#a3a797; font-size:9px; font-variant-numeric:tabular-nums; letter-spacing:.2px; }
+.belief-pair { font-size:12.5px; }
+.belief-english { color:#353e32; font-weight:500; }
+.belief-dash { color:#b0b5a6; margin:0 4px; }
+.belief-chinese { color:#51594c; font-size:12.5px; }
+.belief-hint { display:none; }
+.about-directory { display:grid; gap:10px; border-top:1px solid var(--line); padding:15px 0 19px; }
+.directory-section { display:grid; grid-template-columns:74px minmax(0,1fr); gap:0 17px; padding:0; min-width:0; }
+.directory-section h2 { font-size:20px; line-height:1.5; margin:0; padding:1px 0; }
+.directory-list { list-style:none; padding:0; }
+.directory-item { display:flex; align-items:baseline; flex-wrap:wrap; gap:0 12px; padding:5px 0; width:fit-content; max-width:100%; }
+.directory-name { display:inline-flex; align-items:baseline; gap:5px; color:#434b3f; font-size:12px; line-height:1.7; }
+.directory-arrow { color:#a2a995; font-size:11px; transition:transform .18s,color .18s; }
+.directory-detail { color:#737b6a; font-size:10px; line-height:1.7; }
+.directory-item:hover .directory-name { color:var(--accent); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }
+.directory-item:hover .directory-arrow { color:var(--accent); transform:translate(1px,-1px); }
+.profile-elsewhere { display:grid; grid-template-columns:96px minmax(0,1fr); align-items:baseline; column-gap:17px; padding:15px 0 18px; border-top:1px solid var(--line); }
+.profile-elsewhere h2 { margin:0; font-family:var(--serif); font-style:italic; font-weight:400; font-size:20px; line-height:1.5; letter-spacing:-.5px; }
+.profile-socials { display:flex; flex-wrap:wrap; gap:8px 22px; }
+.profile-socials a { color:#5d6754; font-size:11px; line-height:1.8; }
+.profile-socials a span { margin-left:5px; color:#a2a995; font-size:10px; }
+.profile-socials a:hover { color:var(--accent); text-decoration:underline; text-underline-offset:4px; }
+.page-footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding:20px 0; color:#949889; }
+.page-footer > span { font-family:var(--serif); font-size:13px; font-style:italic; letter-spacing:.3px; }
+.page-footer a { color:#7e8772; padding:4px 8px; font-size:15px; }
+.page-footer a:hover { color:var(--accent); }
+@media (min-width:1400px) { .about-layout { padding-top:82px; } }
+@media (max-width:1000px) {
+ .about-layout { grid-template-columns:150px minmax(0,1fr); gap:48px; width:calc(100% - 64px); }
+ .site-brand { font-size:18px; }
+ .site-caption { white-space:normal; max-width:140px; }
+}
+@media (max-width:800px) {
+ .about-layout { display:block; width:min(640px,calc(100% - 48px)); padding:25px 0 10px; }
+ .site-rail { position:static; display:grid; grid-template-columns:1fr auto; gap:8px 20px; padding:0 0 19px; margin-bottom:28px; border-bottom:1px solid var(--line); }
+ .site-identity { grid-column:1; grid-row:1 / span 2; }
+ .site-brand { font-size:18px; }
+ .site-caption { margin-top:4px; white-space:nowrap; max-width:none; font-size:9px; }
+ .site-navigation { grid-column:2; grid-row:1; flex-direction:row; gap:19px; margin:0; }
+ .site-navigation a { gap:6px; padding:3px 0; font-size:11px; }
+ .site-navigation a span { display:none; }
+ .site-navigation a[aria-current] { text-decoration:underline; text-underline-offset:7px; text-decoration-color:#b9c0aa; }
+ .rail-note { display:none; }
+ .profile-heading { margin-bottom:22px; }
+}
+@media (max-width:480px) {
+ .about-layout { width:calc(100% - 36px); padding-top:19px; }
+ .site-rail { column-gap:12px; margin-bottom:23px; padding-bottom:16px; }
+ .site-brand { font-size:16px; letter-spacing:0; }
+ .site-caption { font-size:8px; }
+ .site-navigation { gap:11px; }
+ .site-navigation a { font-size:11px; }
+ .profile-name h1 { font-size:36px; }
+ .profile-topline { margin-bottom:13px; }
+ .profile-description { margin-top:7px; }
+ .profile-record { grid-template-columns:37px minmax(0,1fr); column-gap:12px; }
+ .record-value { font-size:12px; }
+ .profile-record:last-child .record-value { font-size:11px; }
+ .profile-elsewhere { grid-template-columns:90px minmax(0,1fr); gap:0 10px; }
+ .profile-elsewhere h2 { font-size:18px; }
+ .profile-socials { gap:7px 14px; }
+ .profile-socials a { font-size:10px; }
+ .about-section { padding-bottom:23px; }
+ .about-section h2 { font-size:22px; }
+ #introduction { padding-left:13px; margin-bottom:22px; padding-bottom:20px; }
+ #introduction::before { font-size:25px; }
+ #introduction blockquote p { font-size:14px; }
+ #introduction .section-prose > p { font-size:9px; }
+ .section-heading { display:block; }
+ .philosophy-note { margin-top:4px; font-size:9px; }
+ .belief-line { gap:8px; padding:6px 0; }
+ .belief-number { flex-basis:13px; font-size:8px; }
+ .belief-pair, .belief-chinese { font-size:12px; }
+ .belief-dash { margin:0 1px; }
+ .directory-section { grid-template-columns:56px minmax(0,1fr); gap:0 10px; padding:0; }
+ .directory-section h2 { font-size:19px; }
+ .directory-item { gap:0 8px; }
+ .directory-name { font-size:12px; }
+ .directory-detail { font-size:10px; }
+}
+@media (max-width:359px) {
+ .site-rail { grid-template-columns:1fr; gap:9px; }
+ .site-identity { grid-row:1; grid-column:1; display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+ .site-navigation { grid-row:2; grid-column:1; gap:20px; }
+ .belief-hint { display:block; color:var(--muted); font-size:9px; margin-top:6px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+@page { size:A4; margin:14mm 17mm; }
+@media print {
+ :root { --paper:#fff; }
+ .about-layout { display:block; width:100%; padding:0; margin:0; }
+ .site-rail,.skip-link,.page-footer { display:none; }
+ .profile-heading { margin-bottom:16px; }
+ .profile-topline { margin-bottom:8px; }
+ .profile-name h1 { font-size:32px; }
+ .profile-description { margin-top:5px; }
+ .about-section { padding-bottom:16px; break-inside:avoid; }
+ .about-section h2 { font-size:20px; margin-bottom:7px; }
+ #introduction { margin-bottom:16px; padding-bottom:16px; }
+ #introduction blockquote p { font-size:13px; }
+ .record-value { font-size:12px; }
+ .belief-scroll { overflow:visible; }
+ .belief-line { padding:4px 0; }
+ .belief-pair,.belief-chinese { font-size:12px; }
+ .about-directory { padding:12px 0; gap:6px; break-inside:avoid; }
+ .directory-section { padding:0; }
+ .directory-section h2 { margin:0; }
+ .profile-elsewhere { padding:12px 0; break-inside:avoid; }
+}
+
+

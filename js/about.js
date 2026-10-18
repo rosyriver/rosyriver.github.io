@@ -1,15 +1,5 @@
 (() => {
   const valineURL = new URL('vendor/valine.min.js', document.currentScript.src).href;
-  const menu = document.querySelector('#menu_icon');
-  if (menu) {
-    menu.setAttribute('role', 'button');
-    menu.setAttribute('tabindex', '0');
-    menu.setAttribute('aria-label', '打开或收起导航');
-    menu.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); menu.click(); }
-    });
-  }
-
   const comments = document.querySelector('#vcomments');
   let commentState = 'idle';
   const loadComments = () => {
@@ -39,6 +29,14 @@
     timer = setTimeout(fail, 15000);
     document.head.append(script);
   };
-  if (comments) loadComments();
+  if (comments) {
+    const guestbook = comments.closest('details');
+    if (guestbook) {
+      guestbook.addEventListener('toggle', () => { if (guestbook.open) loadComments(); });
+      if (guestbook.open) loadComments();
+    } else {
+      loadComments();
+    }
+  }
 })();
 
