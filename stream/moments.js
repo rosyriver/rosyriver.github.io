@@ -1,65 +1,19 @@
-/* Shared gallery and text overflow handling for both stream surfaces. */
+/* Shared feed presentation. Image viewing is handled by PhotoSwipe 5.4.4. */
 (() => {
   const feed = document.getElementById('listContainer');
-  const viewer = document.getElementById('photoViewer');
-  if (!feed || !viewer) return;
-  const stage = viewer.querySelector('.photo_viewer_stage');
-  const photo = viewer.querySelector('.photo_viewer_image');
-  const count = viewer.querySelector('[data-photo-count]');
-  const hint = viewer.querySelector('[data-photo-hint]');
-  const status = viewer.querySelector('.photo_viewer_status');
-  const previous = viewer.querySelector('[data-photo-previous]');
-  const next = viewer.querySelector('[data-photo-next]');
-  const canvas = viewer.querySelector('.photo_viewer_canvas');
-  const thumbnails = viewer.querySelector('[data-photo-thumbnails]');
-  const navigation = viewer.querySelector('.photo_viewer_nav');
-  const fitButton = viewer.querySelector('[data-photo-fit]');
-  const actualButton = viewer.querySelector('[data-photo-actual]');
-  const zoomOut = viewer.querySelector('[data-photo-zoom-out]');
-  const zoomIn = viewer.querySelector('[data-photo-zoom-in]');
-  const zoomLabel = viewer.querySelector('[data-photo-zoom]');
-  let sources = [], current = 0, opener, scale = 1, mode = 'fit', loaded = false, sequence = 0, drag, suppressClick = false;
-
-  function fitScale() { return Math.min(1, Math.max(1, stage.clientWidth - 32) / photo.naturalWidth, Math.max(1, stage.clientHeight - 32) / photo.naturalHeight); }
-  function draw(anchor) {
-    if (!loaded || !viewer.open) return;
-    if (mode === 'fit') scale = fitScale();
-    const width = photo.naturalWidth * scale, height = photo.naturalHeight * scale;
-    const canvasWidth = Math.max(stage.clientWidth, width + 32), canvasHeight = Math.max(stage.clientHeight, height + 32);
-    canvas.style.width = canvasWidth + 'px';
-    canvas.style.height = canvasHeight + 'px';
-    const left = (canvasWidth - width) / 2, top = (canvasHeight - height) / 2;
-    photo.style.width = width + 'px';
-    photo.style.height = height + 'px';
-    photo.style.left = left + 'px';
-    photo.style.top = top + 'px';
-    stage.classList.toggle('can_pan', width > stage.clientWidth || height > stage.clientHeight);
-    if (anchor) {
-      stage.scrollLeft = left + anchor.x * width - anchor.clientX;
-      stage.scrollTop = top + anchor.y * height - anchor.clientY;
-    }
-    zoomLabel.textContent = Math.round(scale * 100) + '%';
-    fitButton.setAttribute('aria-pressed', String(mode === 'fit'));
-    actualButton.setAttribute('aria-pressed', String(Math.abs(scale - 1) < .001));
-    zoomOut.disabled = scale <= fitScale() + .001;
-    zoomIn.disabled = scale >= 3;
-  }
-  function changeZoom(value, point) {
-    if (!loaded) return;
-    const stageRect = stage.getBoundingClientRect(), rect = photo.getBoundingClientRect();
-    const clientX = point ? point.clientX - stageRect.left : stage.clientWidth / 2;
-    const clientY = point ? point.clientY - stageRect.top : stage.clientHeight / 2;
-    const anchor = {x:(clientX + stageRect.left - rect.left) / rect.width, y:(clientY + stageRect.top - rect.top) / rect.height, clientX, clientY};
-    scale = Math.max(fitScale(), Math.min(3, value));
-    mode = 'zoom';
-    draw(anchor);
-  }
-
+  if (!feed) return;
+  const moduleUrl = new URL('vendor/photoswipe/photoswipe.esm.min.js', document.currentScript.src).href;
+  const dimensions = new Map();
+  const status = document.getElementById('momentPhotoStatus');
+  let active, opening = false, request = 0, library;
   function measure(image) {
     const button = image.closest('.moment_photo');
     if (!button) return;
     button.classList.toggle('is_unavailable', image.complete && !image.naturalWidth);
-    if (image.naturalWidth) button.classList.toggle('is_long', image.naturalHeight / image.naturalWidth > 1.9);
+    if (image.naturalWidth) {
+      dimensions.set(image.src, {src:image.src, width:image.naturalWidth, height:image.naturalHeight});
+      button.classList.toggle('is_long', image.naturalHeight / image.naturalWidth > 1.9);
+    }
   }
   feed.addEventListener('load', e => { if (e.target.matches('.moment_photo img')) measure(e.target); }, true);
   feed.addEventListener('error', e => { if (e.target.matches('.moment_photo img')) measure(e.target); }, true);
@@ -78,63 +32,125 @@
   window.addEventListener('resize', refreshText);
   refreshText();
 
-  function show(index) {
-    const request = ++sequence;
-    current = index;
-    loaded = false;
-    stage.scrollLeft = 0;
-    stage.scrollTop = 0;
-    stage.classList.remove('can_pan');
-    canvas.style.width = canvas.style.height = '';
-    photo.hidden = true;
-    status.hidden = false;
-    status.textContent = '正在加载图片…';
-    hint.textContent = '';
-    count.textContent = `${index + 1} / ${sources.length}`;
-    zoomLabel.textContent = '—';
-    zoomOut.disabled = zoomIn.disabled = fitButton.disabled = actualButton.disabled = true;
-    previous.disabled = index === 0;
-    next.disabled = index === sources.length - 1;
-    photo.alt = `第 ${index + 1} 张图片，共 ${sources.length} 张`;
-    photo.onload = () => {
-      if (request !== sequence || !viewer.open) return;
-      loaded = true;
-      mode = 'fit';
-      photo.hidden = false;
-      status.hidden = true;
-      fitButton.disabled = actualButton.disabled = false;
-      draw();
-    };
-    photo.onerror = () => { if (request === sequence) status.textContent = '图片暂时无法加载，请稍后再试。'; };
-    photo.src = sources[index];
-    thumbnails.querySelectorAll('button').forEach((button, i) => {
-      button.setAttribute('aria-current', String(i === index));
-      if (i === index) button.scrollIntoView({block:'nearest', inline:'nearest'});
-    });
-  }
-  function openPhotos(items, index, trigger) {
-    if (viewer.open) return;
-    sources = items.filter(source => typeof source === 'string' && source);
-    if (!sources.length) return;
-    opener = trigger;
-    viewer.showModal();
-    document.documentElement.classList.add('photo_viewer_open');
-    navigation.hidden = sources.length < 2;
-    thumbnails.replaceChildren();
-    if (sources.length > 1) sources.forEach((source, index) => {
-      const thumb = document.createElement('button');
-      thumb.type = 'button';
-      thumb.setAttribute('aria-label', '查看第 ' + (index + 1) + ' 张图片');
-      const image = document.createElement('img');
-      image.src = source;
-      image.alt = '';
+
+  function readImage(source) {
+    const src = new URL(source, location.href).href;
+    if (dimensions.has(src)) return Promise.resolve(dimensions.get(src));
+    const existing = [...document.images].find(image => image.src === src && image.naturalWidth);
+    if (existing) {
+      const data = {src, width:existing.naturalWidth, height:existing.naturalHeight};
+      dimensions.set(src, data);
+      return Promise.resolve(data);
+    }
+    const pending = new Promise((resolve, reject) => {
+      const image = new Image();
+      const timer = setTimeout(() => finish(false), 12000);
+      function finish(ok) {
+        clearTimeout(timer);
+        image.onload = image.onerror = null;
+        if (ok && image.naturalWidth) {
+          const data = {src, width:image.naturalWidth, height:image.naturalHeight};
+          dimensions.set(src, data);
+          resolve(data);
+        } else { dimensions.delete(src); reject(new Error('Image unavailable')); }
+      }
+      image.onload = () => finish(true);
+      image.onerror = () => finish(false);
       image.referrerPolicy = 'no-referrer';
-      thumb.appendChild(image);
-      thumb.addEventListener('click', () => show(index));
-      thumbnails.appendChild(thumb);
+      image.src = src;
     });
-    show(Math.max(0, Math.min(sources.length - 1, Number(index) || 0)));
-    viewer.querySelector('[data-photo-close]').focus();
+    dimensions.set(src, pending);
+    return pending;
+  }
+  function unavailable(source) {
+    const message = document.createElement('div');
+    message.className = 'moment_photo_error';
+    message.textContent = '图片暂时无法加载';
+    if (/^(https?:|blob:|data:image\/)/i.test(source)) {
+      const link = document.createElement('a');
+      link.href = source;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = '在新窗口查看';
+      message.appendChild(link);
+    }
+    return {html:message.outerHTML};
+  }
+  function cancelOpening() {
+    if (!opening) return;
+    ++request;
+    opening = false;
+    if (status) status.hidden = true;
+  }
+  status?.querySelector('button')?.addEventListener('click', cancelOpening);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') cancelOpening(); });
+
+  async function openPhotos(items, index, trigger) {
+    if (active || opening) return;
+    const sources = items.filter(source => typeof source === 'string' && source);
+    if (!sources.length) return;
+    const token = ++request;
+    opening = true;
+    if (status) status.hidden = false;
+    if (trigger) trigger.setAttribute('aria-busy', 'true');
+    try {
+      if (!library) library = import(moduleUrl).catch(error => { library = null; throw error; });
+      const [module, dataSource] = await Promise.all([
+        library,
+        Promise.all(sources.map(source => readImage(source).catch(() => unavailable(source))))
+      ]);
+      if (token !== request) return;
+      const pswp = new module.default({
+        dataSource,
+        index:Math.max(0, Math.min(sources.length - 1, Number(index) || 0)),
+        mainClass:'moment_photoswipe',
+        initialZoomLevel:'fit',
+        secondaryZoomLevel:1,
+        maxZoomLevel:3,
+        paddingFn:viewport => ({top:64, bottom:24, left:viewport.x < 600 ? 16 : 48, right:viewport.x < 600 ? 16 : 48}),
+        bgOpacity:1,
+        showHideAnimationType:'none',
+        zoomAnimationDuration:180,
+        loop:false,
+        returnFocus:false,
+        closeOnVerticalDrag:false,
+        pinchToClose:false,
+        clickToCloseNonZoomable:false,
+        imageClickAction:'zoom',
+        bgClickAction:'close',
+        closeTitle:'关闭图片',
+        zoomTitle:'放大或还原图片',
+        arrowPrevTitle:'上一张',
+        arrowNextTitle:'下一张',
+        errorMsg:'图片暂时无法加载，请稍后再试。'
+      });
+      pswp.on('uiRegister', () => {
+        pswp.ui.registerElement({name:'fit', order:8, isButton:true, title:'完整显示图片', html:'适应',
+          onClick:() => { if (pswp.currSlide) pswp.zoomTo(pswp.currSlide.zoomLevels.initial, undefined, 180); }});
+        pswp.ui.registerElement({name:'original', order:9, isButton:true, title:'按原始尺寸查看', html:'原图',
+          onClick:() => { if (pswp.currSlide?.isZoomable()) pswp.zoomTo(1, undefined, 180); }});
+      });
+      pswp.on('destroy', () => {
+        active = null;
+        document.documentElement.classList.remove('photo_viewer_open');
+        if (trigger?.isConnected) trigger.focus({preventScroll:true});
+      });
+      // Preserve the same privacy policy as the feed image requests.
+      pswp.on('contentLoadImage', event => { event.content.element.referrerPolicy = 'no-referrer'; });
+      document.documentElement.classList.add('photo_viewer_open');
+      active = pswp;
+      pswp.init();
+    } catch {
+      active = null;
+      document.documentElement.classList.remove('photo_viewer_open');
+      if (typeof notify === 'function') notify('图片预览暂时无法打开，请稍后再试。', 'error');
+    } finally {
+      trigger?.removeAttribute('aria-busy');
+      if (token === request) {
+        opening = false;
+        if (status) status.hidden = true;
+      }
+    }
   }
   window.openMomentPhotos = openPhotos;
   feed.addEventListener('click', event => {
@@ -142,72 +158,4 @@
     if (!button) return;
     openPhotos(JSON.parse(button.closest('.photo_gallery').dataset.photoSources || '[]'), button.dataset.photoIndex, button);
   });
-  previous.addEventListener('click', () => { if (current > 0) show(current - 1); });
-  next.addEventListener('click', () => { if (current < sources.length - 1) show(current + 1); });
-  fitButton.addEventListener('click', () => { mode = 'fit'; draw(); stage.scrollTop = stage.scrollLeft = 0; });
-  actualButton.addEventListener('click', () => changeZoom(1));
-  zoomOut.addEventListener('click', () => changeZoom(scale / 1.4));
-  zoomIn.addEventListener('click', () => changeZoom(scale * 1.4));
-  photo.addEventListener('dblclick', event => {
-    if (mode === 'zoom' && scale > fitScale() + .01) { mode = 'fit'; draw(); }
-    else changeZoom(scale < 1 ? 1 : scale * 2, event);
-  });
-  stage.addEventListener('wheel', event => {
-    if (event.ctrlKey && loaded) { event.preventDefault(); changeZoom(scale * Math.exp(-event.deltaY * .004), event); }
-  }, {passive:false});
-  photo.addEventListener('dragstart', event => event.preventDefault());
-  stage.addEventListener('pointerdown', event => {
-    if (event.pointerType !== 'mouse' || event.button !== 0 || !stage.classList.contains('can_pan')) return;
-    drag = {x:event.clientX, y:event.clientY, left:stage.scrollLeft, top:stage.scrollTop, id:event.pointerId};
-    suppressClick = false;
-    stage.classList.add('is_dragging');
-    event.preventDefault();
-  });
-  stage.addEventListener('pointermove', event => {
-    if (!drag) return;
-    const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 4) {
-      suppressClick = true;
-      if (!stage.hasPointerCapture(event.pointerId)) stage.setPointerCapture(event.pointerId);
-    }
-    stage.scrollLeft = drag.left - dx;
-    stage.scrollTop = drag.top - dy;
-  });
-  function endDrag() { drag = null; stage.classList.remove('is_dragging'); }
-  stage.addEventListener('pointerup', endDrag);
-  stage.addEventListener('pointercancel', endDrag);
-  stage.addEventListener('click', event => {
-    if (suppressClick) { suppressClick = false; return; }
-    if (event.target === stage || event.target === canvas) viewer.close();
-  });
-  let touch;
-  stage.addEventListener('touchstart', event => { if (event.touches.length === 1) touch = {x:event.touches[0].clientX, y:event.touches[0].clientY}; else touch = null; }, {passive:true});
-  stage.addEventListener('touchend', event => {
-    if (!touch || stage.classList.contains('can_pan') || !event.changedTouches.length) return;
-    const dx = event.changedTouches[0].clientX - touch.x, dy = event.changedTouches[0].clientY - touch.y;
-    touch = null;
-    if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-    if (dx < 0 && current < sources.length - 1) show(current + 1);
-    if (dx > 0 && current > 0) show(current - 1);
-  }, {passive:true});
-  viewer.querySelector('[data-photo-close]').addEventListener('click', () => viewer.close());
-  viewer.addEventListener('click', event => { if (event.target === viewer) viewer.close(); });
-  viewer.addEventListener('keydown', event => {
-    if (event.key === 'ArrowLeft' && current > 0) { event.preventDefault(); show(current - 1); }
-    if (event.key === 'ArrowRight' && current < sources.length - 1) { event.preventDefault(); show(current + 1); }
-    if (event.key === '+' || event.key === '=') { event.preventDefault(); changeZoom(scale * 1.4); }
-    if (event.key === '-') { event.preventDefault(); changeZoom(scale / 1.4); }
-    if (event.key === '0') { mode = 'fit'; draw(); }
-  });
-  viewer.addEventListener('close', () => {
-    document.documentElement.classList.remove('photo_viewer_open');
-    ++sequence;
-    loaded = false;
-    endDrag();
-    thumbnails.replaceChildren();
-    photo.onload = photo.onerror = null;
-    photo.removeAttribute('src');
-    if (opener && opener.isConnected) opener.focus({preventScroll:true});
-  });
-  new ResizeObserver(() => { if (viewer.open && loaded) draw(); }).observe(stage);
 })();
