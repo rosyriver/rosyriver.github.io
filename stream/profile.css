@@ -22,6 +22,12 @@
 .stream-profile-copy p { color:var(--muted,#81857d); overflow-wrap:anywhere; white-space:pre-line; }
 .stream-profile-avatar { background:var(--card-clean,#fafaf8); }
 .stream-profile-avatar img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
+.stream-profile-avatar img[hidden],.stream-profile [hidden],.profile_editor [hidden] { display:none; }
+.stream-profile-avatar [data-profile-initial] { display:grid; place-items:center; width:100%; height:100%; border-radius:50%; background:color-mix(in srgb,var(--ink,#343d39) 5%,transparent); color:var(--muted,#81857d); font:500 22px/1 sans-serif; }
+.stream-profile-avatar [data-profile-initial][hidden] { display:none; }
+.stream-profile-copy h1 { min-height:1.3em; }
+.stream-profile[data-profile-state=loading] .stream-profile-copy::after { content:''; display:block; width:130px; height:9px; margin:9px 0; border-radius:3px; background:color-mix(in srgb,var(--ink,#343d39) 7%,transparent); }
+.profile_load_message { margin-top:10px; color:var(--muted,#81857d); font-size:11px; }
 .stream-profile.is-write { grid-column:2; grid-row:2; margin:0; padding:4px 0 22px; }
 .moment_write .search_wrap { grid-row:3; }
 .moment_write #listContainer { grid-row:4; }

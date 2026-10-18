@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <defs><linearGradient id="profileSky" x2="0" y2="1"><stop stop-color="#c5cbbd"/><stop offset="1" stop-color="#ece5d5"/></linearGradient><linearGradient id="profileWater" x2="0" y2="1"><stop stop-color="#9daea2"/><stop offset="1" stop-color="#81968c"/></linearGradient></defs>
-        <path fill="url(#profileSky)" d="M0 0h100v100H0z"/>
-        <circle cx="62" cy="37" r="18" fill="#faf0d5"/>
-        <path fill="url(#profileWater)" d="M0 56Q23 49 50 56T100 55V100H0Z"/>
-        <path d="M45 62h31M51 68h21M48 75h26M56 83h14" fill="none" stroke="#f7edd6" stroke-width="1.4" opacity=".55"/>
-        <path d="M0 78q21-13 39 2t61-2v22H0Z" fill="#758b80" opacity=".55"/>
-      </svg>

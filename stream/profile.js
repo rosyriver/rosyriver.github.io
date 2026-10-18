@@ -2,31 +2,55 @@
 (() => {
   const script = document.currentScript;
   const profileUrl = new URL(script.dataset.profileUrl, location.href);
-  const defaultAvatar = new URL(script.dataset.avatarUrl, location.href).href;
   const editable = script.dataset.profileEditor === 'true';
-  const defaults = {name:'VarKai', signature:'一些念头，一些正在发生的生活。', avatar:''};
-  let saved = {...defaults}, avatar = '';
+  let saved = {name:'', signature:'', avatar:''}, avatar = '', hasLoaded = false;
   function avatarSource(value) {
     if (/^data:image\/(png|jpeg|webp|gif);base64,[A-Za-z0-9+/=]+$/.test(value || '')) return value;
-    return defaultAvatar;
+    return '';
   }
   function display(profile) {
-    saved = {...defaults, ...profile};
+    saved = {name:typeof profile.name === 'string' ? profile.name : '', signature:typeof profile.signature === 'string' ? profile.signature : '', avatar:avatarSource(profile.avatar)};
+    hasLoaded = true;
     document.querySelectorAll('#stream-profile-name').forEach(el => { el.textContent = saved.name; });
     document.querySelectorAll('[data-profile-signature]').forEach(el => {
       el.textContent = saved.signature;
       el.hidden = !saved.signature;
     });
     document.querySelectorAll('[data-profile-avatar]').forEach(el => {
-      el.src = avatarSource(saved.avatar);
-      el.alt = saved.name + ' 的头像';
+      el.hidden = !saved.avatar;
+      if (saved.avatar) el.src = saved.avatar;
+      else el.removeAttribute('src');
+      el.alt = saved.name ? saved.name + ' 的头像' : '';
     });
+    document.querySelectorAll('[data-profile-initial]').forEach(el => { el.textContent = Array.from(saved.name)[0] || ''; el.hidden = !!saved.avatar; });
+    document.querySelectorAll('.stream-profile').forEach(el => {
+      el.dataset.profileState = 'ready';
+      el.setAttribute('aria-busy', 'false');
+      if (!editable) el.hidden = !saved.name;
+    });
+    const message = document.querySelector('[data-profile-message]');
+    if (message) message.hidden = true;
   }
   async function refresh() {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 4000);
     try {
-      const response = await fetch(profileUrl, {cache:'no-store'});
-      if (response.ok) display(await response.json());
-    } catch { /* The initial markup remains usable when offline. */ }
+      const response = await fetch(profileUrl, {cache:'no-store', signal:controller.signal});
+      if (!response.ok) throw new Error();
+      const data = await response.json();
+      if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error();
+      display(data);
+      return true;
+    } catch {
+      // Keep generated public markup intact; never substitute sample identity data.
+      if (editable && !hasLoaded) {
+        document.querySelector('.stream-profile').dataset.profileState = 'error';
+        document.querySelector('.stream-profile').setAttribute('aria-busy', 'false');
+        const message = document.querySelector('[data-profile-message]');
+        if (message) message.hidden = false;
+      }
+      return false;
+    } finally { clearTimeout(timeout); }
   }
   refresh();
   if (!editable) {
@@ -41,7 +65,7 @@
     <div class="profile_avatar_choice">
       <img data-avatar-preview alt="头像预览">
       <button class="btn btn_small" type="button" data-choose-avatar>更换头像</button>
-      <button class="btn btn_small" type="button" data-reset-avatar>恢复默认</button>
+      <button class="btn btn_small" type="button" data-reset-avatar>移除头像</button>
       <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" data-avatar-file hidden>
     </div>
     <label>昵称<input name="name" maxlength="80" required autocomplete="nickname"></label>
@@ -60,12 +84,19 @@
   const submit = form.querySelector('[type=submit]');
   let processingAvatar = false;
   const button = document.getElementById('btnProfile');
+  let editorOpening = false;
   async function openEditor(focus = 'name') {
-    await refresh();
+    if (editorOpening || dialog.open) return;
+    editorOpening = true;
+    const loaded = await refresh();
+    editorOpening = false;
+    if (!loaded && !hasLoaded) { if (typeof notify === 'function') notify('资料暂时无法加载，请稍后重试。', 'error'); return; }
     form.elements.name.value = saved.name;
     form.elements.signature.value = saved.signature;
     avatar = saved.avatar || '';
-    avatarPreview.src = avatarSource(avatar);
+    if (avatar) avatarPreview.src = avatar;
+    avatarPreview.hidden = !avatar;
+    if (!avatar) avatarPreview.removeAttribute('src');
     file.value = '';
     status.textContent = '';
     dialog.showModal();
@@ -89,7 +120,8 @@
   dialog.querySelector('[data-reset-avatar]').onclick = () => {
     avatar = '';
     file.value = '';
-    avatarPreview.src = defaultAvatar;
+    avatarPreview.hidden = true;
+    avatarPreview.removeAttribute('src');
   };
   file.onchange = async () => {
     const selected = file.files[0];
@@ -109,6 +141,7 @@
       bitmap.close();
       avatar = canvas.toDataURL('image/png');
       avatarPreview.src = avatar;
+      avatarPreview.hidden = false;
       status.textContent = '头像已准备好，保存后生效。';
     } catch { status.textContent = '这张图片无法读取，请换一张。'; }
     finally { processingAvatar = false; submit.disabled = false; }
