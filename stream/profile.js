@@ -45,7 +45,7 @@
       <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" data-avatar-file hidden>
     </div>
     <label>昵称<input name="name" maxlength="80" required autocomplete="nickname"></label>
-    <label>个签<textarea name="signature" maxlength="240" rows="3"></textarea></label>
+    <label>签名<textarea name="signature" maxlength="240" rows="3"></textarea></label>
     <p class="profile_editor_status" role="status" aria-live="polite"></p>
     <div class="profile_editor_actions">
       <button class="btn" type="button" data-cancel-profile>取消</button>
@@ -60,7 +60,7 @@
   const submit = form.querySelector('[type=submit]');
   let processingAvatar = false;
   const button = document.getElementById('btnProfile');
-  button.addEventListener('click', async () => {
+  async function openEditor(focus = 'name') {
     await refresh();
     form.elements.name.value = saved.name;
     form.elements.signature.value = saved.signature;
@@ -69,7 +69,21 @@
     file.value = '';
     status.textContent = '';
     dialog.showModal();
-  });
+    if (focus === 'avatar') dialog.querySelector('[data-choose-avatar]').focus();
+    else form.elements[focus].focus();
+  }
+  button.addEventListener('click', () => openEditor());
+  document.querySelector('[data-edit-avatar]')?.addEventListener('click', () => openEditor('avatar'));
+  const copy = document.querySelector('.is-write .stream-profile-copy');
+  if (copy) {
+    copy.tabIndex = 0;
+    copy.setAttribute('role', 'button');
+    copy.setAttribute('aria-label', '修改昵称和签名');
+    copy.addEventListener('click', event => openEditor(event.target.closest('[data-profile-signature]') ? 'signature' : 'name'));
+    copy.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openEditor(); }
+    });
+  }
   dialog.querySelector('[data-cancel-profile]').onclick = () => dialog.close();
   dialog.querySelector('[data-choose-avatar]').onclick = () => file.click();
   dialog.querySelector('[data-reset-avatar]').onclick = () => {

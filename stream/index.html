@@ -95,8 +95,8 @@
     .stream_share_foot { left: 24px; right: 24px; bottom: 24px; }
   }
 </style>
-<link rel="stylesheet" href="../stream/moments.css?v=20261018b">
-<link rel="stylesheet" href="../stream/profile.css?v=20261018">
+<link rel="stylesheet" href="../stream/moments.css?v=20261018c">
+<link rel="stylesheet" href="../stream/profile.css?v=20261018c">
 </head>
 <body>
 <script>
@@ -1059,19 +1059,27 @@
 <dialog class="photo_viewer" id="photoViewer" aria-label="查看瞬间图片">
  <div class="photo_viewer_head">
   <p><span data-photo-count aria-live="polite"></span><small data-photo-hint></small></p>
-  <div class="photo_viewer_controls">
-   <button type="button" data-photo-previous aria-label="上一张">←</button>
-   <button type="button" data-photo-next aria-label="下一张">→</button>
-   <button type="button" data-photo-close aria-label="关闭图片">×</button>
+  <div class="photo_viewer_tools" aria-label="图片大小">
+   <button type="button" data-photo-fit aria-pressed="false">适应</button>
+   <button type="button" data-photo-actual aria-pressed="false">原图</button>
+   <button type="button" data-photo-zoom-out aria-label="缩小图片">−</button>
+   <span data-photo-zoom aria-live="polite">—</span>
+   <button type="button" data-photo-zoom-in aria-label="放大图片">+</button>
   </div>
+  <button class="photo_viewer_close" type="button" data-photo-close aria-label="关闭图片">×</button>
  </div>
- <div class="photo_viewer_stage" tabindex="0" aria-label="图片内容，可滚动查看">
+ <div class="photo_viewer_stage" tabindex="0" aria-label="图片内容，可滚动或拖动查看">
   <p class="photo_viewer_status" role="status"></p>
-  <img class="photo_viewer_image" alt="" referrerpolicy="no-referrer" hidden>
+  <div class="photo_viewer_canvas"><img class="photo_viewer_image" alt="" referrerpolicy="no-referrer" hidden></div>
+ </div>
+ <div class="photo_viewer_nav" hidden>
+  <button type="button" data-photo-previous aria-label="上一张">上一张</button>
+  <div class="photo_viewer_thumbnails" data-photo-thumbnails aria-label="选择图片"></div>
+  <button type="button" data-photo-next aria-label="下一张">下一张</button>
  </div>
 </dialog>
 
-<script src="../stream/moments.js?v=20261018"></script>
-<script src="../stream/profile.js?v=20261018" data-profile-url="../stream/profile.json" data-avatar-url="../stream/avatar.svg"></script>
+<script src="../stream/moments.js?v=20261018c"></script>
+<script src="../stream/profile.js?v=20261018c" data-profile-url="../stream/profile.json" data-avatar-url="../stream/avatar.svg"></script>
 </body>
 </html>
