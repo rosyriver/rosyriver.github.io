@@ -24,7 +24,6 @@
   function draw(anchor) {
     if (!loaded || !viewer.open) return;
     if (mode === 'fit') scale = fitScale();
-    if (mode === 'read') scale = Math.min(1, Math.max(1, stage.clientWidth - 32) / photo.naturalWidth, 640 / photo.naturalWidth);
     const width = photo.naturalWidth * scale, height = photo.naturalHeight * scale;
     const canvasWidth = Math.max(stage.clientWidth, width + 32), canvasHeight = Math.max(stage.clientHeight, height + 32);
     canvas.style.width = canvasWidth + 'px';
@@ -44,7 +43,6 @@
     actualButton.setAttribute('aria-pressed', String(Math.abs(scale - 1) < .001));
     zoomOut.disabled = scale <= fitScale() + .001;
     zoomIn.disabled = scale >= 3;
-    hint.textContent = mode === 'read' ? '滚动查看' : '';
   }
   function changeZoom(value, point) {
     if (!loaded) return;
@@ -101,7 +99,7 @@
     photo.onload = () => {
       if (request !== sequence || !viewer.open) return;
       loaded = true;
-      mode = photo.naturalHeight / photo.naturalWidth > 1.9 ? 'read' : 'fit';
+      mode = 'fit';
       photo.hidden = false;
       status.hidden = true;
       fitButton.disabled = actualButton.disabled = false;
