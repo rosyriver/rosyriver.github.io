@@ -1,0 +1,157 @@
+/* A personal field note, open to the sea. */
+:root{color-scheme:light;--paper:#fcfdfd;--ink:#354650;--secondary:#5e7079;--muted:#7f8d92;--line:#e5ecee;--accent:#397a99;--font:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box}
+html{background:var(--paper);scroll-behavior:smooth;scrollbar-color:#c8d5dc var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:13px/1.8 var(--font);-webkit-font-smoothing:antialiased}
+p,h1,h2,ol,ul,blockquote{margin:0}
+a{color:inherit;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+a:focus-visible,.belief-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:2px}
+::selection{background:#dbeaf0;color:#294a5c}
+.skip-link{position:fixed;left:16px;top:-70px;z-index:10;padding:8px 14px;background:var(--ink);color:white}
+.skip-link:focus{top:12px}
+.about-layout{width:min(820px,calc(100% - 80px));margin:auto}
+.site-header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0 24px}
+.site-brand{font-size:14px;font-weight:600;letter-spacing:.2px}
+.site-caption{font-size:9px;color:var(--muted);margin-top:3px;letter-spacing:.2px}
+.site-navigation{display:flex;align-items:center;flex-wrap:wrap;gap:22px}
+.site-navigation a{font-size:11px;color:var(--muted);padding:5px 0;white-space:nowrap}
+.site-navigation a[aria-current]{color:var(--accent)}
+.site-navigation a[aria-current]::before{content:'';display:inline-block;width:4px;height:4px;background:#91bacb;border-radius:50%;vertical-align:middle;margin-right:6px}
+.site-navigation a:hover{color:var(--accent)}
+#about-main{outline:none;min-width:0}
+.profile-cover{height:156px;overflow:hidden;border-radius:5px}
+.profile-cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.profile-topline{display:flex;justify-content:center;align-items:center;gap:9px;font-size:9px;color:var(--muted);margin:23px 0 7px}
+.profile-topline time{font-size:9px;font-variant-numeric:tabular-nums}
+.profile-topline time::before{content:'·';margin-right:9px;color:#b4c1c6}
+.profile-kicker{font-size:9px;letter-spacing:.4px}
+.profile-identity{text-align:center}
+.profile-identity h1{font-size:31px;font-weight:550;line-height:1.3;letter-spacing:-1px;overflow-wrap:anywhere}
+.profile-description{font-size:11px;color:var(--secondary);margin-top:5px}
+.profile-heading{padding-bottom:26px}
+.about-content{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:0 43px;align-items:start}
+.about-section{min-width:0;scroll-margin-top:24px}
+#introduction{grid-column:1/-1;text-align:center;padding:0 0 26px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+#introduction blockquote{font-size:14px;line-height:1.9;color:#526b76;font-weight:400}
+#introduction strong{font-weight:inherit}
+#introduction .section-prose>p{font-size:9px;color:var(--muted);margin-top:7px}
+.section-label{display:flex;align-items:baseline;gap:9px;margin-bottom:14px}
+.section-label h2{font-size:15px;font-weight:550;line-height:1.5;letter-spacing:-.15px}
+#profile{grid-column:1;grid-row:2;padding-bottom:22px}
+.profile-record{display:grid;grid-template-columns:42px minmax(0,1fr);column-gap:13px}
+.profile-record+.profile-record{margin-top:12px}
+.record-label{font-size:9px;line-height:2.6;color:var(--muted);white-space:nowrap}
+.record-value{font-size:12px;line-height:1.95;color:#53656d;overflow-wrap:anywhere}
+.record-value strong{font-weight:600;color:#3f7188}
+.record-value del{color:#869398;text-decoration-color:#b8c4c9}
+#philosophy{grid-column:1;grid-row:3;padding:21px 0 24px;border-top:1px solid var(--line)}
+#philosophy .section-label{margin-bottom:6px}
+.philosophy-version{font-size:9px;font-weight:400;color:#88a1ae;font-variant-numeric:tabular-nums}
+.philosophy-note{font-size:9px;color:var(--muted);margin-bottom:13px}
+.belief-scroll{max-width:100%;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#c1d4dd transparent}
+.belief-list{list-style:none;padding:0;min-width:100%;width:max-content}
+.belief-line{display:flex;align-items:baseline;gap:12px;padding:5px 0;line-height:1.8;white-space:nowrap}
+.belief-number{flex:0 0 16px;font-size:8px;letter-spacing:.2px;color:#9aafb8;font-variant-numeric:tabular-nums}
+.belief-pair{font-size:12px}
+.belief-english{color:#405b68;font-weight:500}
+.belief-dash{color:#bccbd2;margin:0 4px}
+.belief-chinese{color:#52656f}
+.belief-group-start{padding-top:13px;margin-top:10px;border-top:1px dashed #e6edef}
+.belief-hint{display:none;font-size:9px;color:var(--muted);margin-top:7px}
+.about-directory{grid-column:2;grid-row:2/span 2;display:block;padding-left:22px;border-left:1px solid var(--line);min-width:0}
+.directory-section+.directory-section{margin-top:28px;padding-top:21px;border-top:1px solid var(--line)}
+.directory-section .section-label{margin-bottom:13px}
+.directory-section h2{font-size:12px;font-weight:550}
+.directory-list{list-style:none;padding:0}
+.directory-list li+li{margin-top:15px}
+.directory-item{display:block;width:fit-content;max-width:100%}
+.directory-name{display:inline-flex;align-items:baseline;gap:4px;font-size:11px;line-height:1.8;color:#537d91;overflow-wrap:anywhere}
+.directory-arrow{font-size:9px;color:#a1b5c0}
+.directory-detail{display:block;font-size:9px;line-height:1.8;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.directory-item:hover .directory-name{color:#2a657f;text-decoration:underline;text-underline-offset:4px}
+.profile-elsewhere{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.profile-elsewhere .section-label{margin:0}
+.profile-elsewhere h2{font-size:10px;font-weight:400;color:var(--muted);letter-spacing:0}
+.profile-socials{display:flex;flex-wrap:wrap;gap:7px 23px}
+.profile-socials a{font-size:10px;color:var(--secondary);padding:3px 0}
+.profile-socials a span{font-size:9px;color:#9eb5c1;margin-left:5px}
+.profile-socials a:hover{color:var(--accent)}
+.page-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 0 26px;border-top:1px solid var(--line);font-size:9px;color:#91a1a8}
+.page-footer>a{font-size:14px;padding:2px 5px;color:#88a6b5}
+.page-footer>a:hover{color:var(--accent)}
+@media(min-width:1400px){.site-header{padding-top:32px}}
+@media(max-width:900px){.about-layout{width:calc(100% - 64px)}.about-content{grid-template-columns:minmax(0,1fr) 145px;gap:0 30px}.about-directory{padding-left:19px}.belief-pair{font-size:11.5px}.belief-dash{margin:0 2px}.belief-line{gap:9px}}
+@media(max-width:700px){
+ .about-layout{width:calc(100% - 44px)}
+ .about-content{display:block}
+ .about-directory{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;border-left:0;border-top:1px solid var(--line);padding:20px 0 22px}
+ .directory-section+.directory-section{margin:0;padding:0;border-top:0}
+ .directory-section .section-label{margin-bottom:11px}
+ .directory-name{font-size:12px}
+ .directory-detail{font-size:9px}
+ .profile-cover{height:149px}
+}
+@media(max-width:480px){
+ .about-layout{width:calc(100% - 36px)}
+ .site-header{padding:20px 0 18px;align-items:flex-start;gap:16px}
+ .site-brand{font-size:13px;white-space:nowrap}
+ .site-caption{font-size:8px;max-width:112px;line-height:1.8}
+ .site-navigation{gap:14px}
+ .site-navigation a{font-size:10px;padding:4px 0}
+ .site-navigation a[aria-current]::before{display:none}
+ .profile-cover{height:128px;border-radius:3px}
+ .profile-cover img{object-position:55% 59%}
+ .profile-topline{margin-top:19px;font-size:8px}
+ .profile-topline time,.profile-kicker{font-size:8px}
+ .profile-identity h1{font-size:28px;letter-spacing:-.7px}
+ .profile-description{font-size:10px;margin-top:4px}
+ .profile-heading{padding-bottom:22px}
+ #introduction{padding-bottom:23px;margin-bottom:23px}
+ #introduction blockquote{font-size:12.5px}
+ #introduction .section-prose>p{font-size:9px;margin-top:6px}
+ .section-label h2{font-size:14px}
+ .section-label{margin-bottom:13px}
+ #profile{padding-bottom:21px}
+ .profile-record{grid-template-columns:37px minmax(0,1fr);gap:12px}
+ .record-label{font-size:9px}
+ .record-value{font-size:12px}
+ #philosophy{padding:20px 0 22px}
+ .philosophy-note{font-size:9px;margin-bottom:12px}
+ .belief-line{gap:8px;padding:6px 0}
+ .belief-number{font-size:8px;flex-basis:13px}
+ .belief-pair{font-size:11.5px}
+ .belief-dash{font-size:10px;margin:0 2px}
+ .belief-group-start{margin-top:9px;padding-top:13px}
+ .about-directory{gap:25px;padding:20px 0}
+ .directory-section h2{font-size:12px}
+ .directory-name{font-size:11.5px}
+ .directory-list li+li{margin-top:13px}
+ .profile-elsewhere{gap:15px;padding:16px 0}
+ .profile-socials{gap:5px 15px}
+ .profile-socials a{font-size:9px}
+ .page-footer{padding:13px 0 22px}
+}
+@media(max-width:359px){.site-header{display:block}.site-identity{display:flex;justify-content:space-between;align-items:baseline;gap:15px}.site-caption{max-width:none}.site-navigation{gap:26px;margin-top:12px}.belief-hint{display:block}.belief-pair{font-size:11px}.about-directory{gap:20px}.directory-name{font-size:11px}.profile-socials{gap:5px 10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+@page{size:A4;margin:14mm 17mm}
+@media print{
+ :root{--paper:white;--ink:#354650;--muted:#777}
+ .about-layout{width:100%;margin:0}
+ .site-header,.skip-link,.page-footer{display:none}
+ .profile-cover{height:110px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .profile-topline{margin-top:16px}
+ .profile-identity h1{font-size:27px}
+ .profile-heading{padding-bottom:16px}
+ #introduction{padding-bottom:18px;margin-bottom:18px}
+ .about-content{display:block}
+ #profile,#philosophy{padding:14px 0;break-inside:avoid}
+ .record-value{font-size:11px}
+ .belief-line{padding:3px 0}
+ .belief-pair{font-size:11px}
+ .belief-scroll{overflow:visible}
+ .belief-group-start{margin-top:6px;padding-top:9px}
+ .belief-hint{display:none}
+ .about-directory{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:16px 0;border-left:0;border-top:1px solid var(--line)}
+ .directory-section+.directory-section{padding:0;margin:0;border-top:0}
+ .profile-elsewhere{padding:12px 0}
+}
