@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>敬宇宙🥂 </title>
+		<title>@我 on 敬宇宙🥂</title>
 		<link>https://joyseen.us/</link>
-		<description>Recent content on 敬宇宙🥂 </description>
+		<description>Recent content in @我 on 敬宇宙🥂</description>
 		<generator>Hugo</generator>
 		<language>zh-tw</language>
 		
@@ -18,14 +18,14 @@
 				<link>https://joyseen.us/about/</link>
 				<pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
 				<guid>https://joyseen.us/about/</guid>
-				<description>&lt;section class=&#34;about-section&#34; id=&#34;introduction&#34; aria-label=&#34;引言&#34;&gt;&#xA;  &#xA;  &lt;div class=&#34;section-prose&#34;&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;「 &lt;strong&gt;一个人只有远离人群，才能真正和他们在一起.&lt;/strong&gt;」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;这是卡尔维诺在《树上的男爵》一书中出的最大谜题。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/section&gt;&#xD;&#xA;&#xA;&lt;section class=&#34;about-section&#34; id=&#34;profile&#34; aria-labelledby=&#34;heading-profile&#34;&gt;&#xA;  &lt;header class=&#34;section-label&#34;&gt;&lt;h2 id=&#34;heading-profile&#34;&gt;Haro&lt;/h2&gt;&lt;/header&gt;&#xA;  &lt;div class=&#34;section-prose&#34;&gt;&lt;div class=&#34;profile-record&#34;&gt;&#xA;  &lt;span class=&#34;record-value&#34;&gt;海贼迷，最佩服尾田老师的伏笔！最爱&lt;strong&gt;香克斯&lt;/strong&gt; , 进击的巨人是唯一可以跟海贼匹敌的 (不接受任何反驳…)&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;profile-record&#34;&gt;&#xA;  &lt;span class=&#34;record-label&#34;&gt;小心愿&lt;/span&gt;　&lt;span class=&#34;record-value&#34;&gt;&lt;del&gt;希望自己能为世界的和平与美好贡献出一份自己的小小力量&lt;/del&gt; (谁知道自己都管不明白QAQ)&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/section&gt;&#xD;&#xA;&#xA;&#xA;&lt;section class=&#34;about-section&#34; id=&#34;philosophy&#34; aria-labelledby=&#34;heading-philosophy&#34;&gt;&#xA;  &lt;header class=&#34;section-heading&#34;&gt;&lt;h2 id=&#34;heading-philosophy&#34;&gt;Philosophy &lt;small&gt;v0.5&lt;/small&gt;&lt;/h2&gt;&lt;p class=&#34;philosophy-note&#34;&gt;赛博导师 GPT 引导出的一些人生信条&lt;/p&gt;</description>
+				<description>&lt;section class=&#34;about-section&#34; id=&#34;introduction&#34; aria-label=&#34;引言&#34;&gt;&#xA;  &#xA;  &lt;div class=&#34;section-prose&#34;&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;「 &lt;strong&gt;一个人只有远离人群，才能真正和他们在一起.&lt;/strong&gt;」&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;这是卡尔维诺在《树上的男爵》一书中出的最大谜题。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&#xA;&lt;section class=&#34;about-section&#34; id=&#34;profile&#34; aria-labelledby=&#34;heading-profile&#34;&gt;&#xA;  &lt;h2 id=&#34;heading-profile&#34;&gt;Haro&lt;/h2&gt;&#xA;  &lt;div class=&#34;section-prose&#34;&gt;&lt;div class=&#34;profile-record&#34;&gt;&#xA;  &lt;span class=&#34;record-value&#34;&gt;海贼迷，最佩服尾田老师的伏笔！最爱&lt;strong&gt;香克斯&lt;/strong&gt; , 进击的巨人是唯一可以跟海贼匹敌的 (不接受任何反驳…)&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;profile-record&#34;&gt;&#xA;  &lt;span class=&#34;record-label&#34;&gt;小心愿&lt;/span&gt;　&lt;span class=&#34;record-value&#34;&gt;&lt;del&gt;希望自己能为世界的和平与美好贡献出一份自己的小小力量&lt;/del&gt; (谁知道自己都管不明白QAQ)&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&#xA;&lt;section class=&#34;about-section&#34; id=&#34;philosophy&#34; aria-labelledby=&#34;heading-philosophy&#34;&gt;&#xA;  &lt;div class=&#34;section-heading&#34;&gt;&#xA;    &lt;h2 id=&#34;heading-philosophy&#34;&gt;Philosophy &lt;small&gt;v0.5&lt;/small&gt;&lt;/h2&gt;&#xA;    &#xA;  &lt;/div&gt;&#xA;  &lt;div class=&#34;section-body&#34;&gt;&#xA;    &lt;div class=&#34;belief-scroll&#34; tabindex=&#34;0&#34; role=&#34;region&#34; aria-label=&#34;人生信条，窄屏可左右滑动&#34;&gt;&#xA;      &lt;ol class=&#34;belief-list&#34;&gt;&#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;01&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Curiosity as a Compass&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;让好奇心指引人生&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;02&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Live to Experience&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;人生在于亲身体验&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;03&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Think in Cycles&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;以周期的眼光理解世界&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;04&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Amor Fati&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;热爱命运&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;05&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Memento Mori&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;记住你终将死去&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;06&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Life as an Experiment&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;把人生当作持续的实验&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;07&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Ambition without Rivalry&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;有野心，但不以他人为敌&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;08&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Truth over Comfort&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;真诚胜过讨好&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;09&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Grace with Boundaries&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;温柔而有边界&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &#xA;        &lt;li class=&#34;belief-line&#34;&gt;&lt;span class=&#34;belief-number&#34; aria-hidden=&#34;true&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;belief-pair&#34;&gt;&lt;span class=&#34;belief-english&#34; lang=&#34;en&#34;&gt;Let What You Create Live&lt;/span&gt;&lt;span class=&#34;belief-dash&#34; aria-hidden=&#34;true&#34;&gt; — &lt;/span&gt;&lt;span class=&#34;belief-chinese&#34;&gt;让创造物继续生长&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&#xA;      &lt;/ol&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;p class=&#34;belief-hint&#34; aria-hidden=&#34;true&#34;&gt;左右滑动查看 ↔&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
 				<link>https://joyseen.us/stream/20261013-195100-43swef19schwv6a/</link>
 				<pubDate>Tue, 13 Oct 2026 19:51:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20261013-195100-43swef19schwv6a/</guid>
-				<description>&lt;p&gt;tibo 送不起重置别送了  网页版已经被5.4接管两天了&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20261013-195100-43swef19schwv6a/e1br0uc4il_1g7wt0ud5i.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;tibo 送不起重置别送了  网页版已经被5.4接管两天了&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20261013-195100-43swef19schwv6a/e1br0uc4il_1g7wt0ud5i.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -46,7 +46,7 @@
 				<link>https://joyseen.us/stream/20260925-212100-7hgz60o41fmq5gp/</link>
 				<pubDate>Fri, 25 Sep 2026 21:21:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20260925-212100-7hgz60o41fmq5gp/</guid>
-				<description>&lt;p&gt;中秋快乐&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20260925-212100-7hgz60o41fmq5gp/20260925092733_2145_41_vpe18egqic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;中秋快乐&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20260925-212100-7hgz60o41fmq5gp/20260925092733_2145_41_vpe18egqic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>与Ai的灵魂对话 1：Scaling law与新的社会制度</title>
@@ -67,7 +67,7 @@
 				<link>https://joyseen.us/stream/20260904-222000-yadf55b9xt9x8ps/</link>
 				<pubDate>Fri, 04 Sep 2026 22:20:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20260904-222000-yadf55b9xt9x8ps/</guid>
-				<description>&lt;p&gt;这张图感觉可以上时代周刊&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20260904-222000-yadf55b9xt9x8ps/f7f80327920a81c27aa69bf620a0a5a0_nao5ix2vok.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;这张图感觉可以上时代周刊&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20260904-222000-yadf55b9xt9x8ps/f7f80327920a81c27aa69bf620a0a5a0_nao5ix2vok.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -88,7 +88,7 @@
 				<link>https://joyseen.us/stream/20260718-171300-av9cldxcv8cf4fn/</link>
 				<pubDate>Sat, 18 Jul 2026 17:13:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20260718-171300-av9cldxcv8cf4fn/</guid>
-				<description>&lt;p&gt;我去 刚知道 赵大哥是赵匡胤  晋中原是赵光义&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20260718-171300-av9cldxcv8cf4fn/df4ce507718d780d6f6674444fc9ed17_fz3xprian2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;我去 刚知道 赵大哥是赵匡胤  晋中原是赵光义&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20260718-171300-av9cldxcv8cf4fn/df4ce507718d780d6f6674444fc9ed17_fz3xprian2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -361,7 +361,7 @@
 				<link>https://joyseen.us/stream/20221126-193300-tzy3yegoqqx8j6b/</link>
 				<pubDate>Sat, 26 Nov 2022 19:33:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20221126-193300-tzy3yegoqqx8j6b/</guid>
-				<description>&lt;p&gt;1&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20221126-193300-tzy3yegoqqx8j6b/image_fm86qmng2e.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;1&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20221126-193300-tzy3yegoqqx8j6b/image_fm86qmng2e.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -739,7 +739,7 @@
 				<link>https://joyseen.us/stream/20200509-090900-isheeuj5cw1k4qi/</link>
 				<pubDate>Sat, 09 May 2020 09:09:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20200509-090900-isheeuj5cw1k4qi/</guid>
-				<description>&lt;p&gt;美得不可方物 //@Walkingtree_:转发微博&#xA;@OhNoNoNo&#xA;一缕夕阳照亮了树林中的月见草。富士X-T4记录&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;./moments/20200509-090900-isheeuj5cw1k4qi/weibo_1034_3_a4500441761775621_720_p_msqote96n0.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;美得不可方物 //@Walkingtree_:转发微博&#xA;@OhNoNoNo&#xA;一缕夕阳照亮了树林中的月见草。富士X-T4记录&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;https://joyseen.us/moments/20200509-090900-isheeuj5cw1k4qi/weibo_1034_3_a4500441761775621_720_p_msqote96n0.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -816,7 +816,7 @@
 				<link>https://joyseen.us/stream/20190415-080800-9gjc536h8lemzi5/</link>
 				<pubDate>Mon, 15 Apr 2019 08:08:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20190415-080800-9gjc536h8lemzi5/</guid>
-				<description>&lt;p&gt;&amp;ldquo;No mistake in a tango, Donna, not like life. Simple, that makes tango so great.&amp;rdquo;  (探戈无所谓错步的,不像人生&lt;/p&gt;&#xA;&lt;p&gt;重温这段  想学探戈了&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;./moments/20190415-080800-9gjc536h8lemzi5/42e_doic4np_xg2ojw_fnfiv29bqz.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;&amp;ldquo;No mistake in a tango, Donna, not like life. Simple, that makes tango so great.&amp;rdquo;  (探戈无所谓错步的,不像人生&lt;/p&gt;&#xA;&lt;p&gt;重温这段  想学探戈了&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;https://joyseen.us/moments/20190415-080800-9gjc536h8lemzi5/42e_doic4np_xg2ojw_fnfiv29bqz.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
@@ -830,14 +830,14 @@
 				<link>https://joyseen.us/stream/20181011-030300-0rfnfbfpn1jauas/</link>
 				<pubDate>Thu, 11 Oct 2018 03:03:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20181011-030300-0rfnfbfpn1jauas/</guid>
-				<description>&lt;p&gt;分享圖片&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./moments/20181011-030300-0rfnfbfpn1jauas/image_x7gxl0hlhk.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;分享圖片&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://joyseen.us/moments/20181011-030300-0rfnfbfpn1jauas/image_x7gxl0hlhk.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
 				<link>https://joyseen.us/stream/20180625-030300-gsvq4dokopdwkcx/</link>
 				<pubDate>Mon, 25 Jun 2018 03:03:00 +0800</pubDate>
 				<guid>https://joyseen.us/stream/20180625-030300-gsvq4dokopdwkcx/</guid>
-				<description>&lt;p&gt;太欢乐了&lt;/p&gt;&#xA;&lt;p&gt;@谷大白话&#xA;昨天比赛之后有爱的一幕：塞内加尔球迷跟日本球迷合唱《海贼王》片头曲&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;./moments/20180625-030300-gsvq4dokopdwkcx/obb_pq2_znmn_d4p_oti23n_v3_lbn_oie1l3ghiuzn2_a_32_rk9f6dlvqk.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;太欢乐了&lt;/p&gt;&#xA;&lt;p&gt;@谷大白话&#xA;昨天比赛之后有爱的一幕：塞内加尔球迷跟日本球迷合唱《海贼王》片头曲&lt;/p&gt;&#xA;&lt;p&gt;&lt;video class=&#34;stream_video&#34; controls muted preload=&#34;metadata&#34; src=&#34;https://joyseen.us/moments/20180625-030300-gsvq4dokopdwkcx/obb_pq2_znmn_d4p_oti23n_v3_lbn_oie1l3ghiuzn2_a_32_rk9f6dlvqk.mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
