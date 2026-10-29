@@ -1,0 +1,4 @@
+# Fingerprinted resources must retain their exact bytes for integrity checks.
+/css/*.*.css -text
+/js/*.*.js -text
+/haro-mark.*.svg -text
