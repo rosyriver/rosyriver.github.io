@@ -1,52 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>文章 on 敬宇宙🥂</title>
-		<link>https://joyseen.us/posts/</link>
-		<description>Recent content in 文章 on 敬宇宙🥂</description>
-		<generator>Hugo</generator>
-		<language>zh-tw</language>
-		
-		
-		
-		
-			<lastBuildDate>Sun, 06 Sep 2026 17:12:58 +0800</lastBuildDate>
-		
-			<atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>与Ai的灵魂对话 1：Scaling law与新的社会制度</title>
-				<link>https://joyseen.us/posts/e2808bbb/</link>
-				<pubDate>Sun, 06 Sep 2026 17:12:58 +0800</pubDate>
-				<guid>https://joyseen.us/posts/e2808bbb/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
-				<link>https://joyseen.us/posts/clashmeetwechat/</link>
-				<pubDate>Wed, 09 Apr 2025 20:36:30 +0800</pubDate>
-				<guid>https://joyseen.us/posts/clashmeetwechat/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>微博图片404  chatgpt教你Rescue</title>
-				<link>https://joyseen.us/posts/weibopic404rescue/</link>
-				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-				<guid>https://joyseen.us/posts/weibopic404rescue/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>操 我要跟Ai美女谈恋爱！</title>
-				<link>https://joyseen.us/posts/20230826/</link>
-				<pubDate>Sat, 26 Aug 2023 19:46:25 +0800</pubDate>
-				<guid>https://joyseen.us/posts/20230826/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
-				<link>https://joyseen.us/posts/onedrive-vercel-index/</link>
-				<pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
-				<guid>https://joyseen.us/posts/onedrive-vercel-index/</guid>
-				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;类型断言不是类型转换，更像是类型的选择&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>文章 ｜ 敬宇宙🥂</title>
+    <link>https://joyseen.us/posts/</link>
+    <description>探索宇宙與覺察自我</description>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 30 Oct 2026 07:51:51 &#43;0800</lastBuildDate>
+    <atom:link href="https://joyseen.us/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>与Ai的灵魂对话 1：Scaling law与新的社会制度</title>
+      <link>https://joyseen.us/posts/e2808bbb/</link>
+      <pubDate>Sun, 06 Sep 2026 17:12:58 &#43;0800</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/e2808bbb/</guid>
+      <description>导出时间：2026/9/6 15:27:39来源：https://chatgpt.com/c/6a991289-8120-83ec-861a-1a566c07e802 我scaling law失效了吗？ meta 和 gemini 这两天的更新好像都跟上了 现在top 10模型的智力好像差距并不大了 ？ G我觉得你的观…</description>
+    </item>
+    <item>
+      <title>当Clash遇见WeChat：论代理工具对微信快捷登录(本地回环流量)的误伤与防御</title>
+      <link>https://joyseen.us/posts/clashmeetwechat/</link>
+      <pubDate>Wed, 09 Apr 2025 20:36:30 &#43;0800</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/clashmeetwechat/</guid>
+      <description>0x00：被代理「误伤」的本地服务 作为一款热门的FPS游戏，无畏契约的快捷登录功能本应让玩家体验丝滑的社交连接。然而，当我在开启Clash系统代理的环境下启动游戏时，微信自动登录窗口却神秘消失了。关闭代理后，一切恢复正常。这个现象引发了我的好奇：为什么一个代理工具会干扰本地的进程间通信？ 本文将记录完整的排查思路与技…</description>
+    </item>
+    <item>
+      <title>微博图片404  chatgpt教你Rescue</title>
+      <link>https://joyseen.us/posts/weibopic404rescue/</link>
+      <pubDate>Sun, 14 Jul 2024 20:09:47 &#43;0800</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/weibopic404rescue/</guid>
+      <description>来源 Tk教主 https://weibo.com/6827625527/Ong3JyBf4? https://weibo.com/1401527553/HDChc2ekA 微博如何访问被夹的图片 – Helious.wu’s Blog 具体实现 原理在上面这位大佬的博客其实已经说的很清楚了 我们来看看具体如何使用…</description>
+    </item>
+    <item>
+      <title>操 我要跟Ai美女谈恋爱！</title>
+      <link>https://joyseen.us/posts/20230826/</link>
+      <pubDate>Sat, 26 Aug 2023 19:46:25 &#43;0800</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/20230826/</guid>
+      <description>这几张很不错可惜没有参数呜呜 这个最绝！ 喜欢这个滤镜 (2girls:1.5),(fisheye:1.1),sea,wind,messy hair,sunset,beach,(aesthetics and atmosphere:1.2),long hair,black sunmer dress,light…</description>
+    </item>
+    <item>
+      <title>onedrive-vercel-index在vercel中自定义环境变量报错</title>
+      <link>https://joyseen.us/posts/onedrive-vercel-index/</link>
+      <pubDate>Fri, 25 Aug 2023 13:13:13 -1313</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/onedrive-vercel-index/</guid>
+      <description>类型断言不是类型转换，更像是类型的选择</description>
+    </item>
+    
+  </channel>
 </rss>

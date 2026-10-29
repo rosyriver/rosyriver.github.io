@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Python on 敬宇宙🥂</title>
-		<link>https://joyseen.us/tags/python/</link>
-		<description>Recent content in Python on 敬宇宙🥂</description>
-		<generator>Hugo</generator>
-		<language>zh-tw</language>
-		
-		
-		
-		
-			<lastBuildDate>Sun, 14 Jul 2024 20:09:47 +0800</lastBuildDate>
-		
-			<atom:link href="https://joyseen.us/tags/python/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>微博图片404  chatgpt教你Rescue</title>
-				<link>https://joyseen.us/posts/weibopic404rescue/</link>
-				<pubDate>Sun, 14 Jul 2024 20:09:47 +0800</pubDate>
-				<guid>https://joyseen.us/posts/weibopic404rescue/</guid>
-				<description></description>
-			</item>
-	</channel>
+  <channel>
+    <title>Python ｜ 敬宇宙🥂</title>
+    <link>https://joyseen.us/tags/python/</link>
+    <description>探索宇宙與覺察自我</description>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 30 Oct 2026 07:51:51 &#43;0800</lastBuildDate>
+    <atom:link href="https://joyseen.us/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微博图片404  chatgpt教你Rescue</title>
+      <link>https://joyseen.us/posts/weibopic404rescue/</link>
+      <pubDate>Sun, 14 Jul 2024 20:09:47 &#43;0800</pubDate>
+      <guid isPermaLink="true">https://joyseen.us/posts/weibopic404rescue/</guid>
+      <description>来源 Tk教主 https://weibo.com/6827625527/Ong3JyBf4? https://weibo.com/1401527553/HDChc2ekA 微博如何访问被夹的图片 – Helious.wu’s Blog 具体实现 原理在上面这位大佬的博客其实已经说的很清楚了 我们来看看具体如何使用…</description>
+    </item>
+    
+  </channel>
 </rss>
