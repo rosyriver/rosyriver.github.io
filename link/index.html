@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>joyseen · 工具清单</title><meta name="description" content="分享值得一试的工具，让工作与生活轻一点。"><style>:root {
+  color-scheme: light;
+  --paper: #fafaf7;
+  --ink: #272d26;
+  --muted: #65705f;
+  --line: #e3e7dd;
+  --green: #496644;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+.page {
+  width: min(560px, calc(100% - 40px));
+  margin: 46px auto 30px;
+}
+
+.page-header { margin-bottom: 26px; }
+.page-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 680;
+  line-height: 1.2;
+  letter-spacing: -.045em;
+  overflow-wrap: anywhere;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: #829b72;
+}
+
+.page-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.collection { margin: 20px 0 0; }
+.collection h2 {
+  margin: 0 0 7px 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tool-list {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+}
+
+.tool {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 12px;
+  padding: 0 12px;
+}
+
+.tool + .tool { border-top: 1px solid #eef0eb; }
+.tool.featured {
+  background: #f1f5ed;
+  box-shadow: inset 2px 0 #8ba47e;
+}
+.featured .tool-name { color: #365133; }
+.tool-info { min-width: 0; }
+.tool-info summary { cursor: pointer; list-style: none; }
+.tool-info summary[aria-disabled="true"] { cursor: default; }
+.tool-info summary::-webkit-details-marker { display: none; }
+.tool-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+}
+
+.tool-name, .description, .visit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tool-name {
+  flex: 0 1 138px;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.description {
+  flex: 1 1 100px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.detail-toggle {
+  position: relative;
+  flex: 0 0 10px;
+  height: 10px;
+  color: #71866a;
+}
+
+.detail-toggle::before, .detail-toggle::after {
+  position: absolute;
+  content: "";
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.detail-toggle::before { inset: 4px 1px 5px; }
+.detail-toggle::after { inset: 1px 5px 1px 4px; }
+.tool-info[open] .description { visibility: hidden; }
+.tool-info[open] .detail-toggle::after { display: none; }
+.tool-info summary:not([aria-disabled="true"]):hover .tool-name { color: var(--green); }
+
+.visit, .pending {
+  align-self: start;
+  margin-top: 9px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.visit {
+  max-width: 130px;
+  padding: 5px 9px;
+  border: 1px solid #e2e9de;
+  border-radius: 5px;
+  background: #f6f8f3;
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.visit:hover { background: #eaf0e5; }
+.featured .visit { border-color: #dde7d7; background: #e9f0e5; }
+.featured .visit:hover { background: #dce9d5; }
+.pending { padding: 6px 0; color: #697463; }
+
+.visit:focus-visible, .tool-info summary:focus-visible {
+  outline: 2px solid #708a66;
+  outline-offset: -2px;
+}
+
+.tool-detail { padding: 0 0 12px; color: var(--muted); font-size: 12px; }
+.tool-detail p { margin: 0 0 7px; white-space: pre-line; overflow-wrap: anywhere; }
+.tool-detail p:last-child { margin-bottom: 0; }
+
+.page-footer {
+  margin-top: 25px;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .page { width: calc(100% - 32px); margin-top: 28px; }
+  .page-header { margin-bottom: 22px; }
+  .tool { padding: 0 10px; column-gap: 8px; }
+  .tool-row { gap: 7px; }
+  .tool-name { flex-basis: 100px; }
+  .description { font-size: 11px; }
+  .visit { max-width: 101px; padding-inline: 6px; }
+}
+</style></head><body><main class="page"><header class="page-header"><h1>joyseen<span class="brand-dot" aria-hidden="true"></span></h1><p>分享值得一试的工具，让工作与生活轻一点。</p></header><section class="collection"><h2>AI 工具</h2><div class="tool-list"><article class="tool featured"><details class="tool-info"><summary class="tool-row"><span class="tool-name" title="TRAE">TRAE</span><span class="description">AI 编程工具，辅助完成编程与开发任务。</span><span class="detail-toggle" aria-hidden="true"></span></summary><div class="tool-detail"><p>AI 编程工具，辅助完成编程与开发任务。</p></div></details><a class="visit" href="https://www.trae.cn/events/code-fission/NFNJRDJ23GAB?utm_source=copy_link&amp;utm_medium=code_fission" target="_blank" rel="sponsored noopener noreferrer" title="邀请链接">邀请链接</a></article><article class="tool"><div class="tool-row"><span class="tool-name" title="AI 图像创作">AI 图像创作</span></div><span class="pending">待添加</span></article></div></section><section class="collection"><h2>网络工具</h2><div class="tool-list"><article class="tool"><div class="tool-row"><span class="tool-name" title="网络连接服务">网络连接服务</span></div><span class="pending">待添加</span></article></div></section><section class="collection"><h2>效率办公</h2><div class="tool-list"><article class="tool"><div class="tool-row"><span class="tool-name" title="笔记与知识管理">笔记与知识管理</span></div><span class="pending">待添加</span></article><article class="tool"><div class="tool-row"><span class="tool-name" title="自动化工作流">自动化工作流</span></div><span class="pending">待添加</span></article></div></section><section class="collection"><h2>云服务</h2><div class="tool-list"><article class="tool"><div class="tool-row"><span class="tool-name" title="云服务器 / VPS">云服务器 / VPS</span></div><span class="pending">待添加</span></article></div></section><footer class="page-footer">部分链接为推广链接，通过链接注册或购买，我可能获得奖励。请按需选择，活动权益与服务条款以官方页面为准。</footer></main><script>(function setupReasonDisclosure() {
+ const rows = Array.from(document.querySelectorAll('.tool-info'), details => {
+  const summary = details.querySelector('summary');
+  const description = summary.querySelector('.description');
+  const toggle = summary.querySelector('.detail-toggle');
+  summary.addEventListener('click', event => {
+   if (toggle.hidden) event.preventDefault();
+  });
+  return {details, summary, description, toggle};
+ });
+
+ function refresh() {
+  // Measure the space available before the disclosure icon takes any of it.
+  rows.forEach(({toggle}) => { toggle.hidden = true; });
+  const overflow = rows.map(({description}) => description.scrollWidth > description.clientWidth);
+  rows.forEach(({details, summary, toggle}, index) => {
+   toggle.hidden = !overflow[index];
+   if (overflow[index]) {
+    summary.removeAttribute('tabindex');
+    summary.removeAttribute('aria-disabled');
+   } else {
+    details.open = false;
+    summary.tabIndex = -1;
+    summary.setAttribute('aria-disabled', 'true');
+   }
+  });
+ }
+
+ if (rows.length) {
+  refresh();
+  window.addEventListener('resize', refresh);
+  document.fonts?.ready.then(refresh);
+ }
+})();</script></body></html>
