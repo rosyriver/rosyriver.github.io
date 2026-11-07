@@ -35,7 +35,10 @@ function normalize(raw){
  return result;
  })};})};
 }
-function defaults(collection){return normalize({version:VERSION,profile:{name:'joyseen',bio:'分享值得一试的工具，让工作与生活轻一点。',disclosure:'部分链接为推广链接，通过链接注册或购买，我可能获得奖励。请按需选择，活动权益与服务条款以官方页面为准。'},categories:collection.categories.map(name=>({name,links:collection.tools.filter(t=>t.category===name).map(t=>({...blankLink(),name:t.name,url:t.demo?'':t.url,reason:t.reason||'',featured:!!t.featured}))}))});}
+function defaults(collection){
+ if (collection?.version === VERSION) return normalize(collection);
+ return normalize({version:VERSION,profile:{name:'joyseen',bio:'分享值得一试的工具，让工作与生活轻一点。',disclosure:'部分链接为推广链接，通过链接注册或购买，我可能获得奖励。请按需选择，活动权益与服务条款以官方页面为准。'},categories:collection.categories.map(name=>({name,links:collection.tools.filter(t=>t.category===name).map(t=>({...blankLink(),name:t.name,url:t.demo?'':t.url,reason:t.reason||'',featured:!!t.featured}))}))});
+}
 function problems(data){const errors=[];if(!data.profile.name.trim())errors.push('请填写昵称。');const names=new Set();data.categories.forEach((c,i)=>{if(!c.name.trim())errors.push('第 '+(i+1)+' 个分类需要名称。');else if(names.has(c.name.trim()))errors.push('分类「'+c.name+'」重名了。');names.add(c.name.trim());c.links.forEach((l,j)=>{if(!l.name.trim())errors.push('「'+c.name+'」第 '+(j+1)+' 个工具需要名称。');if(l.url.trim()&&!validUrl(l.url.trim()))errors.push('「'+l.name+'」的链接无效；整段文案可使用「提取链接」。');});});return errors;}
 function toolRow(link) {
  const url = link.url.trim();
