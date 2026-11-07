@@ -3,7 +3,19 @@ const $=id=>document.getElementById(id);
 let model=core.defaults(window.COLLECTION),history=[],active=0,expanded=-1,saveTimer,previewTimer,previewUrl,toastTimer,failedLoad=false;
 function status(text){$('status').textContent=text;}
 function toast(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4500);}
-try{const saved=localStorage.getItem(KEY);if(saved){const raw=JSON.parse(saved);model=core.normalize(raw);if(raw.version<core.VERSION&&!localStorage.getItem(KEY+'-before-v3'))localStorage.setItem(KEY+'-before-v3',saved);status('已恢复草稿 · 旧版内容已兼容');}else status('仅保存到当前浏览器');}catch{failedLoad=true;status('原草稿未改动。读取失败，请先备份或导入有效文件。');}
+try {
+ const saved = localStorage.getItem(KEY);
+ if (saved) {
+  const raw = JSON.parse(saved);
+  model = core.normalize(raw);
+  if (raw.version < core.VERSION && !localStorage.getItem(KEY + '-before-v3')) {
+   localStorage.setItem(KEY + '-before-v3', saved);
+  }
+ }
+} catch {
+ failedLoad = true;
+ status('原草稿未改动。读取失败，请先备份或导入有效文件。');
+}
 function snapshot(){const s=JSON.stringify(model);if(history.at(-1)!==s)history.push(s);if(history.length>30)history.shift();$('undo').disabled=false;}
 function save(){clearTimeout(saveTimer);if(failedLoad){status('原草稿受保护，请导入有效备份后再保存。');return;}try{localStorage.setItem(KEY,JSON.stringify(model));status('已保存 · '+new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}));}catch{status('保存失败，请立即导出备份。');}}
 function preview(){clearTimeout(previewTimer);const errors=core.problems(model);$('errors').hidden=!errors.length;$('errors').textContent=errors.slice(0,8).join('\n');$('preview').srcdoc=core.html(model,window.PAGE_STYLE);}
