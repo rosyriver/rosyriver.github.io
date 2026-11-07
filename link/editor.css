@@ -39,6 +39,22 @@ iframe { background: #fafaf7; }
   background: #f1f5ed;
   box-shadow: inset 2px 0 #8ba47e;
 }
+.tool-editor[open] {
+  position: relative;
+  outline: 1px solid #93ad87;
+  outline-offset: -1px;
+}
+.tool-editor[open] > summary {
+  background: #e6f0df;
+  box-shadow: inset 3px 0 #66865c;
+}
+.tool-editor[open] .summary-name { color: #2f4d29; }
+.tool-editor[open] .edit-label {
+  border-radius: 4px;
+  background: #d4e4cb;
+  color: #365430;
+  font-weight: 600;
+}
 .tool-fields { padding-inline: 12px; }
 .tool-list-heading {
   position: sticky;
