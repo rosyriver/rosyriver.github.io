@@ -26,7 +26,14 @@ window.COLLECTION = {
         {
           "name": "Muse",
           "url": "https://muse.ai/join",
-          "reason": "邀请码：ZL9ZY4",
+          "reason": "邀请码 : ZL9ZY4",
+          "cta": "邀请链接",
+          "featured": false
+        },
+        {
+          "name": "elevenlabs",
+          "url": "https://try.elevenlabs.io/z1e48m62fg3c",
+          "reason": "Ai voice",
           "cta": "邀请链接",
           "featured": false
         }
