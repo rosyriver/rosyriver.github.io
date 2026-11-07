@@ -24,7 +24,17 @@ iframe { background: #fafaf7; }
   box-shadow: inset 2px 0 #8ba47e;
 }
 .tool-fields { padding-inline: 12px; }
-.add-link { background: transparent; }
+.tool-list-heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-block: 6px;
+  background: #fafaf7;
+}
+.tool-list-heading .collection-actions { gap: 4px; }
+.collection-actions button { white-space: nowrap; }
+#add-tool { padding: 6px 9px; font-size: 11px; }
+.tool-fields input { scroll-margin-top: 55px; }
 @media (max-width: 900px) {
   .top { padding-inline: 16px; }
   .workspace { gap: 16px; }

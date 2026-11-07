@@ -1,8 +1,15 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>joyseen · 清单编辑室</title><link rel="stylesheet" href="editor.css"></head><body>
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>joyseen · 清单编辑室</title><link rel="stylesheet" href="editor.css?v=add-tool"></head><body>
 <header class="top"><a class="brand" href="./">joyseen<span> 编辑台</span></a><div class="actions"><button id="undo" disabled>撤销</button><button id="import">导入</button><button id="backup">备份</button><button id="export" class="primary">导出 HTML</button><input id="file" type="file" accept=".json,application/json" hidden></div></header>
 <div class="studio-intro"><span id="status" role="status">正在读取草稿…</span></div>
 <div class="mobile-switch" role="group" aria-label="视图切换"><button id="edit-view" class="active">编辑内容</button><button id="preview-view">查看预览</button></div>
 <main class="workspace"><section class="editing" aria-label="内容编辑"><div id="errors" role="alert" hidden></div><details class="profile"><summary><span class="step">01</span><span><strong>个人名片</strong><small>昵称、简介与推广说明</small></span><span class="disclosure-chevron"></span></summary><div class="profile-fields"><label>昵称<input id="nickname" maxlength="80"></label><label>一句话简介<input id="bio" maxlength="240"></label><label>页脚说明<textarea id="disclosure" rows="3" maxlength="1000"></textarea></label></div></details>
-<div class="section-title"><div><span class="step">02</span><h2>工具清单</h2></div><button id="add-category" class="text-button">＋ 新分类</button></div><nav id="category-tabs" aria-label="编辑分类"></nav><div id="groups"></div><p class="bottom-note">自动保存到当前浏览器 · 换设备前请备份<br>导出后上传 HTML，才会更新你的展示页。</p></section>
+<div class="section-title tool-list-heading">
+  <h2>工具清单</h2>
+  <div class="collection-actions">
+    <button type="button" id="add-category" class="text-button">＋ 新分类</button>
+    <button type="button" id="add-tool" class="primary" disabled>＋ 添加工具</button>
+  </div>
+</div>
+<nav id="category-tabs" aria-label="编辑分类"></nav><div id="groups"></div><p class="bottom-note">自动保存到当前浏览器 · 换设备前请备份<br>导出后上传 HTML，才会更新你的展示页。</p></section>
 <section class="preview-pane" aria-label="页面预览"><div class="preview-head"><span><i></i> 实时预览</span></div><iframe id="preview" title="静态页面实时预览" sandbox="allow-scripts"></iframe></section></main><div id="toast" role="status" hidden></div>
-<script src="content.js"></script><script src="page-style.js"></script><script src="editor-core.js"></script><script src="editor.js"></script></body></html>
+<script src="content.js"></script><script src="page-style.js"></script><script src="editor-core.js?v=add-tool"></script><script src="editor.js?v=add-tool"></script></body></html>

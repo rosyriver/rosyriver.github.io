@@ -19,6 +19,7 @@ function render(){
  active=Math.min(active,Math.max(0,model.categories.length-1));renderTabs();
  for(const [id,key]of[['nickname','name'],['bio','bio'],['disclosure','disclosure']])$(id).value=model.profile[key];
  $('groups').replaceChildren();const category=model.categories[active];
+ $('add-tool').disabled = !category;
  if(!category){$('groups').append(node('p','empty-category','先新增一个分类，再收集你的好工具。'));preview();return;}
  const settings=node('div','category-settings');settings.append(field('分类名称',category.name,80,v=>{category.name=v;renderTabs();}));
  const catActions=node('div','category-actions');catActions.append(action('up','上移分类 '+category.name,()=>{move(model.categories,active,-1);active--;},active===0),action('down','下移分类 '+category.name,()=>{move(model.categories,active,1);active++;},active===model.categories.length-1),action('trash','删除分类 '+category.name,()=>{model.categories.splice(active,1);toast('分类已删除，可撤销恢复。');}));settings.append(catActions);$('groups').append(settings);
@@ -46,10 +47,20 @@ function render(){
  });
  if(category.links.length)$('groups').append(rows);
  if(!category.links.length)$('groups').append(node('p','empty-category','这个分类还是空的，添加第一个工具吧。'));
- const add=node('button','add-link','＋ 添加工具');add.onclick=()=>{snapshot();category.links.push(core.blankLink());expanded=category.links.length-1;render();changed();};$('groups').append(add);$('undo').disabled=!history.length;preview();
+ $('undo').disabled=!history.length;preview();
 }
 for(const [id,key]of[['nickname','name'],['bio','bio'],['disclosure','disclosure']]){$(id).addEventListener('focus',snapshot);$(id).oninput=()=>{model.profile[key]=$(id).value;changed();};}
 $('add-category').onclick=()=>{snapshot();let name='新分类',n=2;while(model.categories.some(c=>c.name===name))name='新分类 '+n++;model.categories.push({name,links:[]});active=model.categories.length-1;expanded=0;render();changed();$('groups').querySelector('input')?.focus();};
+$('add-tool').onclick = () => {
+ const category = model.categories[active];
+ if (!category) return;
+ snapshot();
+ category.links.push(core.blankLink());
+ expanded = category.links.length - 1;
+ render();
+ changed();
+ $('groups').querySelector('.tool-editor[open] .field-row input')?.focus();
+};
 $('undo').onclick=()=>{const now=JSON.stringify(model);while(history.length&&history.at(-1)===now)history.pop();if(!history.length){$('undo').disabled=true;return;}model=JSON.parse(history.pop());render();changed();};
 function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=node('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
 $('backup').onclick=()=>{let raw=JSON.stringify(model,null,2);if(failedLoad){try{raw=localStorage.getItem(KEY)||raw;}catch{}}else save();download('joyseen-links-backup.json',raw,'application/json;charset=utf-8');toast('已生成备份。');};

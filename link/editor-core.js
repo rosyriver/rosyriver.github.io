@@ -11,7 +11,7 @@ const DEFAULT_CTA = '邀请链接';
 const REASON_LIMIT = 1002;
 const VERSION = 3;
 const OLD_DEFAULTS = new Set(['了解工具', '查看邀请福利', '领取新用户积分']);
-function blankLink(){return {name:'新工具',url:'',reason:'',cta:DEFAULT_CTA,featured:false,shareText:''};}
+function blankLink(){return {name:'',url:'',reason:'',cta:DEFAULT_CTA,featured:false,shareText:''};}
 function normalize(raw){
  if(!raw||![1,2,VERSION].includes(raw.version)||!raw.profile||!Array.isArray(raw.categories)||raw.categories.length>100)throw Error('不是受支持的清单备份文件。');
  const str=(v,max,optional=false)=>{if(optional&&v===undefined)return '';if(typeof v!=='string'||v.length>max)throw Error('备份字段格式或长度不正确。');return v;};
