@@ -1,7 +1,7 @@
 ﻿{
     "page":  1,
     "totalPages":  2,
-    "totalItems":  33,
+    "totalItems":  46,
     "items":  [
                   {
                       "id":  "jlqy1fkd0152ivi",
@@ -15,6 +15,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -41,6 +43,8 @@
                                    "政治"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -67,6 +71,8 @@
                                    "视频"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -93,6 +99,8 @@
                                    "视频"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -119,6 +127,8 @@
                                    "图片"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
                                      "/moments/20221126-193300-tzy3yegoqqx8j6b/image_fm86qmng2e.png"
                                  ],
@@ -145,6 +155,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -172,6 +184,8 @@
                                    "海贼王"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -198,6 +212,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -224,6 +240,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -250,6 +268,8 @@
                                    "经济学"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -276,6 +296,8 @@
                                    "视频"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -302,6 +324,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -328,6 +352,8 @@
                                    "图片"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
                                      "https://img.joyseen.us/photos/2026/06/23-bbeb901d64e8.jpg",
                                      "https://img.joyseen.us/photos/2026/06/23-2cfff5da4f4d.jpg",
@@ -358,6 +384,36 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "jb203zcrwptv9kf",
+                      "content":  "左是历史的进程 右是文明的进程",
+                      "type":  "murmur",
+                      "typeLabel":  "murmur",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.09.01 23:41",
+                      "tags":  [
+                                   "政治"
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -384,6 +440,102 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "mx2cihtmoshqz69",
+                      "content":  "打德扑就是在不断对抗自己的赌性   把自己打造成一个只做正Ev决策的机器",
+                      "type":  "thought",
+                      "typeLabel":  "thought",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.08.25 23:39",
+                      "tags":  [
+                                   "德扑"
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "5wow2ph88bfax17",
+                      "content":  " 🚬",
+                      "type":  "murmur",
+                      "typeLabel":  "murmur",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.08.18 23:47",
+                      "tags":  [
+                                   "图片",
+                                   "绝命毒师",
+                                   "美剧"
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+                                     "/moments/20220818-234700-5wow2ph88bfax17/mmexport1660828147178_mqw0vvllyp.jpg"
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "1g97ge7tec9oc7d",
+                      "content":  "还有一种想赢的方式是  \"play like an idiot\"  上来就梭哈",
+                      "type":  "thought",
+                      "typeLabel":  "thought",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.08.14 00:05",
+                      "tags":  [
+
+                               ],
+                      "pinned":  false,
+                      "repost":  {
+                                     "id":  "9fh5j9ujgub2lpr",
+                                     "title":  "",
+                                     "content":  "\"poker is patience and discipline\"",
+                                     "date":  "2022.07.26 23:32",
+                                     "type":  "murmur",
+                                     "image":  "/moments/20220726-233200-9fh5j9ujgub2lpr/12b0a9e43753977a9ac9e14dac992117_xivai1lz6q.jpg",
+                                     "media":  "1 张图片"
+                                 },
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -410,8 +562,122 @@
                                    "图片"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
                                      "https://img.joyseen.us/photos/2026/06/23-128c0648bf6c.jpg"
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "qxjdqwtb2qd61v9",
+                      "content":  "你的身上有每个「所遇之人」的灵魂碎片 你便是他们的魂器",
+                      "type":  "thought",
+                      "typeLabel":  "thought",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.08.01 23:09",
+                      "tags":  [
+
+                               ],
+                      "pinned":  true,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "9fh5j9ujgub2lpr",
+                      "content":  "\"poker is patience and discipline\"",
+                      "type":  "murmur",
+                      "typeLabel":  "murmur",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.07.26 23:32",
+                      "tags":  [
+                                   "图片"
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  1,
+                      "images":  [
+                                     "/moments/20220726-233200-9fh5j9ujgub2lpr/12b0a9e43753977a9ac9e14dac992117_xivai1lz6q.jpg"
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "clz0yoqc3qwym4u",
+                      "content":  "资本市场里 「 小概率事件」是特别常见的   比如 \"二十年一遇\" \"四十年一遇\" 等等",
+                      "type":  "murmur",
+                      "typeLabel":  "murmur",
+                      "title":  "",
+                      "author":  "",
+                      "date":  "2022.07.18 23:30",
+                      "tags":  [
+
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
+                                 ],
+                      "videos":  [
+
+                                 ],
+                      "audios":  [
+
+                                 ],
+                      "link_image":  "",
+                      "link_title":  "",
+                      "link_description":  "",
+                      "url":  ""
+                  },
+                  {
+                      "id":  "uww4lf8w3zdbt74",
+                      "content":  "put all your eggs in one basket  and watch the basket carefully.\r\n\r\n",
+                      "type":  "quote",
+                      "typeLabel":  "quote",
+                      "title":  "",
+                      "author":  "Druckenmiller",
+                      "date":  "2022.07.18 23:29",
+                      "tags":  [
+
+                               ],
+                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
+                      "images":  [
+
                                  ],
                       "videos":  [
 
@@ -436,6 +702,8 @@
                                    "经济学"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -462,6 +730,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -489,6 +759,8 @@
                                    "游戏"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
                                      "https://img.joyseen.us/photos/2026/06/23-d5959479cee5.jpg"
                                  ],
@@ -515,6 +787,8 @@
                                    "crypto"
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -541,6 +815,8 @@
 
                                ],
                       "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
@@ -568,218 +844,8 @@
                                    "交易"
                                ],
                       "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "05pw429oq62mpjk",
-                      "content":  "现在的福利姬小姐姐也太上进了\r\n\r\n有整天10个小时在听web3的space的  也有疯狂开合约的赌怪hkd老师\r\n\r\n还有个昨天非要学撸大厂的cdn作视频床 ",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.05.19 19:16",
-                      "tags":  [
-                                   "图片",
-                                   "crypto"
-                               ],
-                      "pinned":  false,
-                      "images":  [
-                                     "https://img.joyseen.us/photos/2026/06/23-e17cacb9bc51.jpg"
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "km06dqqw7ladu2l",
-                      "content":  "任何东西有了限制 它就会变得珍贵 ​​​",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.05.14 19:15",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "leuiokn27n0eo5q",
-                      "content":  "记得缠师在05年就说过 2019是美股周期大顶  2020黑天鹅的疫情   全球来了一场流动性盛宴 ​​​  那么之后会发生马老师所说的1930吗",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.05.09 19:14",
-                      "tags":  [
-                                   "图片",
-                                   "交易",
-                                   "crypto"
-                               ],
-                      "pinned":  false,
-                      "images":  [
-                                     "https://img.joyseen.us/photos/2026/06/23-68a7fd77f87e.jpg",
-                                     "https://img.joyseen.us/photos/2026/06/23-2220c023335d.jpg"
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "0r7vmd7na927axs",
-                      "content":  "如果跟一个人聊的很舒服,那个人可能在伺候你\r\n\r\n",
-                      "type":  "quote",
-                      "typeLabel":  "quote",
-                      "title":  "",
-                      "author":  "黄执中 ​​​",
-                      "date":  "2022.05.07 19:14",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "nyaryrzmhw6beut",
-                      "content":  "这句台词是在致敬乔布斯和海贼王吗  哈哈哈\r\n\r\n日本80年代房地产泡沫破灭之后  社会由对金钱的低欲望社会 转而对性欲的高欲望社会  加速了风俗业以及av产业 ",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.05.02 19:11",
-                      "tags":  [
-                                   "视频"
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-                                     "https://img.joyseen.us/videos/2026/06/23-bc3c098939e5.mp4"
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "pbfmic673wt6t5c",
-                      "content":  "当虚拟变得无处不在的时候，现实才是最稀缺的东西",
-                      "type":  "quote",
-                      "typeLabel":  "quote",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.03.23 03:03",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "qd5qx6t6h9xy3h7",
-                      "content":  "敬  Satoshi  \u0026  Hayek  🥂 ​​​",
-                      "type":  "murmur",
-                      "typeLabel":  "murmur",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.02.02 02:02",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
-                      "images":  [
-
-                                 ],
-                      "videos":  [
-
-                                 ],
-                      "audios":  [
-
-                                 ],
-                      "link_image":  "",
-                      "link_title":  "",
-                      "link_description":  "",
-                      "url":  ""
-                  },
-                  {
-                      "id":  "pfvpegqkggicrwg",
-                      "content":  "如果你能说出一串 对方身上这个优点 那个品质 那么我觉得 你喜欢的是  没法成为的那部分自己\r\n\r\n真正的喜欢就是没有理由 不讲道理的 ​​​",
-                      "type":  "thought",
-                      "typeLabel":  "thought",
-                      "title":  "",
-                      "author":  "",
-                      "date":  "2022.02.01 19:10",
-                      "tags":  [
-
-                               ],
-                      "pinned":  false,
+                      "repost":  null,
+                      "repost_count":  0,
                       "images":  [
 
                                  ],
